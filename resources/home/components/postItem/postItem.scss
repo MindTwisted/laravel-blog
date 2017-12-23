@@ -1,0 +1,27 @@
+.postItem {
+  margin: 0.5rem 0;
+
+  &__controls {
+    margin-top: 1rem;
+
+    & > * {
+      margin: 0.15rem 0;
+    }
+  }
+
+  .card-title {
+    margin: 0;
+  }
+
+  &__deleteForm {
+    display: inline-block;
+  }
+
+  &__thumbnail {
+    overflow: hidden;
+
+    img {
+      max-height: 300px;
+    }
+  }
+}

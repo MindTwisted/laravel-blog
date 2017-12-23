@@ -1,0 +1,14 @@
+.notification {
+  position: fixed;
+  right: 0;
+  top: 5rem;
+  z-index: 10000;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

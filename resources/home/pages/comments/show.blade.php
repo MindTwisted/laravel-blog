@@ -1,0 +1,50 @@
+@extends ('home.layouts.master')
+
+@section('content')
+  <div class="homePage">
+    <div class="container-fluid">
+      <div class="homePage__breadcrumbs">
+        {{ Breadcrumbs::render('showComment', $comment) }}
+      </div>
+      <div class="homePage__title">
+        <h2>Comment for post "{{ $comment->post->title }}"
+          by {{ $comment->author_name }}</h2>
+      </div>
+      <hr>
+      <div class="homePage__content">
+        <div class="commentsPage">
+          
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="homePage__mdAreaViewer">
+                {{ $comment->body }}
+              </div>
+            
+            </div>
+            <br>
+            <div class="col-md-12">
+              <div class="commentsPage__controls">
+                <a href="{{ route('comments.edit', $comment->id) }}"
+                   class="btn btn-success">
+                  Edit
+                </a>
+                <form action="{{ route('comments.destroy', $comment->id) }}"
+                      method="POST"
+                      class="commentItem__deleteForm">
+                  {{ method_field('DELETE') }}
+                  {{ csrf_field() }}
+                  
+                  <button class="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection

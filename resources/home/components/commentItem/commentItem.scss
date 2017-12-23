@@ -1,0 +1,27 @@
+.commentItem {
+  margin: 0.5rem 0;
+
+  &__controls {
+    margin-top: 1rem;
+  }
+
+  .card-title {
+    margin: 0;
+  }
+
+  &__deleteForm {
+    display: inline-block;
+
+    .btn {
+      cursor: pointer;
+    }
+  }
+
+  &__approveBox {
+    margin-bottom: 1rem;
+
+    button {
+      cursor: pointer;
+    }
+  }
+}

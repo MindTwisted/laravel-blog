@@ -1,0 +1,7 @@
+.postsFilterPanel {
+  &__formWrapper > * {
+    @include media-breakpoint-down(md) {
+      margin: 0.5rem 0;
+    }
+  }
+}

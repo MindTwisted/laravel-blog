@@ -1,0 +1,40 @@
+.homePage {
+  &__emptyQuery {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+
+    .pagination {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h1 {
+      display: inline-block;
+    }
+  }
+
+  &__addResourceButton {
+    margin-left: 0.75rem;
+  }
+
+  &__content {
+    .CodeMirror {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .editor-toolbar {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

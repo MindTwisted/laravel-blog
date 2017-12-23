@@ -1,0 +1,28 @@
+.postsPage {
+  &__filterPanel {
+    margin-bottom: 2rem;
+  }
+
+  &__filterItem {
+    margin: 0;
+  }
+
+  &__categoryTitle {
+    color: $gray-600;
+  }
+
+  &__image {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    img {
+      max-height: 1024px;
+    }
+  }
+
+  &__deleteImage {
+    margin: 1rem 0;
+    display: block;
+  }
+
+}

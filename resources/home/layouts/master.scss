@@ -1,0 +1,24 @@
+.layout-master {
+  &__main {
+    margin-top: $navbarHeight;
+  }
+
+  &__sidebar {
+    position: fixed;
+    width: $sidebarWidth;
+
+    @include media-breakpoint-down(lg) {
+      position: inherit;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    margin-left: $sidebarWidth;
+    padding: $spacer;
+
+    @include media-breakpoint-down(lg) {
+      margin-left: inherit;
+    }
+  }
+}

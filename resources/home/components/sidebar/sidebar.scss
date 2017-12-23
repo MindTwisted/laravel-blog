@@ -1,0 +1,47 @@
+.sidebar {
+  max-width: $sidebarWidth;
+  width: 100%;
+  background-color: $dark;
+  height: calc(100vh - #{$navbarHeight});
+  padding: 1rem;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+    height: inherit;
+  }
+
+  .nav-link {
+    &:hover {
+      background-color: rgba(#fff, 0.25);
+      color: #fff;
+    }
+  }
+
+  &__accordionContent {
+    .nav-link {
+      padding-left: 3rem;
+    }
+  }
+
+  .show {
+    & > .nav-link {
+      color: $primary;
+      background-color: inherit;
+
+      &:hover {
+        background-color: rgba(#fff, 0.25);
+        color: #fff;
+      }
+    }
+
+    & > .nav-link.active {
+      background-color: $primary;
+      color: #fff;
+
+      &:hover {
+        background-color: rgba(#fff, 0.25);
+        color: #fff;
+      }
+    }
+  }
+}
