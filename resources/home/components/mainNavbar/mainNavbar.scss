@@ -1,0 +1,28 @@
+.mainNavbar {
+  $selector: '.mainNavbar';
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .svgIcon {
+    width: 33px;
+    right: 0;
+    @include absoluteVerticalCentering;
+
+    svg {
+      fill: #494b4f;
+    }
+  }
+
+  &__dropdownIconWrap {
+    position: relative;
+    padding-right: 3rem !important;
+    display: inline-block;
+
+    &::after {
+      display: none;
+    }
+  }
+
+}

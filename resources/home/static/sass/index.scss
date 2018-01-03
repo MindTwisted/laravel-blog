@@ -1,9 +1,16 @@
 // Base
+@import "base/fonts";
+@import "base/base";
+@import "base/mixins";
 @import "base/libs";
 @import "base/framework";
 @import "base/variables";
 // Layouts
 @import "../../layouts/master";
+// Pages
+@import "../../pages/posts/postsPage";
+@import "../../pages/comments/commentsPage";
+@import "../../pages/homePage";
 // Components
 @import "../../components/sidebar/sidebar";
 @import "../../components/postItem/postItem";
@@ -14,7 +21,5 @@
 @import "../../components/addResourceButton/addResourceButton";
 @import "../../components/postsFilterPanel/postsFilterPanel";
 @import "../../components/commentsFilterPanel/commentsFilterPanel";
-// Pages
-@import "../../pages/posts/postsPage";
-@import "../../pages/comments/commentsPage";
-@import "../../pages/homePage";
+@import "../../components/mainNavbar/mainNavbar";
+@import "../../components/svgIcons/svgIcon";

@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\PostRepository;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function indexPage()
+    /**
+     * Display public site index page
+     *
+     * @param PostRepository $postRepository
+     * @return \Illuminate\Http\Response
+     */
+    public function indexPage(PostRepository $postRepository)
     {
-        return view('site.pages.index');
+        $posts = $postRepository->latest(9);
+
+        return view('site.pages.index', compact('posts'));
     }
 }

@@ -26,6 +26,17 @@ class PostRepository
     }
 
     /**
+     * Get latest posts from DB
+     *
+     * @param int $count
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function latest(int $count = 6)
+    {
+        return Post::latest()->take($count)->get();
+    }
+
+    /**
      * Get filtered posts from DB
      *
      * @param array $filter

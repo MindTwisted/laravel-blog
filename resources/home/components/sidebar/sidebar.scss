@@ -1,47 +1,72 @@
 .sidebar {
+  $sidebarMainColor: theme-color('primary');
+
   max-width: $sidebarWidth;
   width: 100%;
-  background-color: $dark;
-  height: calc(100vh - #{$navbarHeight});
-  padding: 1rem;
+  background-color: theme-color("dark");
+  height: 100vh;
 
   @include media-breakpoint-down(lg) {
     max-width: 100%;
     height: inherit;
   }
 
-  .nav-link {
-    &:hover {
-      background-color: rgba(#fff, 0.25);
-      color: #fff;
+  &__brand {
+    min-height: $navbarHeight;
+    background-color: $sidebarMainColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: #ffffff;
+      font-size: #{(25/16)}rem;
+      font-weight: 500;
+      text-decoration: none;
     }
   }
 
-  &__accordionContent {
-    .nav-link {
-      padding-left: 3rem;
-    }
-  }
+  .nav {
+    padding-top: 3rem;
 
-  .show {
-    & > .nav-link {
-      color: $primary;
-      background-color: inherit;
+    &-link {
+      padding: 1rem 1rem 1rem 5rem;
+      color: #9398a2;
+      position: relative;
+
+      .svgIcon {
+        left: 2rem;
+        @include absoluteVerticalCentering;
+
+        svg {
+          fill: #494c53;
+        }
+      }
+
+      &.active {
+        background-color: transparent;
+        color: $sidebarMainColor;
+        &::before {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4px;
+          height: 100%;
+          background-color: $sidebarMainColor;
+        }
+
+        svg {
+          fill: $sidebarMainColor;
+        }
+      }
 
       &:hover {
-        background-color: rgba(#fff, 0.25);
-        color: #fff;
+        background-color: rgba(#fff, 0.05);
       }
     }
 
-    & > .nav-link.active {
-      background-color: $primary;
-      color: #fff;
-
-      &:hover {
-        background-color: rgba(#fff, 0.25);
-        color: #fff;
-      }
-    }
   }
+
 }

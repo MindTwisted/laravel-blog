@@ -20,6 +20,9 @@
 <body>
 <div id="app">
   
+  @component('home.components.svgIcons.svgIcons')
+  @endcomponent
+  
   @if(session('status'))
     @component('home.components.notification.notification',
               ['messages' => session('status'),
@@ -34,7 +37,7 @@
     @endcomponent
   @endif
   
-  @component('home.components.navbar.navbar')
+  @component('home.components.mainNavbar.mainNavbar')
   @endcomponent
   
   <div class="layout-master__main">

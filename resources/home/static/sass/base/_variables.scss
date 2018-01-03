@@ -1,5 +1,6 @@
 // Navbar
-$navbarHeight: $nav-link-height + $nav-link-padding-x;
+$navLinkHeight: (($font-size-base * 1.25) * $line-height-base + $nav-link-padding-y * 2);
+$navbarHeight: $navLinkHeight + $spacer;
 
 // Sidebar
 $sidebarWidth: 300px;

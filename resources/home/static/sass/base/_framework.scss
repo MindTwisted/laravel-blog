@@ -1,10 +1,24 @@
 // Bootstrap variables
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+$spacer: 1.5rem;
+
+// Borders
+$border-radius: 6px;
+$border-radius-lg: 6px;
+$border-radius-sm: 6px;
+
+// Colors
+$blue: #38c6da;
+$red: #fb5867;
+$green: #6ad36e;
+$gray-800: #282a2c;
+
+$body-bg: #f0f3f5;
+
+// Fonts
+$font-family-sans-serif: 'Rubik', sans-serif;
+$headings-font-weight: 400;
 
 // Bootstrap 4
-//@import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
@@ -24,4 +38,15 @@ $border-radius-sm: 0;
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/utilities";
+
+// Buttons styles
+.btn, .btn:hover {
+  color: $white;
+}
+
+// Budges styles
+.badge {
+  color: $white;
+  font-weight: 400;
+}
 

@@ -6,6 +6,8 @@
   &__sidebar {
     position: fixed;
     width: $sidebarWidth;
+    top: 0;
+    z-index: 10000;
 
     @include media-breakpoint-down(lg) {
       position: inherit;
