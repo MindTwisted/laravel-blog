@@ -1,0 +1,44 @@
+.teaserAchievements {
+  padding: rem(100) 0;
+  background-color: #646d79;
+  color: $white;
+
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+
+  &__item {
+    @include media-breakpoint-down(sm) {
+      margin: rem(30) 0;
+    }
+  }
+
+  &__itemIcon {
+    text-align: center;
+
+    svg {
+      width: rem(45);
+      height: rem(45);
+      fill: $white;
+    }
+  }
+
+  &__mainText {
+    font-size: rem(40);
+    line-height: rem(40);
+    font-family: $ralewayFont;
+    margin-bottom: rem(25);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(15);
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__secondaryText {
+    font-size: rem(25);
+    line-height: rem(25);
+    font-family: $ralewayFont;
+    font-weight: 300;
+  }
+}

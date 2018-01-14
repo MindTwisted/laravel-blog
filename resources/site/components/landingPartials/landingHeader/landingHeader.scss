@@ -1,0 +1,123 @@
+.landingHeader {
+  padding: 20rem 0 5rem 0;
+  position: relative;
+  color: $white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include absoluteColorOverflow(#3c4147, 0.4);
+
+  &__content {
+    position: relative;
+    z-index: 20;
+  }
+
+  &__line {
+    display: inline-block;
+  }
+
+  &__description {
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: $ralewayFont;
+  }
+
+  &__controls {
+    margin-top: 3rem;
+    & > a {
+      margin-right: 1rem;
+    }
+  }
+
+  // Carousel dots styling
+  .owl-dots {
+    margin-top: 7.5rem;
+    text-align: center;
+  }
+
+  .owl-dot {
+    width: 1.375rem;
+    height: 1.375rem;
+    border: 1px solid $white;
+    display: inline-block;
+    margin: 0 0.4rem;
+
+    &.active {
+      background-color: $white;
+    }
+  }
+
+  // Carousel nav styling
+  .owl-nav {
+    svg {
+      width: 3rem;
+      height: 4rem;
+      fill: $white;
+      opacity: 0.4;
+      transition: opacity 0.25s ease;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    @include absoluteVerticalCentering;
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  .owl-prev {
+    left: -4rem;
+  }
+
+  .owl-next {
+    right: -4rem;
+  }
+}
+
+// Hide carousel item basically
+.owl-item {
+  .landingHeader__carouselItem {
+    visibility: hidden;
+  }
+}
+
+// Show active carousel item and entrance animation
+.owl-item.active {
+  .landingHeader {
+    &__carouselItem {
+      visibility: visible;
+    }
+
+    &__heading,
+    &__line,
+    &__description {
+      animation-name: fadeInRightBig;
+    }
+
+    &__heading {
+      animation-duration: 0.75s;
+    }
+
+    &__line {
+      animation-duration: 1s;
+    }
+
+    &__description {
+      animation-duration: 1.25s;
+    }
+
+    &__controls {
+      animation-name: bounceInUp;
+      animation-duration: 1.5s;
+    }
+  }
+}

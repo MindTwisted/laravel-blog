@@ -1,0 +1,46 @@
+.sectionParallax {
+  padding: rem(130) 0 rem(100) 0;
+  position: relative;
+
+  @include absoluteColorOverflow($red, 0.7);
+
+  &__content {
+    position: relative;
+    z-index: 20;
+  }
+
+  &__quote {
+    margin-top: rem(86);
+    color: $white;
+  }
+
+  &__quoteText {
+    font-weight: 300;
+    font-size: rem(30);
+    line-height: rem(40);
+    font-style: italic;
+    position: relative;
+
+    &::before {
+      content: '‘‘';
+      font-family: 'Times New Roman', serif;
+      font-size: rem(150);
+      opacity: 0.2;
+      position: absolute;
+      left: rem(-30);
+      top: rem(14);
+      letter-spacing: rem(-9);
+    }
+  }
+
+  &__quoteAuthor {
+    font-weight: 300;
+    font-size: rem(30);
+    line-height: rem(40);
+    margin-top: rem(50);
+
+    &::before {
+      content: '—';
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.mainNavbar {
+  $linkColor: #fafafa;
+  $className: 'mainNavbar';
+
+  &__secondaryLogo {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  &__authControls {
+    @include media-breakpoint-up(lg) {
+      right: 0;
+      @include absoluteVerticalCentering;
+    }
+
+    @include media-breakpoint-down(md) {
+      position: relative;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $white;
+    }
+  }
+
+  &--isVisible {
+    .navbar {
+      background-color: rgba($dark, 0.95);
+    }
+
+    .logo {
+      &__text {
+        display: none;
+      }
+    }
+  }
+
+  .navbar {
+    @include media-breakpoint-down(md) {
+      background-color: rgba($dark, 0.95);
+    }
+  }
+
+  .navbar-toggler {
+    color: $white;
+    border-color: $white;
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+
+  .navbar-nav {
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .nav-item, .nav-item.active {
+    @include media-breakpoint-down(md) {
+      margin: 0;
+    }
+
+    .logo {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    &.#{$className}__authControls {
+      margin: 0;
+    }
+
+    margin: 1rem 2rem;
+    text-transform: uppercase;
+    font-family: $ralewayFont;
+    font-weight: 300;
+
+    .nav-link {
+      color: $linkColor;
+      letter-spacing: rem(0.36);
+
+      &:hover {
+        color: lighten($linkColor, 25%);
+      }
+    }
+  }
+
+}

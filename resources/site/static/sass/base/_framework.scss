@@ -1,8 +1,71 @@
 // Bootstrap variables
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+$enable-rounded: false;
+
+// Colors
+$red: #ff3c1f;
+
+// Fonts
+$font-family-sans-serif: $openSansFont;
+$headings-font-weight: 500;
+$headings-font-family: $ralewayFont;
+
+$h1-font-size: 4.37rem;
+$h2-font-size: 2.8125rem;
+
+// Buttons
+$btn-font-weight: 500;
+
+// Forms
+$input-border-color: transparent;
+
+$input-btn-padding-y: 1.1rem;
+$input-btn-padding-x: 1.1rem;
+
+$input-placeholder-color: #4e5860;
 
 // Bootstrap 4
 @import "~bootstrap/scss/bootstrap";
 
+// Buttons styles
+.btn {
+  font-family: $ralewayFont;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+
+  &-outline-secondary {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      color: $red;
+    }
+  }
+}
+
+// Form styles
+.form-control {
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-image-source: linear-gradient(#ffffff, #a8b1bb);
+  border-image-slice: 1;
+  font-size: rem(15);
+  font-style: italic;
+
+  &.is-invalid {
+    border-image-source: linear-gradient(#ffffff, $red);
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+    border-image-source: linear-gradient(#ffffff, $primary);
+  }
+}

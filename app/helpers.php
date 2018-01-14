@@ -1,6 +1,13 @@
 <?php
 
-function checkActiveRoute($route, $className = 'active'): string
+/**
+ * Check provided route name with current active route
+ *
+ * @param $route
+ * @param string $className
+ * @return string
+ */
+function checkActiveRoute($route, string $className = 'active'): string
 {
     $currentRoute = Route::currentRouteName();
 
@@ -15,4 +22,18 @@ function checkActiveRoute($route, $className = 'active'): string
     }
 
     return $currentRoute === $route ? $className : '';
+}
+
+/**
+ * Trim provided string to provided length and add '..' if string was trimmed
+ *
+ * @param string $string
+ * @param int $maxLength
+ * @return string
+ */
+function trimString(string $string, $maxLength = 200): string
+{
+    return strlen($string) > $maxLength ?
+        substr($string, 0, $maxLength) . '..' :
+        $string;
 }

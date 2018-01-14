@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', 'PagesController@indexPage');
-
 // Left only login and logout routes
 Route::namespace('Auth')
     ->group(function () {
@@ -23,7 +21,17 @@ Route::namespace('Auth')
             ->name('logout');
     });
 
-// Define routes for personal dashboard of admin
+// Define routes for public site
+Route::namespace('Site')->group(function () {
+    // Landing page route
+    Route::get('/', 'PagesController@indexPage')->name('landing');
+
+    // Sending contact email route
+    Route::post('/send-contact-email', 'MailController@sendContactEmail')
+        ->name('contact-emails.send');
+});
+
+// Define routes for personal admin dashboard
 Route::middleware('auth')
     ->prefix('home')
     ->namespace('Home')

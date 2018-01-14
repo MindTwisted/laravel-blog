@@ -43,5 +43,8 @@ class CreatePostsTable extends Migration
             $table->dropForeign(['user_id']);
             $table->dropForeign(['category_id']);
         });
+
+        // Clear posts images from storage when reversing migration
+        Storage::deleteDirectory('public/images/blog');
     }
 }

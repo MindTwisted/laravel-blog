@@ -1,0 +1,27 @@
+.skewedLine {
+  $lineHeight: 30;
+
+  position: absolute;
+  height: #{$lineHeight}px;
+  width: 50%;
+  background-color: $white;
+  z-index: 20;
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  &--top {
+    top: 0;
+  }
+
+  &--left {
+    left: -#{($lineHeight/2)}px;
+    transform: skewX(45deg);
+  }
+
+  &--right {
+    right: -#{($lineHeight/2)}px;
+    transform: skewX(45deg);
+  }
+}

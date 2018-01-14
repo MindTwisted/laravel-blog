@@ -1,0 +1,43 @@
+.sectionBlog {
+  padding: rem(100) 0;
+
+  &__carousel {
+    margin-top: rem(90);
+  }
+
+  &__empty {
+    margin-top: rem(40);
+    text-align: center;
+    font-family: $ralewayFont;
+    font-size: rem(20);
+  }
+
+  // Carousel nav styling
+  .owl-nav {
+    svg {
+      width: 3rem;
+      height: 4rem;
+      fill: #656d78;
+      transition: fill 0.25s ease;
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    @include absoluteVerticalCentering;
+
+    &:hover {
+      svg {
+        fill: $red;
+      }
+    }
+  }
+
+  .owl-prev {
+    left: -4rem;
+  }
+
+  .owl-next {
+    right: -4rem;
+  }
+}

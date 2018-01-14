@@ -11,6 +11,7 @@ import notification from '../../components/notification/notification';
 import homePage from '../../pages/homePage';
 import postsPage from '../../pages/posts/postsPage';
 
+// Adding csrf token to every ajax request
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

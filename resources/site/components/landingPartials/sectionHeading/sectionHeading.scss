@@ -1,0 +1,43 @@
+.sectionHeading {
+  $className: 'sectionHeading';
+
+  &__title {
+    color: #272d32;
+    margin: 0;
+  }
+
+  &__line {
+    width: 100px;
+    height: 1px;
+    background-image: linear-gradient(to left, #4e5860 0%, #ff3c1f 100%);
+    margin: 1rem 0;
+  }
+
+  &__description {
+    color: #4e5860;
+    font-family: $openSansFont;
+    font-size: rem(18);
+    margin: 0;
+  }
+
+  &--centered {
+    text-align: center;
+
+    .#{$className}__line {
+      margin: 1rem auto;
+    }
+  }
+
+  &--light {
+    .#{$className}__title,
+    .#{$className}__description {
+      color: $white;
+    }
+
+    .#{$className}__line {
+      background-image: none;
+      background-color: $white;
+    }
+
+  }
+}

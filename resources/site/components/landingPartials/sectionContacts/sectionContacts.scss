@@ -1,0 +1,68 @@
+.sectionContacts {
+  $className: 'sectionContacts';
+
+  margin: rem(100) 0;
+
+  &__contacts {
+    margin-top: rem(60);
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  &__contactItem {
+    padding-left: rem(100);
+    margin-bottom: rem(70);
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+
+    &:hover {
+      .#{$className}__contactItemIcon {
+        svg {
+          fill: $red;
+        }
+      }
+
+      .#{$className}__contactItemText {
+        color: $red;
+      }
+    }
+  }
+
+  &__contactItemIcon {
+
+    @include media-breakpoint-up(lg) {
+      @include absoluteVerticalCentering;
+      left: rem(20);
+    }
+
+    svg {
+      width: rem(36);
+      height: rem(36);
+      fill: #636c77;
+      transition: fill 0.25s ease;
+    }
+  }
+
+  &__contactItemText {
+    color: #4e5860;
+    font-size: rem(14);
+    transition: color 0.25s ease;
+  }
+
+  &__form {
+    margin-top: rem(60);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(10);
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+}

@@ -33,7 +33,7 @@ class PostRepository
      */
     public function latest(int $count = 6)
     {
-        return Post::latest()->take($count)->get();
+        return Post::withCount('comments')->latest()->take($count)->get();
     }
 
     /**

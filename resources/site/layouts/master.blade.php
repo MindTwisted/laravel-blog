@@ -19,7 +19,10 @@
 </head>
 <body>
 <div id="app">
-  @component('site.components.navbar.navbar')
+  @component('site.components.notification.notification')
+  @endcomponent
+  
+  @component('site.components.svgSprites.svgSprites')
   @endcomponent
   
   @yield('content')
@@ -27,5 +30,10 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/site.js') }}"></script>
+
+{{--Load google map--}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu1s0G5DALQ1_ssXgddOX7T69PxY5_4v4"
+        async
+        defer></script>
 </body>
 </html>

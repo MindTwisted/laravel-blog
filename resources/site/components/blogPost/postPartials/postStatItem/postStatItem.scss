@@ -1,0 +1,16 @@
+.postStatItem {
+  display: inline-block;
+  margin-right: rem(5);
+
+  svg {
+    width: rem(14);
+    height: rem(14);
+    fill: $red;
+  }
+
+  span {
+    margin-left: rem(3);
+    font-size: rem(14);
+    color: #303030;
+  }
+}

@@ -1,0 +1,23 @@
+.sectionMap {
+  height: rem(500);
+  background-color: $gray-200;
+  position: relative;
+
+  &__map {
+    height: 100%;
+  }
+
+  &__infoWindow {
+    padding: 0.5rem;
+    font-family: $ralewayFont;
+  }
+
+  &__infoWindowTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__infoWindowBody {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,11 @@
+.teaserBrands {
+  padding: rem(85) 0;
+  border-top: rem(1) solid rgba(#a9b2be, 0.35);
+
+  &__item {
+    border: rem(1) solid #e6e9ed;
+    padding: rem(42) 0;
+    text-align: center;
+    margin: rem(15) 0;
+  }
+}

@@ -1,0 +1,68 @@
+.sectionAbout {
+  padding: rem(100) 0;
+  background-color: $white;
+
+  &__quote,
+  &__item {
+    margin-top: rem(81);
+  }
+
+  &__quoteText {
+    color: #4e5860;
+    font-size: rem(28);
+  }
+
+  &__quoteButton {
+    margin-top: rem(53);
+
+    svg {
+      fill: $white;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .svgIcon {
+      vertical-align: middle;
+      margin-left: 0.25rem;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+
+    .svgIcon {
+      position: relative;
+      bottom: rem(-4);
+    }
+
+    svg {
+      width: rem(41);
+      height: rem(38);
+      fill: #aab2bd;
+    }
+  }
+
+  &__itemTitle {
+    font-size: rem(20);
+    font-weight: 700;
+    color: #303030;
+    margin-bottom: rem(20);
+  }
+
+  &__itemBody {
+    color: #4e5860;
+    font-size: rem(14);
+  }
+
+  &__innerWrap {
+    position: relative;
+    padding: rem(25);
+    border: 1px solid #e6e9ed;
+  }
+
+  .skewedLine {
+    top: -1px;
+    border-left: 1px solid #e6e9ed;
+    border-bottom: 1px solid #e6e9ed;
+  }
+}

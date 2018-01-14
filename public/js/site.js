@@ -20772,13 +20772,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery_src_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery_src_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap_js_src_util__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap_js_src_dropdown__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bootstrap_js_src_collapse__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_indexPage__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery_parallax_js__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery_parallax_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery_parallax_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap_js_src_util__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bootstrap_js_src_dropdown__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_bootstrap_js_src_collapse__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_landingPartials_landingHeader_landingHeader__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_mainNavbar_mainNavbar__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_landingPartials_sectionBlog_sectionBlog__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_landingPartials_sectionReviews_sectionReviews__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_landingPartials_sectionContacts_sectionContacts__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_landingPartials_sectionMap_sectionMap__ = __webpack_require__(157);
 // jQuery
 
 // Owl Carousel
+
+// Parallax JS
 
 
 // Bootstrap 4
@@ -20786,11 +20795,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// Pages
+// Adding csrf token to every ajax request
+jQuery.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+// Components
+
+
+
+
+
 
 
 $(document).ready(function () {
-    Object(__WEBPACK_IMPORTED_MODULE_5__pages_indexPage__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_6__components_landingPartials_landingHeader_landingHeader__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_7__components_mainNavbar_mainNavbar__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_8__components_landingPartials_sectionBlog_sectionBlog__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_9__components_landingPartials_sectionReviews_sectionReviews__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_10__components_landingPartials_sectionContacts_sectionContacts__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_11__components_landingPartials_sectionMap_sectionMap__["a" /* default */])();
 });
 
 /***/ }),
@@ -28939,31 +28965,410 @@ if ( !noGlobal ) {
 
 /***/ }),
 /* 138 */
+/***/ (function(module, exports) {
+
+/*!
+ * parallax.js v1.5.0 (http://pixelcog.github.io/parallax.js/)
+ * @copyright 2016 PixelCog, Inc.
+ * @license MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
+ */
+!function(t,i,e,s){function o(i,e){var h=this;"object"==typeof e&&(delete e.refresh,delete e.render,t.extend(this,e)),this.$element=t(i),!this.imageSrc&&this.$element.is("img")&&(this.imageSrc=this.$element.attr("src"));var r=(this.position+"").toLowerCase().match(/\S+/g)||[];if(r.length<1&&r.push("center"),1==r.length&&r.push(r[0]),"top"!=r[0]&&"bottom"!=r[0]&&"left"!=r[1]&&"right"!=r[1]||(r=[r[1],r[0]]),this.positionX!==s&&(r[0]=this.positionX.toLowerCase()),this.positionY!==s&&(r[1]=this.positionY.toLowerCase()),h.positionX=r[0],h.positionY=r[1],"left"!=this.positionX&&"right"!=this.positionX&&(isNaN(parseInt(this.positionX))?this.positionX="center":this.positionX=parseInt(this.positionX)),"top"!=this.positionY&&"bottom"!=this.positionY&&(isNaN(parseInt(this.positionY))?this.positionY="center":this.positionY=parseInt(this.positionY)),this.position=this.positionX+(isNaN(this.positionX)?"":"px")+" "+this.positionY+(isNaN(this.positionY)?"":"px"),navigator.userAgent.match(/(iPod|iPhone|iPad)/))return this.imageSrc&&this.iosFix&&!this.$element.is("img")&&this.$element.css({backgroundImage:'url("'+this.imageSrc+'")',backgroundSize:"cover",backgroundPosition:this.position}),this;if(navigator.userAgent.match(/(Android)/))return this.imageSrc&&this.androidFix&&!this.$element.is("img")&&this.$element.css({backgroundImage:'url("'+this.imageSrc+'")',backgroundSize:"cover",backgroundPosition:this.position}),this;this.$mirror=t("<div />").prependTo(this.mirrorContainer);var a=this.$element.find(">.parallax-slider"),n=!1;0==a.length?this.$slider=t("<img />").prependTo(this.$mirror):(this.$slider=a.prependTo(this.$mirror),n=!0),this.$mirror.addClass("parallax-mirror").css({visibility:"hidden",zIndex:this.zIndex,position:"fixed",top:0,left:0,overflow:"hidden"}),this.$slider.addClass("parallax-slider").one("load",function(){h.naturalHeight&&h.naturalWidth||(h.naturalHeight=this.naturalHeight||this.height||1,h.naturalWidth=this.naturalWidth||this.width||1),h.aspectRatio=h.naturalWidth/h.naturalHeight,o.isSetup||o.setup(),o.sliders.push(h),o.isFresh=!1,o.requestRender()}),n||(this.$slider[0].src=this.imageSrc),(this.naturalHeight&&this.naturalWidth||this.$slider[0].complete||a.length>0)&&this.$slider.trigger("load")}!function(){for(var t=0,e=["ms","moz","webkit","o"],s=0;s<e.length&&!i.requestAnimationFrame;++s)i.requestAnimationFrame=i[e[s]+"RequestAnimationFrame"],i.cancelAnimationFrame=i[e[s]+"CancelAnimationFrame"]||i[e[s]+"CancelRequestAnimationFrame"];i.requestAnimationFrame||(i.requestAnimationFrame=function(e){var s=(new Date).getTime(),o=Math.max(0,16-(s-t)),h=i.setTimeout(function(){e(s+o)},o);return t=s+o,h}),i.cancelAnimationFrame||(i.cancelAnimationFrame=function(t){clearTimeout(t)})}(),t.extend(o.prototype,{speed:.2,bleed:0,zIndex:-100,iosFix:!0,androidFix:!0,position:"center",overScrollFix:!1,mirrorContainer:"body",refresh:function(){this.boxWidth=this.$element.outerWidth(),this.boxHeight=this.$element.outerHeight()+2*this.bleed,this.boxOffsetTop=this.$element.offset().top-this.bleed,this.boxOffsetLeft=this.$element.offset().left,this.boxOffsetBottom=this.boxOffsetTop+this.boxHeight;var t,i=o.winHeight,e=o.docHeight,s=Math.min(this.boxOffsetTop,e-i),h=Math.max(this.boxOffsetTop+this.boxHeight-i,0),r=this.boxHeight+(s-h)*(1-this.speed)|0,a=(this.boxOffsetTop-s)*(1-this.speed)|0;r*this.aspectRatio>=this.boxWidth?(this.imageWidth=r*this.aspectRatio|0,this.imageHeight=r,this.offsetBaseTop=a,t=this.imageWidth-this.boxWidth,"left"==this.positionX?this.offsetLeft=0:"right"==this.positionX?this.offsetLeft=-t:isNaN(this.positionX)?this.offsetLeft=-t/2|0:this.offsetLeft=Math.max(this.positionX,-t)):(this.imageWidth=this.boxWidth,this.imageHeight=this.boxWidth/this.aspectRatio|0,this.offsetLeft=0,t=this.imageHeight-r,"top"==this.positionY?this.offsetBaseTop=a:"bottom"==this.positionY?this.offsetBaseTop=a-t:isNaN(this.positionY)?this.offsetBaseTop=a-t/2|0:this.offsetBaseTop=a+Math.max(this.positionY,-t))},render:function(){var t=o.scrollTop,i=o.scrollLeft,e=this.overScrollFix?o.overScroll:0,s=t+o.winHeight;this.boxOffsetBottom>t&&this.boxOffsetTop<=s?(this.visibility="visible",this.mirrorTop=this.boxOffsetTop-t,this.mirrorLeft=this.boxOffsetLeft-i,this.offsetTop=this.offsetBaseTop-this.mirrorTop*(1-this.speed)):this.visibility="hidden",this.$mirror.css({transform:"translate3d("+this.mirrorLeft+"px, "+(this.mirrorTop-e)+"px, 0px)",visibility:this.visibility,height:this.boxHeight,width:this.boxWidth}),this.$slider.css({transform:"translate3d("+this.offsetLeft+"px, "+this.offsetTop+"px, 0px)",position:"absolute",height:this.imageHeight,width:this.imageWidth,maxWidth:"none"})}}),t.extend(o,{scrollTop:0,scrollLeft:0,winHeight:0,winWidth:0,docHeight:1<<30,docWidth:1<<30,sliders:[],isReady:!1,isFresh:!1,isBusy:!1,setup:function(){function s(){if(p==i.pageYOffset)return i.requestAnimationFrame(s),!1;p=i.pageYOffset,h.render(),i.requestAnimationFrame(s)}if(!this.isReady){var h=this,r=t(e),a=t(i),n=function(){o.winHeight=a.height(),o.winWidth=a.width(),o.docHeight=r.height(),o.docWidth=r.width()},l=function(){var t=a.scrollTop(),i=o.docHeight-o.winHeight,e=o.docWidth-o.winWidth;o.scrollTop=Math.max(0,Math.min(i,t)),o.scrollLeft=Math.max(0,Math.min(e,a.scrollLeft())),o.overScroll=Math.max(t-i,Math.min(t,0))};a.on("resize.px.parallax load.px.parallax",function(){n(),h.refresh(),o.isFresh=!1,o.requestRender()}).on("scroll.px.parallax load.px.parallax",function(){l(),o.requestRender()}),n(),l(),this.isReady=!0;var p=-1;s()}},configure:function(i){"object"==typeof i&&(delete i.refresh,delete i.render,t.extend(this.prototype,i))},refresh:function(){t.each(this.sliders,function(){this.refresh()}),this.isFresh=!0},render:function(){this.isFresh||this.refresh(),t.each(this.sliders,function(){this.render()})},requestRender:function(){var t=this;t.render(),t.isBusy=!1},destroy:function(e){var s,h=t(e).data("px.parallax");for(h.$mirror.remove(),s=0;s<this.sliders.length;s+=1)this.sliders[s]==h&&this.sliders.splice(s,1);t(e).data("px.parallax",!1),0===this.sliders.length&&(t(i).off("scroll.px.parallax resize.px.parallax load.px.parallax"),this.isReady=!1,o.isSetup=!1)}});var h=t.fn.parallax;t.fn.parallax=function(s){return this.each(function(){var h=t(this),r="object"==typeof s&&s;this==i||this==e||h.is("body")?o.configure(r):h.data("px.parallax")?"object"==typeof s&&t.extend(h.data("px.parallax"),r):(r=t.extend({},h.data(),r),h.data("px.parallax",new o(this,r))),"string"==typeof s&&("destroy"==s?o.destroy(this):o[s]())})},t.fn.parallax.Constructor=o,t.fn.parallax.noConflict=function(){return t.fn.parallax=h,this},t(function(){t('[data-parallax="scroll"]').parallax()})}(jQuery,window,document);
+
+/***/ }),
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 function init() {
-    var $container = $('.indexPage__postsCarousel');
+    // Get DOM elements
+    var $container = $('.landingHeader__carousel');
 
-    $container.owlCarousel({
-        loop: true,
-        margin: 15,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
-        }
-    });
+    // Custom nav markup
+    var $prevNavHTML = '<svg>\n                          <use xlink:href="#angle-left"></use>\n                       </svg>';
+    var $nextNavHTML = '<svg>\n                          <use xlink:href="#angle-right"></use>\n                       </svg>';
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            items: 1,
+            autoplay: true,
+            smartSpeed: 750,
+            nav: true,
+            navText: [$prevNavHTML, $nextNavHTML]
+        });
+    }
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (init);
+
+/***/ }),
+/* 140 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function init() {
+    var $container = $('.mainNavbar');
+
+    if ($container.length > 0) {
+        $(document).on('scroll', toggleNavbarVisibility);
+        $(document).ready(toggleNavbarVisibility);
+    }
+
+    function toggleNavbarVisibility() {
+        if ($(document).scrollTop() > 250) {
+            $container.addClass('mainNavbar--isVisible');
+        } else {
+            $container.removeClass('mainNavbar--isVisible');
+        }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (init);
+
+/***/ }),
+/* 141 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function init() {
+    // Get DOM elements
+    var $container = $('.sectionBlog__carousel');
+
+    // Custom nav markup
+    var $prevNavHTML = '<svg>\n                          <use xlink:href="#angle-left"></use>\n                       </svg>';
+    var $nextNavHTML = '<svg>\n                          <use xlink:href="#angle-right"></use>\n                       </svg>';
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            autoplay: true,
+            smartSpeed: 750,
+            margin: 30,
+            nav: true,
+            navText: [$prevNavHTML, $nextNavHTML],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                800: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (init);
+
+/***/ }),
+/* 142 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function init() {
+    // Get DOM elements
+    var $container = $('.sectionReviews__carousel');
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            items: 1
+        });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (init);
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notification_notification__ = __webpack_require__(144);
+
+
+// Define variables form jquery instances of form fields
+var $nameField = void 0,
+    $emailField = void 0,
+    $subjectField = void 0,
+    $messageField = void 0;
+// Define variable for jquery instance of form submit button
+var $submitButton = void 0;
+// Input invalid class name
+var invalidClassName = 'is-invalid';
+
+// Reset form input fields
+function resetInputFields() {
+    $nameField.val('');
+    $emailField.val('');
+    $subjectField.val('');
+    $messageField.val('');
+}
+
+// Reset form errors state
+function resetErrors() {
+    $nameField.removeClass(invalidClassName);
+    $emailField.removeClass(invalidClassName);
+    $subjectField.removeClass(invalidClassName);
+    $messageField.removeClass(invalidClassName);
+}
+
+// Get error response and set error state on provided form fields
+function handleErrors(errors) {
+    if (errors.name) {
+        $nameField.addClass(invalidClassName);
+
+        errors.name.map(function (error) {
+            $nameField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.email) {
+        $emailField.addClass(invalidClassName);
+
+        errors.email.map(function (error) {
+            $emailField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.subject) {
+        $subjectField.addClass(invalidClassName);
+
+        errors.subject.map(function (error) {
+            $subjectField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.message) {
+        $messageField.addClass(invalidClassName);
+
+        errors.message.map(function (error) {
+            $messageField.siblings('.invalid-feedback').text(error);
+        });
+    }
+}
+
+// Disable submit button
+function disableButton() {
+    $submitButton.attr('disabled', true);
+    $submitButton.text('Loading ...');
+}
+
+// Enable submit button
+function enableButton() {
+    $submitButton.attr('disabled', false);
+    $submitButton.text('SUBMIT');
+}
+
+// Main
+function init() {
+    var $form = $('.sectionContacts__form');
+
+    // Handle form submitting if form exists on the page
+    if ($form.length > 0) {
+        $form.on('submit', function submitContactForm(e) {
+            // Prevent default form submit behavior
+            e.preventDefault();
+
+            // Get form action URL
+            var URL = $form.attr('action');
+
+            // Get form input fields jquery instances
+            $nameField = $form.find(".form-control[name='name']");
+            $emailField = $form.find(".form-control[name='email']");
+            $subjectField = $form.find(".form-control[name='subject']");
+            $messageField = $form.find(".form-control[name='message']");
+
+            // Get submit button jquery instance
+            $submitButton = $form.find("button[type='submit']");
+
+            // Get form input fields data
+            var nameData = $nameField.val();
+            var emailData = $emailField.val();
+            var subjectData = $subjectField.val();
+            var messageData = $messageField.val();
+
+            // Disable submit button until response from server will be received
+            disableButton();
+
+            $.ajax(
+            // Request URL
+            URL,
+            // Request options object
+            {
+                // Set request method
+                method: 'POST',
+                // Set data which request will send
+                data: {
+                    name: nameData,
+                    email: emailData,
+                    subject: subjectData,
+                    message: messageData
+                }
+            }).done(function (data) {
+                // Handle success ajax response
+
+                // Show success notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__notification_notification__["a" /* showNotification */])('SUCCESS', data);
+                // Reset form errors state
+                resetErrors();
+                // Enable submit button after server response received
+                enableButton();
+                // Reset input fields
+                resetInputFields();
+            }).fail(function (error) {
+                // Handle error ajax response
+                var errors = error.responseJSON.errors;
+                var message = error.responseJSON.message;
+
+                // Reset form errors state
+                resetErrors();
+                // Show error notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__notification_notification__["a" /* showNotification */])('ERROR', message);
+                // Add form invalid state
+                handleErrors(errors);
+                // Enable submit button after server response received
+                enableButton();
+            });
+        });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (init);
+
+/***/ }),
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return showNotification; });
+// Get jquery instance of notification and alert dom elements
+var $notification = $('.notification');
+var $alert = $notification.find('.alert');
+
+// Notification visible class name
+var visibleClassName = 'notification--isVisible';
+
+// Notification auto-hide timeout, milliseconds
+var autoHideTimeout = 5000;
+
+// Initialize timer
+var timer = void 0;
+
+// Hide notification
+function hideNotification() {
+    $alert.removeClass('alert-success alert-danger');
+    $alert.text('');
+    $notification.removeClass(visibleClassName);
+}
+
+// Show success notification with provided text message
+function showSuccessNotification(text) {
+    // Clear old notification if any exists
+    hideNotification();
+    // Reset auto-hide timer if any exists
+    clearTimeout(timer);
+
+    $alert.addClass('alert-success');
+    $alert.text(text);
+    $notification.addClass(visibleClassName);
+
+    // Set auto-hide timer on notification
+    timer = setTimeout(hideNotification, autoHideTimeout);
+}
+
+// Show error notification with provided text message
+function showErrorNotification(text) {
+    // Clear old notification if any exists
+    hideNotification();
+    // Reset auto-hide timer if any exists
+    clearTimeout(timer);
+
+    $alert.addClass('alert-danger');
+    $alert.text(text);
+    $notification.addClass(visibleClassName);
+
+    // Set auto-hide timer on notification
+    timer = setTimeout(hideNotification, autoHideTimeout);
+}
+
+// Check notification type and invoke the right show function
+function showNotification(type, text) {
+    switch (type) {
+        case 'SUCCESS':
+            showSuccessNotification(text);
+            break;
+        case 'ERROR':
+            showErrorNotification(text);
+            break;
+        default:
+            return false;
+    }
+}
+
+
+
+/***/ }),
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var map = void 0;
+
+function initMap() {
+    // Set coordinates
+    var newYork = { lat: 40.768021, lng: -73.970286 };
+
+    // Init map in predefined coordinates
+    map = new google.maps.Map(document.getElementById('sectionMap__map'), {
+        center: newYork,
+        zoom: 13,
+        disableDefaultUI: true
+    });
+
+    // Put marker with custom icon into map
+    var marker = new google.maps.Marker({
+        position: newYork,
+        map: map,
+        icon: '/images/landing/map-marker.png',
+        title: '65th St Transverse, New York'
+    });
+
+    // Define map info window content
+    var contentString = '\n            <div class="sectionMap__infoWindow">\n              <div class="sectionMap__infoWindowTitle">\n                New York\n              </div>\n              <div class="sectionMap__infoWindowBody">\n                65th St Transverse\n              </div>     \n            </div>\n        ';
+
+    // Init info window with provided content
+    var infoWindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    // Open info windows when click event occurs on map marker
+    marker.addListener('click', function () {
+        infoWindow.open(map, marker);
+    });
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (initMap);
 
 /***/ })
 /******/ ]);

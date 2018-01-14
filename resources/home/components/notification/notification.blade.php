@@ -13,5 +13,3 @@
     </ul>
   </div>
 </div>
-
-{{--TODO: Understand why colors doesn't changed--}}

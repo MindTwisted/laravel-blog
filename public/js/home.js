@@ -26318,6 +26318,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// Adding csrf token to every ajax request
 __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': __WEBPACK_IMPORTED_MODULE_3_jquery___default()('meta[name="csrf-token"]').attr('content')

@@ -1,0 +1,17 @@
+.notification {
+  position: fixed;
+  top: 10rem;
+  right: 0;
+  z-index: 2000;
+  display: none;
+
+  .alert {
+    padding: 1rem 3rem;
+  }
+
+  &--isVisible {
+    display: block;
+    animation-name: fadeInRight;
+    animation-duration: 0.25s;
+  }
+}

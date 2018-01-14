@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
 use Illuminate\Http\Request;
 
