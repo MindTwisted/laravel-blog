@@ -2,5 +2,7 @@ body {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto !important;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }

@@ -1,4 +1,5 @@
-<div class="mainNavbar">
+<div class="mainNavbar"
+     id="mainNavbar">
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <!-- Branding Image -->
@@ -22,8 +23,8 @@
            id="site-navbar-collapse">
         
         <ul class="navbar-nav align-items-center">
-          <li class="nav-item active">
-            <a href="/"
+          <li class="nav-item">
+            <a href="#app"
                class="nav-link">
               Home
             </a>
@@ -100,8 +101,3 @@
     </div>
   </nav>
 </div>
-
-
-{{--TODO: add active state to nav buttons--}}
-{{--TODO: add scroll spy to nav--}}
-{{--TODO: add slow scroll to ID--}}

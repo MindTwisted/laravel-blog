@@ -83,41 +83,44 @@
   }
 }
 
-// Hide carousel item basically
-.owl-item {
-  .landingHeader__carouselItem {
-    visibility: hidden;
+// Add animation to carousel items on large devices and higher
+@include media-breakpoint-up(lg) {
+  // Hide carousel item basically
+  .owl-item {
+    .landingHeader__carouselItem {
+      visibility: hidden;
+    }
   }
-}
 
-// Show active carousel item and entrance animation
-.owl-item.active {
-  .landingHeader {
-    &__carouselItem {
-      visibility: visible;
-    }
+  // Show active carousel item and entrance animation
+  .owl-item.active {
+    .landingHeader {
+      &__carouselItem {
+        visibility: visible;
+      }
 
-    &__heading,
-    &__line,
-    &__description {
-      animation-name: fadeInRightBig;
-    }
+      &__heading,
+      &__line,
+      &__description {
+        animation-name: fadeInRightBig;
+      }
 
-    &__heading {
-      animation-duration: 0.75s;
-    }
+      &__heading {
+        animation-duration: 0.75s;
+      }
 
-    &__line {
-      animation-duration: 1s;
-    }
+      &__line {
+        animation-duration: 1s;
+      }
 
-    &__description {
-      animation-duration: 1.25s;
-    }
+      &__description {
+        animation-duration: 1.25s;
+      }
 
-    &__controls {
-      animation-name: bounceInUp;
-      animation-duration: 1.5s;
+      &__controls {
+        animation-name: bounceInUp;
+        animation-duration: 1.5s;
+      }
     }
   }
 }

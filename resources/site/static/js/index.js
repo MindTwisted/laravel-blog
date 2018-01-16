@@ -1,14 +1,15 @@
-// jQuery
-import 'jquery/src/jquery';
+// Note: you don't need to import Popper, Util
+// and jQuery as they are already autoload in webpack.mix.js
+
 // Owl Carousel
 import 'owl.carousel';
 // Parallax JS
 import 'jquery-parallax.js';
 
 // Bootstrap 4
-import util from 'bootstrap/js/src/util';
-import dropdown from 'bootstrap/js/src/dropdown';
-import collapse from 'bootstrap/js/src/collapse';
+require('bootstrap/js/dist/dropdown');
+require('bootstrap/js/dist/collapse');
+require('bootstrap/js/dist/scrollspy');
 
 // Adding csrf token to every ajax request
 jQuery.ajaxSetup({
@@ -24,6 +25,7 @@ import sectionBlog from '../../components/landingPartials/sectionBlog/sectionBlo
 import sectionReviews from '../../components/landingPartials/sectionReviews/sectionReviews';
 import sectionContacts from '../../components/landingPartials/sectionContacts/sectionContacts';
 import sectionMap from '../../components/landingPartials/sectionMap/sectionMap';
+import indexPage from '../../pages/indexPage/indexPage';
 
 $(document).ready(function () {
     landingHeader();
@@ -32,4 +34,5 @@ $(document).ready(function () {
     sectionReviews();
     sectionContacts();
     sectionMap();
+    indexPage();
 });

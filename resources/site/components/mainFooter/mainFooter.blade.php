@@ -54,7 +54,7 @@
       </div>
     </div>
     
-    <a href="#"
+    <a href="#app"
        class="mainFooter__scrollTop">
       @component('site.components.svgSprites.svgIcon', ['id' => 'angle-up'])
       @endcomponent

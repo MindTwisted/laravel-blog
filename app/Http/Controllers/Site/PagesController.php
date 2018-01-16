@@ -18,6 +18,6 @@ class PagesController extends Controller
     {
         $posts = $postRepository->latest(9);
 
-        return view('site.pages.index', compact('posts'));
+        return view('site.pages.indexPage.indexPage', compact('posts'));
     }
 }

@@ -23,5 +23,8 @@
     "popper.js": "^1.12.9",
     "select2": "^4.0.6-rc.1",
     "simplemde": "^1.11.2"
+  },
+  "dependencies": {
+    "exports-loader": "^0.6.4"
   }
 }

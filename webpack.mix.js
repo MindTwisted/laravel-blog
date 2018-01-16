@@ -11,6 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.autoload({
+    // Code below needs to run bootstrap 4
+    jquery: ['$', 'jQuery', 'window.jQuery'],
+    'exports-loader?Util!bootstrap/js/dist/util': ['Util'],
+    'popper.js/dist/umd/popper.js': ['Popper']
+});
+
 mix.js('resources/home/static/js/index.js', 'public/js/home.js')
     .js('resources/site/static/js/index.js', 'public/js/site.js')
     .sass('resources/home/static/sass/index.scss', 'public/css/home.css')

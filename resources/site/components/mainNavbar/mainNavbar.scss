@@ -80,6 +80,22 @@
     .nav-link {
       color: $linkColor;
       letter-spacing: rem(0.36);
+      border-bottom: rem(1) solid transparent;
+      padding: 0 0.5rem;
+
+      @include media-breakpoint-down(md) {
+        margin: 0.75rem 0;
+      }
+
+      &.active {
+        color: $linkColor;
+        border-image-source: linear-gradient(to left, #ff3c1f 0%, #902616 100%);
+        border-image-slice: 1;
+      }
+
+      &:visited {
+        color: $linkColor;
+      }
 
       &:hover {
         color: lighten($linkColor, 25%);

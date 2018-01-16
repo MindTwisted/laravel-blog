@@ -145,7 +145,9 @@ body {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto !important;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /*!
@@ -9782,6 +9784,27 @@ a.text-dark:hover {
 .mainNavbar .nav-item.active .nav-link {
   color: #fafafa;
   letter-spacing: 0.0225rem;
+  border-bottom: 0.0625rem solid transparent;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .mainNavbar .nav-item .nav-link,
+  .mainNavbar .nav-item.active .nav-link {
+    margin: 0.75rem 0;
+  }
+}
+
+.mainNavbar .nav-item .nav-link.active,
+.mainNavbar .nav-item.active .nav-link.active {
+  color: #fafafa;
+  border-image-source: linear-gradient(to left, #ff3c1f 0%, #902616 100%);
+  border-image-slice: 1;
+}
+
+.mainNavbar .nav-item .nav-link:visited,
+.mainNavbar .nav-item.active .nav-link:visited {
+  color: #fafafa;
 }
 
 .mainNavbar .nav-item .nav-link:hover,
@@ -9887,41 +9910,43 @@ a.text-dark:hover {
   right: -4rem;
 }
 
-.owl-item .landingHeader__carouselItem {
-  visibility: hidden;
-}
+@media (min-width: 992px) {
+  .owl-item .landingHeader__carouselItem {
+    visibility: hidden;
+  }
 
-.owl-item.active .landingHeader__carouselItem {
-  visibility: visible;
-}
+  .owl-item.active .landingHeader__carouselItem {
+    visibility: visible;
+  }
 
-.owl-item.active .landingHeader__heading,
-.owl-item.active .landingHeader__line,
-.owl-item.active .landingHeader__description {
-  -webkit-animation-name: fadeInRightBig;
-          animation-name: fadeInRightBig;
-}
+  .owl-item.active .landingHeader__heading,
+  .owl-item.active .landingHeader__line,
+  .owl-item.active .landingHeader__description {
+    -webkit-animation-name: fadeInRightBig;
+            animation-name: fadeInRightBig;
+  }
 
-.owl-item.active .landingHeader__heading {
-  -webkit-animation-duration: 0.75s;
-          animation-duration: 0.75s;
-}
+  .owl-item.active .landingHeader__heading {
+    -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+  }
 
-.owl-item.active .landingHeader__line {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-}
+  .owl-item.active .landingHeader__line {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
 
-.owl-item.active .landingHeader__description {
-  -webkit-animation-duration: 1.25s;
-          animation-duration: 1.25s;
-}
+  .owl-item.active .landingHeader__description {
+    -webkit-animation-duration: 1.25s;
+            animation-duration: 1.25s;
+  }
 
-.owl-item.active .landingHeader__controls {
-  -webkit-animation-name: bounceInUp;
-          animation-name: bounceInUp;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  .owl-item.active .landingHeader__controls {
+    -webkit-animation-name: bounceInUp;
+            animation-name: bounceInUp;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+  }
 }
 
 .sectionAbout {
