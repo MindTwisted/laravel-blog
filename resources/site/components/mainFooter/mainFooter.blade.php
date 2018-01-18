@@ -55,7 +55,7 @@
     </div>
     
     <a href="#app"
-       class="mainFooter__scrollTop">
+       class="mainFooter__scrollTop slowScroll">
       @component('site.components.svgSprites.svgIcon', ['id' => 'angle-up'])
       @endcomponent
     </a>

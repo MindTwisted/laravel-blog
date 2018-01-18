@@ -54,6 +54,15 @@ $input-placeholder-color: #4e5860;
   font-size: rem(15);
   font-style: italic;
 
+  &:focus ~ label,
+  &:valid ~ label {
+    transform: none;
+    top: -0.75em;
+    font-style: normal;
+    font-size: rem(16);
+    opacity: 1;
+  }
+
   &.is-invalid {
     border-image-source: linear-gradient(#ffffff, $red);
 
@@ -68,4 +77,23 @@ $input-placeholder-color: #4e5860;
     box-shadow: none;
     border-image-source: linear-gradient(#ffffff, $primary);
   }
+}
+
+.form-group {
+  margin: 1rem 0;
+  position: relative;
+
+  label {
+    left: rem(8);
+    position: absolute;
+    top: 1.25em;
+    font-size: rem(15);
+    font-style: italic;
+    transition: all 0.25s ease;
+    opacity: 0.5;
+  }
+}
+
+.form-check {
+  margin-top: 1rem;
 }

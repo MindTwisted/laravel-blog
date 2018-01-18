@@ -73,7 +73,9 @@
                 <input type="text"
                        name="name"
                        class="form-control"
-                       placeholder="Name">
+                       id="name"
+                       required>
+                <label for="name">Name</label>
                 <div class="invalid-feedback"></div>
               </div>
             </div>
@@ -83,7 +85,9 @@
                 <input type="email"
                        name="email"
                        class="form-control"
-                       placeholder="Email">
+                       id="email"
+                       required>
+                <label for="email">Email</label>
                 <div class="invalid-feedback"></div>
               </div>
             </div>
@@ -97,7 +101,9 @@
                 <input type="text"
                        name="subject"
                        class="form-control"
-                       placeholder="Subject">
+                       id="subject"
+                       required>
+                <label for="subject">Subject</label>
                 <div class="invalid-feedback"></div>
               </div>
             </div>
@@ -109,10 +115,12 @@
             <div class="col">
               <div class="form-group">
                 <textarea name="message"
-                          placeholder="Message"
+                          id="message"
                           cols="30"
                           rows="10"
-                          class="form-control"></textarea>
+                          class="form-control"
+                          required></textarea>
+                <label for="message">Message</label>
                 <div class="invalid-feedback"></div>
               </div>
             </div>

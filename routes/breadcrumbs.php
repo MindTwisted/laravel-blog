@@ -2,6 +2,7 @@
 
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
+// Authenticated dashboard breadcrumbs
 // Home
 Breadcrumbs::register('home', function ($breadcrumbs) {
     $breadcrumbs->push('Home', route('home'));
@@ -95,4 +96,16 @@ Breadcrumbs::register('editComment', function ($breadcrumbs, $comment) {
     $breadcrumbs->parent('comments');
     $breadcrumbs->push("Edit Comment by {$comment->author_name}",
         route('comments.edit', $comment->id));
+});
+
+// Public site breadcrumbs
+// Main
+Breadcrumbs::register('main', function ($breadcrumbs) {
+    $breadcrumbs->push('Main', route('landingPage'));
+});
+
+// Main > Login
+Breadcrumbs::register('login', function ($breadcrumbs) {
+    $breadcrumbs->parent('main');
+    $breadcrumbs->push('Login', route('login'));
 });

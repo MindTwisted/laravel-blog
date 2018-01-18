@@ -25,13 +25,13 @@
         <ul class="navbar-nav align-items-center">
           <li class="nav-item">
             <a href="#app"
-               class="nav-link">
+               class="nav-link slowScroll">
               Home
             </a>
           </li>
           <li class="nav-item">
             <a href="#sectionBlog"
-               class="nav-link">
+               class="nav-link slowScroll">
               Blog
             </a>
           </li>
@@ -41,13 +41,13 @@
           </li>
           <li class="nav-item">
             <a href="#sectionAbout"
-               class="nav-link">
+               class="nav-link slowScroll">
               About Us
             </a>
           </li>
           <li class="nav-item">
             <a href="#sectionContacts"
-               class="nav-link">
+               class="nav-link slowScroll">
               Contact
             </a>
           </li>

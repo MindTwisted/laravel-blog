@@ -5,23 +5,26 @@ function initMap() {
     const newYork = {lat: 40.768021, lng: -73.970286};
 
     // Init map in predefined coordinates
-    map = new google.maps.Map(document.getElementById('sectionMap__map'), {
-        center: newYork,
-        zoom: 13,
-        disableDefaultUI: true
-    });
+    let mapContainer = document.getElementById('sectionMap__map');
 
-    // Put marker with custom icon into map
-    let marker = new google.maps.Marker({
-        position: newYork,
-        map: map,
-        icon: '/images/landing/map-marker.png',
-        title: '65th St Transverse, New York'
-    });
+    if (mapContainer) {
+        map = new google.maps.Map(mapContainer, {
+            center: newYork,
+            zoom: 13,
+            disableDefaultUI: true
+        });
 
-    // Define map info window content
-    let contentString =
-        `
+        // Put marker with custom icon into map
+        let marker = new google.maps.Marker({
+            position: newYork,
+            map: map,
+            icon: '/images/landing/map-marker.png',
+            title: '65th St Transverse, New York'
+        });
+
+        // Define map info window content
+        let contentString =
+            `
             <div class="sectionMap__infoWindow">
               <div class="sectionMap__infoWindowTitle">
                 New York
@@ -32,15 +35,16 @@ function initMap() {
             </div>
         `;
 
-    // Init info window with provided content
-    let infoWindow = new google.maps.InfoWindow({
-        content: contentString
-    });
+        // Init info window with provided content
+        let infoWindow = new google.maps.InfoWindow({
+            content: contentString
+        });
 
-    // Open info windows when click event occurs on map marker
-    marker.addListener('click', function () {
-        infoWindow.open(map, marker);
-    });
+        // Open info windows when click event occurs on map marker
+        marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+        });
+    }
 }
 
 export default initMap;

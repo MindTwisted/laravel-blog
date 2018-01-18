@@ -36,3 +36,5 @@
     @endcomponent
   </div>
 @endsection
+
+{{--TODO: add scroll and hover animations to landing elements only on desktop devices--}}

@@ -1,6 +1,6 @@
 function init() {
     // Add slow scroll animation on #id links
-    $('a[href*="#"]').on('click', function (e) {
+    $('a.slowScroll[href*="#"]').on('click', function (e) {
         e.preventDefault();
 
         $('html, body').animate({

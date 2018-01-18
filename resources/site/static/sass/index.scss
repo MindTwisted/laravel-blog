@@ -3,8 +3,8 @@
 @import "base/base";
 @import "base/variables";
 @import "base/functions";
-@import "base/framework";
 @import "base/mixins/helpers";
+@import "base/framework";
 @import "base/keyframes";
 // Libs
 @import "base/libs";
@@ -30,3 +30,5 @@
 @import "../../components/blogPost/postPartials/postStatItem/postStatItem";
 @import "../../components/notification/notification";
 @import "../../components/mainFooter/mainFooter";
+@import "../../components/secondaryHeader/secondaryHeader";
+@import "../../components/secondaryNavbar/secondaryNavbar";

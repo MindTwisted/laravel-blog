@@ -65,3 +65,5 @@ function showNotification(type, text) {
 export {
     showNotification
 };
+
+// TODO: rewrite notification with OOP and ul > li architecture
