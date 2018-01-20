@@ -4,7 +4,8 @@
       Filter comments
     </div>
     <div class="card-body">
-      <form action="{{ route('comments.filter') }}">
+      <form action="{{ route('comments.index') }}"
+            method="GET">
         <div class="row commentsFilterPanel__formWrapper">
           <div class="col-md-4">
             <select class="form-control"

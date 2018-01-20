@@ -13,7 +13,7 @@
         </div>
       @endisset
       @if($post->comments_count > 0)
-        <a href="{{ route('comments.filter') . "?post={$post->id}" }}">
+        <a href="{{ route('comments.index') . "?post={$post->id}" }}">
           Comments ({{ $post->comments_count }})
         </a>
       @else

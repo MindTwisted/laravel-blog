@@ -26,7 +26,7 @@
       </div>
       <div>
         @if($post->has('comments') && count($post->comments) > 0)
-          <a href="{{ route('comments.filter') . "?post={$post->id}" }}">
+          <a href="{{ route('comments.index') . "?post={$post->id}" }}">
             Comments ({{ count($post->comments) }})
           </a>
         @else

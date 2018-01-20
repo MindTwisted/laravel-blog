@@ -12,22 +12,24 @@ class CommentRepository
     /**
      * Get all comments from DB
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @param array $filters
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function all()
+    public function all(array $filters = [])
     {
-        return Comment::all();
-    }
+        $post = isset($filters['post']) ? $filters['post'] : '';
+        $approved = isset($filters['approved']) ? $filters['approved'] : '';
 
-    /**
-     * Get all comments from DB with simple pagination
-     *
-     * @param $perPage
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function simplePaginate($perPage = 10)
-    {
-        return Comment::simplePaginate($perPage);
+        $comments = Comment
+            ::when($post, function ($query) use ($post) {
+                return $query->where('post_id', $post);
+            })
+            ->when($approved && $approved === 'NOT_APPROVED',
+                function ($query) use ($approved) {
+                    return $query->where('approved', false);
+                });
+
+        return $comments;
     }
 
     /**
@@ -95,31 +97,5 @@ class CommentRepository
     {
         $comment->approved = true;
         $comment->save();
-    }
-
-    /**
-     * Get filtered comments from DB
-     *
-     * @param array $filter
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function filter(array $filter)
-    {
-        $post = $filter['post'];
-        $approved = isset($filter['approved']) ?
-            $filter['approved'] :
-            'APPROVED';
-
-        $comments = Comment
-            ::when($post, function ($query) use ($post) {
-                return $query->where('post_id', $post);
-            })
-            ->when($approved === 'NOT_APPROVED',
-                function ($query) use ($approved) {
-                    return $query->where('approved', false);
-                })
-            ->get();
-
-        return $comments;
     }
 }

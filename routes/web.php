@@ -56,8 +56,6 @@ Route::middleware('auth')
         ]);
 
         // Dashboard comments routes
-        Route::get('/comments/filter', 'CommentController@filter')
-            ->name('comments.filter');
         Route::post('/comments/{comment}/approve', 'CommentController@approve')
             ->name('comments.approve');
         Route::resource('/comments', 'CommentController');

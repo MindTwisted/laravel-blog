@@ -17,7 +17,9 @@
       <div class="homePage__content">
         <div class="postsPage">
           
-          @if($filters['text'] || $filters['category'] || $filters['order'])
+          @if(isset($filters['text']) ||
+              isset($filters['category']) ||
+              isset($filters['order']))
             
             <div class="row">
               <div class="col-md-12">
@@ -28,24 +30,24 @@
                     <p class="postsPage__filterItem">
                       Results: {{ $posts->total() }}
                     </p>
-                    @if($filters['text'])
+                    @isset($filters['text'])
                       <p class="postsPage__filterItem">
                         Text: {{ $filters['text'] }}
                       </p>
-                    @endif
-                    @if($filters['category'])
+                    @endisset
+                    @isset($filters['category'])
                       <p class="postsPage__filterItem">
                         Category: {{ $categories
                                         ->find($filters['category'])
                                         ->title
                                         or 'Without category' }}
                       </p>
-                    @endif
-                    @if($filters['order'])
+                    @endisset
+                    @isset($filters['order'])
                       <p class="postsPage__filterItem">
                         Latest posts first
                       </p>
-                    @endif
+                    @endisset
                     <a href="{{ route('posts.index') }}">
                       Reset filters
                     </a>

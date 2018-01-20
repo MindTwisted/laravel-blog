@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index(PostRepository $postRepository,
                           CategoryRepository $categoryRepository)
     {
-        $filters = Request::all(['text', 'category', 'order']);
+        $filters = Request::only(['text', 'category', 'order']);
         $posts = $postRepository->all($filters)->paginate(12);
         $categories = $categoryRepository->all();
 

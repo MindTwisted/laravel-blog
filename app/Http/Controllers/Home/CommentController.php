@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Http\Requests\FilterCommentRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use App\Repositories\CommentRepository;
 use App\Repositories\PostRepository;
 use App\Http\Requests\EditCommentRequest;
@@ -23,11 +23,12 @@ class CommentController extends Controller
     public function index(CommentRepository $commentRepository,
                           PostRepository $postRepository)
     {
-        $comments = $commentRepository->simplePaginate(12);
-        $posts = $postRepository->all();
+        $filters = Request::only(['post', 'approved']);
+        $comments = $commentRepository->all($filters)->paginate(12);
+        $posts = $postRepository->all()->get();
 
         return view('home.pages.comments.index',
-            compact('comments', 'posts'));
+            compact('comments', 'posts', 'filters'));
     }
 
     /**
@@ -39,7 +40,7 @@ class CommentController extends Controller
     public function create(PostRepository $postRepository)
     {
         $user = Auth::user();
-        $posts = $postRepository->all();
+        $posts = $postRepository->all()->get();
 
         return view('home.pages.comments.create', compact('user', 'posts'));
     }
@@ -142,25 +143,5 @@ class CommentController extends Controller
         return redirect()->route('comments.index')
             ->with('status',
                 "Comment was successfully approved");
-    }
-
-    /**
-     * Display filtered comments
-     *
-     * @param FilterCommentRequest $request
-     * @param CommentRepository $commentRepository
-     * @param PostRepository $postRepository
-     * @return \Illuminate\Http\Response
-     */
-    public function filter(FilterCommentRequest $request,
-                           CommentRepository $commentRepository,
-                           PostRepository $postRepository)
-    {
-        $filters = $request->only(['post', 'approved']);
-        $comments = $commentRepository->filter($filters);
-        $posts = $postRepository->all();
-
-        return view('home.pages.comments.index',
-            compact('comments', 'posts', 'filters'));
     }
 }

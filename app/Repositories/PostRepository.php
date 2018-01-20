@@ -15,14 +15,14 @@ class PostRepository
     /**
      * Get all posts from DB
      *
-     * @param array $filter
+     * @param array $filters
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function all(array $filter = [])
+    public function all(array $filters = [])
     {
-        $text = isset($filter['text']) ? $filter['text'] : '';
-        $category = isset($filter['category']) ? $filter['category'] : '';
-        $order = isset($filter['order']) ? $filter['order'] : '';
+        $text = isset($filters['text']) ? $filters['text'] : '';
+        $category = isset($filters['category']) ? $filters['category'] : '';
+        $order = isset($filters['order']) ? $filters['order'] : '';
 
         $posts = Post
             ::when($text, function ($query) use ($text) {
