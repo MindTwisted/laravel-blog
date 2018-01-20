@@ -8425,10 +8425,8 @@ a.text-dark:hover {
   font-size: 1.1rem;
 }
 
-@media (max-width: 991px) {
-  .postsFilterPanel__formWrapper > * {
-    margin: 0.5rem 0;
-  }
+.postsFilterPanel__formWrapper > * {
+  margin: 0.5rem 0;
 }
 
 @media (max-width: 991px) {

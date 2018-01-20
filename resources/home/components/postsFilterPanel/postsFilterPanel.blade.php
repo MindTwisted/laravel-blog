@@ -7,13 +7,13 @@
       <form action="{{ route('posts.index') }}"
             method="GET">
         <div class="row postsFilterPanel__formWrapper">
-          <div class="col-md-3">
+          <div class="col-lg-4">
             <input type="text"
                    class="form-control"
                    name="text"
                    placeholder="Enter filter query">
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-4">
             <select class="form-control"
                     name="category">
               <option value="">Choose category ...</option>
@@ -25,7 +25,7 @@
               @endforeach
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-4">
             <select class="form-control"
                     name="tag">
               <option value="">Choose tag ...</option>
@@ -36,7 +36,9 @@
               @endforeach
             </select>
           </div>
-          <div class="col-md-2">
+        </div>
+        <div class="row postsFilterPanel__formWrapper">
+          <div class="col-lg-6">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input"
@@ -47,7 +49,9 @@
               </label>
             </div>
           </div>
-          <div class="col-md-1">
+        </div>
+        <div class="row postsFilterPanel__formWrapper">
+          <div class="col-lg-6">
             <button type="submit"
                     class="btn btn-primary">
               Submit
