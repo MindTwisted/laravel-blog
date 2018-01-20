@@ -26,6 +26,17 @@
             </select>
           </div>
           <div class="col-md-3">
+            <select class="form-control"
+                    name="tag">
+              <option value="">Choose tag ...</option>
+              @foreach ($tags as $tag)
+                <option value="{{ $tag->id }}">
+                  {{ $tag->title }}
+                </option>
+              @endforeach
+            </select>
+          </div>
+          <div class="col-md-2">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input"
@@ -36,7 +47,7 @@
               </label>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-1">
             <button type="submit"
                     class="btn btn-primary">
               Submit

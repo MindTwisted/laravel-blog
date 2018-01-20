@@ -19,6 +19,7 @@
           
           @if(isset($filters['text']) ||
               isset($filters['category']) ||
+              isset($filters['tag']) ||
               isset($filters['order']))
             
             <div class="row">
@@ -43,6 +44,14 @@
                                         or 'Without category' }}
                       </p>
                     @endisset
+                    @isset($filters['tag'])
+                      <p class="postsPage__filterItem">
+                        Tag: {{ $tags
+                                  ->find($filters['tag'])
+                                  ->title
+                                  or 'No such tag' }}
+                      </p>
+                    @endisset
                     @isset($filters['order'])
                       <p class="postsPage__filterItem">
                         Latest posts first
@@ -64,7 +73,7 @@
               
               <div class="postsPage__filterPanel">
                 @component('home.components.postsFilterPanel.postsFilterPanel',
-                          compact('categories'))
+                          compact('categories', 'tags'))
                 @endcomponent
               </div>
             

@@ -24,4 +24,16 @@
       max-height: 300px;
     }
   }
+
+  &__comments {
+    margin: 0.75rem 0;
+  }
+
+  &__tags {
+    .badge {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }

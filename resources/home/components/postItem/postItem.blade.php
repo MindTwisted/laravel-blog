@@ -5,20 +5,44 @@
       <h4 class="card-title">
         {{ $post->title }}
       </h4>
-      <p><em>{{ $post->category->title or 'Without category' }}</em></p>
+      
+      <div class="postItem__category">
+        @if(isset($post->category))
+          <a href="{{ route('posts.index', ['category' => $post->category->id]) }}">
+            {{ $post->category->title }}
+          </a>
+        @else
+          Without category
+        @endif
+      </div>
+      
+      <div class="postItem__tags">
+        @forelse($post->tags as $tag)
+          <a href="{{ route('posts.index', ['tag' => $tag->id]) }}"
+             class="badge badge-pill badge-primary">
+            {{ $tag->title }}
+          </a>
+        @empty
+        @endforelse
+      </div>
+      
       @isset($post->thumbnail_path)
         <div class="postItem__thumbnail">
           <img src="{{ Storage::url($post->thumbnail_path) }}"
                alt="Post thumbnail">
         </div>
       @endisset
-      @if($post->comments_count > 0)
-        <a href="{{ route('comments.index') . "?post={$post->id}" }}">
-          Comments ({{ $post->comments_count }})
-        </a>
-      @else
-        <span>No comments</span>
-      @endif
+      
+      <div class="postItem__comments">
+        @if($post->comments_count > 0)
+          <a href="{{ route('comments.index') . "?post={$post->id}" }}">
+            Comments ({{ $post->comments_count }})
+          </a>
+        @else
+          <span>No comments</span>
+        @endif
+      </div>
+      
       <div class="postItem__controls">
         <a href="{{ route('posts.show', $post->id) }}"
            class="btn btn-primary">
@@ -39,6 +63,7 @@
           </button>
         </form>
       </div>
+    
     </div>
   </div>
 

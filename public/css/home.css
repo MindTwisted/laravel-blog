@@ -8325,6 +8325,14 @@ a.text-dark:hover {
   max-height: 300px;
 }
 
+.postItem__comments {
+  margin: 0.75rem 0;
+}
+
+.postItem__tags .badge:hover {
+  color: #fff;
+}
+
 .categoryItem {
   margin: 0.5rem 0;
 }

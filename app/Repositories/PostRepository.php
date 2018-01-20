@@ -22,6 +22,7 @@ class PostRepository
     {
         $text = isset($filters['text']) ? $filters['text'] : '';
         $category = isset($filters['category']) ? $filters['category'] : '';
+        $tag = isset($filters['tag']) ? $filters['tag'] : '';
         $order = isset($filters['order']) ? $filters['order'] : '';
 
         $posts = Post
@@ -39,6 +40,11 @@ class PostRepository
                 function ($query) use ($category) {
                     return $query->where('category_id', NULL);
                 })
+            ->when($tag, function ($query) use ($tag) {
+                return $query->whereHas('tags', function ($query) use ($tag) {
+                    $query->where('id', $tag);
+                });
+            })
             ->when($order === 'DESC', function ($query) use ($order) {
                 return $query->latest();
             })
