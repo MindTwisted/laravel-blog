@@ -6,10 +6,10 @@ use App\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EditPostRequest;
 use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\FilterPostRequest;
 use App\Repositories\PostRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\TagRepository;
+use Illuminate\Support\Facades\Request;
 
 class PostController extends Controller
 {
@@ -23,10 +23,12 @@ class PostController extends Controller
     public function index(PostRepository $postRepository,
                           CategoryRepository $categoryRepository)
     {
-        $posts = $postRepository->simplePaginate(12);
+        $filters = Request::all(['text', 'category', 'order']);
+        $posts = $postRepository->all($filters)->paginate(12);
         $categories = $categoryRepository->all();
 
-        return view('home.pages.posts.index', compact('posts', 'categories'));
+        return view('home.pages.posts.index',
+            compact('posts', 'categories', 'filters'));
     }
 
     /**
@@ -130,26 +132,6 @@ class PostController extends Controller
         return redirect()->route('posts.index')
             ->with('status',
                 "Post with title '{$post->title}' was successfully deleted");
-    }
-
-    /**
-     * Display filtered posts
-     *
-     * @param FilterPostRequest $request
-     * @param PostRepository $postRepository
-     * @param CategoryRepository $categoryRepository
-     * @return \Illuminate\Http\Response
-     */
-    public function filter(FilterPostRequest $request,
-                           PostRepository $postRepository,
-                           CategoryRepository $categoryRepository)
-    {
-        $filters = $request->all(['text', 'category', 'order']);
-        $posts = $postRepository->filter($filters);
-        $categories = $categoryRepository->all();
-
-        return view('home.pages.posts.index',
-            compact('posts', 'categories', 'filters'));
     }
 
     /**

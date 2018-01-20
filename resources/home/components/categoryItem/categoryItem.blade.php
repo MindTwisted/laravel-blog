@@ -7,7 +7,7 @@
       </h4>
       
       @if($category->posts_count > 0)
-        <a href="{{ route('posts.filter') . "?category={$category->id}" }}">
+        <a href="{{ route('posts.index') . "?category={$category->id}" }}">
           Show posts ({{ $category->posts_count }})
         </a>
       @else

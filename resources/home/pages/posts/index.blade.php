@@ -17,7 +17,7 @@
       <div class="homePage__content">
         <div class="postsPage">
           
-          @isset($filters)
+          @if($filters['text'] || $filters['category'] || $filters['order'])
             
             <div class="row">
               <div class="col-md-12">
@@ -26,7 +26,7 @@
                   <div class="alert alert-primary">
                     <h4>Active Filters</h4>
                     <p class="postsPage__filterItem">
-                      Results: {{ count($posts) }}
+                      Results: {{ $posts->total() }}
                     </p>
                     @if($filters['text'])
                       <p class="postsPage__filterItem">
@@ -55,7 +55,7 @@
               </div>
             </div>
           
-          @endisset
+          @endif
           
           <div class="row">
             <div class="col-md-12">
@@ -93,7 +93,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="homePage__pagination">
-                  {{ $posts->links('views.vendor.pagination.simple-bootstrap-4') }}
+                  {{ $posts->appends($filters)->links('views.vendor.pagination.bootstrap-4') }}
                 </div>
               </div>
             </div>

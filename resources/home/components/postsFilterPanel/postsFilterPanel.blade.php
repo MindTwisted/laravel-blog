@@ -4,7 +4,8 @@
       Filter posts
     </div>
     <div class="card-body">
-      <form action="{{ route('posts.filter') }}">
+      <form action="{{ route('posts.index') }}"
+            method="GET">
         <div class="row postsFilterPanel__formWrapper">
           <div class="col-md-3">
             <input type="text"

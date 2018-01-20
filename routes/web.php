@@ -43,8 +43,6 @@ Route::middleware('auth')
         // Dashboard posts routes
         Route::delete('/posts/{post}/delete-image', 'PostController@deleteImage')
             ->name('posts.delete-image');
-        Route::get('/posts/filter', 'PostController@filter')
-            ->name('posts.filter');
         Route::resource('/posts', 'PostController');
 
         // Dashboard categories routes
