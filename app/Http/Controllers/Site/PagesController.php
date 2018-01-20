@@ -15,7 +15,7 @@ class PagesController extends Controller
      */
     public function indexPage(PostRepository $postRepository)
     {
-        $posts = $postRepository->latest(9);
+        $posts = $postRepository->latest(9)->get();
 
         return view('site.pages.indexPage.indexPage', compact('posts'));
     }
@@ -28,7 +28,7 @@ class PagesController extends Controller
      */
     public function blogPage(PostRepository $postRepository)
     {
-        $posts = $postRepository->paginate(5);
+        $posts = $postRepository->all()->paginate(5);
 
         return view('site.pages.blogPage.blogPage', compact('posts'));
     }
