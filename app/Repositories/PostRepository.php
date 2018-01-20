@@ -15,57 +15,14 @@ class PostRepository
     /**
      * Get all posts from DB
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function all()
-    {
-        return Post::withCount('comments')->get();
-    }
-
-    /**
-     * Get all posts from DB with pagination
-     *
-     * @param $perPage
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function paginate($perPage = 10)
-    {
-        return Post::withCount('comments')->paginate($perPage);
-    }
-
-    /**
-     * Get all posts from DB with simple pagination
-     *
-     * @param $perPage
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function simplePaginate($perPage = 10)
-    {
-        return Post::withCount('comments')->simplePaginate($perPage);
-    }
-
-    /**
-     * Get latest posts from DB
-     *
-     * @param int $count
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function latest(int $count = 6)
-    {
-        return Post::withCount('comments')->latest()->take($count)->get();
-    }
-
-    /**
-     * Get filtered posts from DB
-     *
      * @param array $filter
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function filter(array $filter)
+    public function all(array $filter = [])
     {
-        $text = $filter['text'];
-        $category = $filter['category'];
-        $order = $filter['order'];
+        $text = isset($filter['text']) ? $filter['text'] : '';
+        $category = isset($filter['category']) ? $filter['category'] : '';
+        $order = isset($filter['order']) ? $filter['order'] : '';
 
         $posts = Post
             ::when($text, function ($query) use ($text) {
@@ -85,9 +42,20 @@ class PostRepository
             ->when($order === 'DESC', function ($query) use ($order) {
                 return $query->latest();
             })
-            ->get();
+            ->withCount('comments');
 
         return $posts;
+    }
+
+    /**
+     * Get latest posts from DB
+     *
+     * @param int $count
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function latest(int $count = 6)
+    {
+        return Post::withCount('comments')->latest()->take($count);
     }
 
     /**
