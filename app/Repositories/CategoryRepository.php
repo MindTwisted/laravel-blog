@@ -11,11 +11,11 @@ class CategoryRepository
     /**
      * Get all categories from DB
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function all()
     {
-        return Category::withCount('posts')->get();
+        return Category::withCount('posts');
     }
 
     /**

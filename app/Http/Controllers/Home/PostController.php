@@ -41,8 +41,8 @@ class PostController extends Controller
     public function create(CategoryRepository $categoryRepository,
                            TagRepository $tagRepository)
     {
-        $categories = $categoryRepository->all();
-        $tags = $tagRepository->all();
+        $categories = $categoryRepository->all()->get();
+        $tags = $tagRepository->all()->get();
 
         return view('home.pages.posts.create',
             compact('categories', 'tags'));
@@ -88,8 +88,8 @@ class PostController extends Controller
                          CategoryRepository $categoryRepository,
                          TagRepository $tagRepository)
     {
-        $categories = $categoryRepository->all();
-        $tags = $tagRepository->all();
+        $categories = $categoryRepository->all()->get();
+        $tags = $tagRepository->all()->get();
 
         return view('home.pages.posts.edit',
             compact('post', 'categories', 'tags'));

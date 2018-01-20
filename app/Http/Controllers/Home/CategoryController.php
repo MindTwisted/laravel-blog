@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index(CategoryRepository $categoryRepository)
     {
-        $categories = $categoryRepository->all();
+        $categories = $categoryRepository->all()->get();
 
         return view('home.pages.categories.index', compact('categories'));
     }

@@ -11,11 +11,11 @@ class TagRepository
     /**
      * Get all tags from DB
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function all()
     {
-        return Tag::all();
+        return Tag::withCount('posts');
     }
 
     /**

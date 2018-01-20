@@ -83,7 +83,7 @@ class CommentController extends Controller
     public function edit(Comment $comment,
                          PostRepository $postRepository)
     {
-        $posts = $postRepository->all();
+        $posts = $postRepository->all()->get();
 
         return view('home.pages.comments.edit',
             compact('comment', 'posts'));
