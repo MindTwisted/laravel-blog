@@ -6,25 +6,28 @@
       <div class="homePage__breadcrumbs">
         {{ Breadcrumbs::render('showPost', $post) }}
       </div>
-      <div class="homePage__title">
-        <h2>
-          {{ $post->title }}
-          <div>
-            <small class="postsPage__categoryTitle">
-              <em>{{ $post->category->title or '' }}</em>
-            </small>
-          </div>
-        </h2>
+      
+      <div class="postsPage__title">
+        {{ $post->title }}
       </div>
+      
+      <div class="postsPage__categoryTitle">
+        <a href="{{ route('posts.index', ['category' => $post->category->id]) }}">
+          <em>{{ $post->category->title or '' }}</em>
+        </a>
+      </div>
+      
       <div class="postsPage__tags">
         @forelse($post->tags as $tag)
-          <span class="badge badge-pill badge-primary">
+          <a href="{{ route('posts.index', ['tag' => $tag->id]) }}"
+             class="badge badge-pill badge-primary">
             {{ $tag->title }}
-          </span>
+          </a>
         @empty
         @endforelse
       </div>
-      <div>
+      
+      <div class="postsPage__comments">
         @if($post->has('comments') && count($post->comments) > 0)
           <a href="{{ route('comments.index') . "?post={$post->id}" }}">
             Comments ({{ count($post->comments) }})
@@ -33,7 +36,9 @@
           <span>No comments</span>
         @endif
       </div>
+      
       <hr>
+      
       <div class="homePage__content">
         <div class="postsPage">
           

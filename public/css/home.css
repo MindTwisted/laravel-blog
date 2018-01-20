@@ -8148,8 +8148,21 @@ a.text-dark:hover {
   margin: 0;
 }
 
-.postsPage__categoryTitle {
+.postsPage__title {
+  font-size: 2.2rem;
+}
+
+.postsPage__categoryTitle a {
+  font-size: 1.5rem;
   color: #868e96;
+}
+
+.postsPage__tags .badge:hover {
+  color: #fff;
+}
+
+.postsPage__comments {
+  margin-top: 1rem;
 }
 
 .postsPage__image {
