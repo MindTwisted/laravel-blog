@@ -15,14 +15,33 @@ class PostRepository
     /**
      * Get all posts from DB
      *
-     * @param $paginate
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function all($paginate = null)
+    public function all()
     {
-        return $paginate ?
-            Post::withCount('comments')->simplePaginate($paginate) :
-            Post::withCount('comments')->get();
+        return Post::withCount('comments')->get();
+    }
+
+    /**
+     * Get all posts from DB with pagination
+     *
+     * @param $perPage
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function paginate($perPage = 10)
+    {
+        return Post::withCount('comments')->paginate($perPage);
+    }
+
+    /**
+     * Get all posts from DB with simple pagination
+     *
+     * @param $perPage
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function simplePaginate($perPage = 10)
+    {
+        return Post::withCount('comments')->simplePaginate($perPage);
     }
 
     /**

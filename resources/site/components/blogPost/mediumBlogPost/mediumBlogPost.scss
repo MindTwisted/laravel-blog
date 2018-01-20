@@ -1,0 +1,28 @@
+.mediumBlogPost {
+  margin-bottom: rem(100);
+  padding-left: rem(120);
+  position: relative;
+
+  &__date {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__content {
+    padding: rem(30);
+    border: rem(1) solid #e6e9ed;
+  }
+
+  &__statsBox {
+    margin-bottom: rem(12);
+  }
+
+  &__separator {
+    margin: rem(15) 0;
+  }
+
+  &__body {
+    margin-bottom: rem(30);
+  }
+}

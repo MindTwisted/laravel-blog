@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
-use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     /**
-     * Display public site index page
+     * Show public site index page
      *
      * @param PostRepository $postRepository
      * @return \Illuminate\Http\Response
@@ -19,5 +18,18 @@ class PagesController extends Controller
         $posts = $postRepository->latest(9);
 
         return view('site.pages.indexPage.indexPage', compact('posts'));
+    }
+
+    /**
+     * Show public site blog page
+     *
+     * @param PostRepository $postRepository
+     * @return \Illuminate\Http\Response
+     */
+    public function blogPage(PostRepository $postRepository)
+    {
+        $posts = $postRepository->paginate(5);
+
+        return view('site.pages.blogPage.blogPage', compact('posts'));
     }
 }

@@ -1,38 +1,15 @@
 .smallBlogPost {
-  &__imageBox {
-    height: rem(250);
-    overflow: hidden;
-    background-color: #646d77;
-    position: relative;
-  }
 
-  &__imageCover {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-
-  &__contentBox {
-    border-bottom: 1px solid #e6e9ed;
-    border-left: 1px solid #e6e9ed;
-    border-right: 1px solid #e6e9ed;
+  &__content {
+    border: 1px solid #e6e9ed;
     padding: rem(25);
   }
 
-  &__title {
-    font-size: rem(25);
-    font-family: $ralewayFont;
-    color: #303030;
+  &__separator {
+    margin: rem(10) 0;
   }
 
   &__body {
-    font-size: rem(14);
-    color: #4e5860;
     margin-bottom: rem(25);
   }
 

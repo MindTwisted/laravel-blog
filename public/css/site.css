@@ -9723,8 +9723,55 @@ a.text-dark:hover {
   margin-top: 1rem;
 }
 
+.pagination {
+  margin: 0;
+}
+
+.pagination .page-link {
+  color: #646d77;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+  border: 0.0625rem solid #e6e9ed;
+  padding: 1rem;
+}
+
+.pagination .page-link:hover {
+  background-color: inherit;
+  color: #ff3c1f;
+}
+
+@media (max-width: 991px) {
+  .pagination .page-item {
+    display: none;
+  }
+
+  .pagination .page-item:first-child,
+  .pagination .page-item:last-child {
+    display: block;
+  }
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #ff3c1f;
+  border-color: #ff3c1f;
+}
+
 .loginPage__form {
   margin-top: 5rem;
+}
+
+.blogPage__content {
+  padding-top: 6.25rem;
+}
+
+.blogPage__pagination {
+  margin-bottom: 6.25rem;
+}
+
+.blogPage__pagination .pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (min-width: 992px) {
@@ -10622,40 +10669,16 @@ a.text-dark:hover {
           transform: skewX(45deg);
 }
 
-.smallBlogPost__imageBox {
-  height: 15.625rem;
-  overflow: hidden;
-  background-color: #646d77;
-  position: relative;
-}
-
-.smallBlogPost__imageCover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.smallBlogPost__contentBox {
-  border-bottom: 1px solid #e6e9ed;
-  border-left: 1px solid #e6e9ed;
-  border-right: 1px solid #e6e9ed;
+.smallBlogPost__content {
+  border: 1px solid #e6e9ed;
   padding: 1.5625rem;
 }
 
-.smallBlogPost__title {
-  font-size: 1.5625rem;
-  font-family: "Raleway", sans-serif;
-  color: #303030;
+.smallBlogPost__separator {
+  margin: 0.625rem 0;
 }
 
 .smallBlogPost__body {
-  font-size: 0.875rem;
-  color: #4e5860;
   margin-bottom: 1.5625rem;
 }
 
@@ -10663,10 +10686,83 @@ a.text-dark:hover {
   margin-bottom: 0.9375rem;
 }
 
+.mediumBlogPost {
+  margin-bottom: 6.25rem;
+  padding-left: 7.5rem;
+  position: relative;
+}
+
+.mediumBlogPost__date {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mediumBlogPost__content {
+  padding: 1.875rem;
+  border: 0.0625rem solid #e6e9ed;
+}
+
+.mediumBlogPost__statsBox {
+  margin-bottom: 0.75rem;
+}
+
+.mediumBlogPost__separator {
+  margin: 0.9375rem 0;
+}
+
+.mediumBlogPost__body {
+  margin-bottom: 1.875rem;
+}
+
 .postSeparator {
   height: 0.0625rem;
   background-color: #e6e9ed;
-  margin: 0.8125rem 0;
+}
+
+.postTitle {
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+}
+
+.postTitle--small {
+  font-size: 1.5625rem;
+  line-height: 1.9375rem;
+}
+
+.postTitle--medium {
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+.postBody {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  color: #4e5860;
+}
+
+.postDate {
+  color: #aab2bd;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+.postDate__year {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.postDate__month {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+}
+
+.postDate__day {
+  font-size: 3.25rem;
+  line-height: 2.1875rem;
 }
 
 .postStatItem {
@@ -10906,5 +11002,30 @@ a.text-dark:hover {
 .secondaryNavbar .nav-item .nav-link:hover,
 .secondaryNavbar .nav-item.active .nav-link:hover {
   color: white;
+}
+
+.imageBox {
+  overflow: hidden;
+  background-color: #646d77;
+  position: relative;
+}
+
+.imageBox__cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageBox--small {
+  height: 15.625rem;
+}
+
+.imageBox--medium {
+  height: 22.5rem;
 }
 

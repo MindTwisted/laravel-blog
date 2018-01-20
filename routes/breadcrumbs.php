@@ -109,3 +109,9 @@ Breadcrumbs::register('login', function ($breadcrumbs) {
     $breadcrumbs->parent('main');
     $breadcrumbs->push('Login', route('login'));
 });
+
+// Main > Blog
+Breadcrumbs::register('blog', function ($breadcrumbs) {
+    $breadcrumbs->parent('main');
+    $breadcrumbs->push('Blog', route('blogPage'));
+});

@@ -1,0 +1,23 @@
+.postDate {
+  color: #aab2bd;
+  font-family: $ralewayFont;
+  text-align: center;
+
+  &__year {
+    font-size: rem(24);
+    line-height: rem(28);
+    font-weight: 500;
+  }
+
+  &__month {
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: rem(30);
+    text-transform: uppercase;
+  }
+
+  &__day {
+    font-size: rem(52);
+    line-height: rem(35);
+  }
+}

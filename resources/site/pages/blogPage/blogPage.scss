@@ -1,0 +1,13 @@
+.blogPage {
+  &__content {
+    padding-top: rem(100);
+  }
+
+  &__pagination {
+    margin-bottom: rem(100);
+
+    .pagination {
+      justify-content: center;
+    }
+  }
+}

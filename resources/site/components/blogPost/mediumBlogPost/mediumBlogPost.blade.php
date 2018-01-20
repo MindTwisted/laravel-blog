@@ -1,19 +1,35 @@
-<div class="smallBlogPost">
+<div class="mediumBlogPost">
   
-  <div class="smallBlogPost__image">
+  <div class="mediumBlogPost__date">
     
-    @component('site.components.blogPost.postPartials.postImage.postImage',
-    ['size' => 'small'])
+    @component('site.components.blogPost.postPartials.postDate.postDate')
+      @slot('year')
+        {{ $post->updated_at->formatLocalized('%Y') }}
+      @endslot
+      @slot('month')
+        {{ $post->updated_at->formatLocalized('%b') }}
+      @endslot
+      @slot('day')
+        {{ $post->updated_at->formatLocalized('%d') }}
+      @endslot
     @endcomponent
   
   </div>
   
-  <div class="smallBlogPost__content">
+  <div class="mediumBlogPost__image">
     
-    <div class="smallBlogPost__title">
+    @component('site.components.blogPost.postPartials.postImage.postImage',
+      ['size' => 'medium'])
+    @endcomponent
+  
+  </div>
+  
+  <div class="mediumBlogPost__content">
+    
+    <div class="mediumBlogPost__title">
       
       @component('site.components.blogPost.postPartials.postTitle.postTitle',
-        ['size' => 'small'])
+        ['size' => 'medium'])
         @slot('title')
           {{ $post->title }}
         @endslot
@@ -21,19 +37,14 @@
     
     </div>
     
-    <div class="smallBlogPost__separator">
+    <div class="mediumBlogPost__separator">
+      
       @component('site.components.blogPost.postPartials.postSeparator.postSeparator')
       @endcomponent
+    
     </div>
     
-    <div class="smallBlogPost__statsBox">
-      
-      @component('site.components.blogPost.postPartials.postStatItem.postStatItem',
-        ['svgId' => 'calendar'])
-        @slot('text')
-          {{ $post->updated_at->formatLocalized('%d %B %Y') }}
-        @endslot
-      @endcomponent
+    <div class="mediumBlogPost__statsBox">
       
       @component('site.components.blogPost.postPartials.postStatItem.postStatItem',
         ['svgId' => 'comment'])
@@ -43,16 +54,18 @@
       @endcomponent
     
     </div>
-    <div class="smallBlogPost__body">
+    
+    <div class="mediumBlogPost__body">
       
       @component('site.components.blogPost.postPartials.postBody.postBody')
         @slot('body')
-          {{ trimString($post->body, 250) }}
+          {{ trimString($post->body, 500) }}
         @endslot
       @endcomponent
     
     </div>
-    <div class="smallBlogPost__button">
+    
+    <div class="mediumBlogPost__button">
       <a href="#"
          class="btn btn-outline-danger">
         read more
@@ -60,4 +73,5 @@
     </div>
   
   </div>
+
 </div>

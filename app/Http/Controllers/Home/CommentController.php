@@ -23,7 +23,7 @@ class CommentController extends Controller
     public function index(CommentRepository $commentRepository,
                           PostRepository $postRepository)
     {
-        $comments = $commentRepository->all(12);
+        $comments = $commentRepository->simplePaginate(12);
         $posts = $postRepository->all();
 
         return view('home.pages.comments.index',

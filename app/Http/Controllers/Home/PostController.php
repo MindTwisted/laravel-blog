@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index(PostRepository $postRepository,
                           CategoryRepository $categoryRepository)
     {
-        $posts = $postRepository->all(12);
+        $posts = $postRepository->simplePaginate(12);
         $categories = $categoryRepository->all();
 
         return view('home.pages.posts.index', compact('posts', 'categories'));

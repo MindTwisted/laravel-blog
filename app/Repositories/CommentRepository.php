@@ -14,11 +14,20 @@ class CommentRepository
      *
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function all($paginate = null)
+    public function all()
     {
-        return $paginate ?
-            Comment::simplePaginate($paginate) :
-            Comment::all();
+        return Comment::all();
+    }
+
+    /**
+     * Get all comments from DB with simple pagination
+     *
+     * @param $perPage
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function simplePaginate($perPage = 10)
+    {
+        return Comment::simplePaginate($perPage);
     }
 
     /**

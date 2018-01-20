@@ -1,0 +1,14 @@
+.postTitle {
+  font-family: $ralewayFont;
+  color: #303030;
+
+  &--small {
+    font-size: rem(25);
+    line-height: rem(31);
+  }
+
+  &--medium {
+    font-weight: 500;
+    font-size: rem(28);
+  }
+}

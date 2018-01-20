@@ -23,7 +23,7 @@
         
         <ul class="navbar-nav align-items-center">
           <li class="nav-item">
-            <a href="/#app"
+            <a href="/"
                class="nav-link">
               Home
             </a>
@@ -51,3 +51,5 @@
     </div>
   </nav>
 </div>
+
+{{--TODO: add ability to link main page with slow scroll to ID--}}

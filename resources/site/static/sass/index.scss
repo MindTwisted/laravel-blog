@@ -11,6 +11,7 @@
 // Pages
 @import "../../pages/auth/loginPage";
 @import "../../pages/indexPage/indexPage";
+@import "../../pages/blogPage/blogPage";
 // Components
 @import "../../components/mainNavbar/mainNavbar";
 @import "../../components/landingPartials/landingHeader/landingHeader";
@@ -26,9 +27,16 @@
 @import "../../components/logo/logo";
 @import "../../components/skewedLine/skewedLine";
 @import "../../components/blogPost/smallBlogPost/smallBlogPost";
+@import "../../components/blogPost/mediumBlogPost/mediumBlogPost";
 @import "../../components/blogPost/postPartials/postSeparator/postSeparator";
+@import "../../components/blogPost/postPartials/postTitle/postTitle";
+@import "../../components/blogPost/postPartials/postBody/postBody";
+@import "../../components/blogPost/postPartials/postDate/postDate";
 @import "../../components/blogPost/postPartials/postStatItem/postStatItem";
 @import "../../components/notification/notification";
 @import "../../components/mainFooter/mainFooter";
 @import "../../components/secondaryHeader/secondaryHeader";
 @import "../../components/secondaryNavbar/secondaryNavbar";
+@import "../../components/blogPost/postPartials/postImage/postImage";
+
+//TODO: organize components structure

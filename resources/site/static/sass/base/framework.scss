@@ -97,3 +97,40 @@ $input-placeholder-color: #4e5860;
 .form-check {
   margin-top: 1rem;
 }
+
+// Pagination styles
+.pagination {
+  margin: 0;
+
+  .page-link {
+    color: #646d77;
+    font-family: $ralewayFont;
+    font-size: rem(18);
+    border: rem(1) solid #e6e9ed;
+    padding: 1rem;
+
+    &:hover {
+      background-color: inherit;
+      color: $red;
+    }
+  }
+
+  .page-item {
+
+    @include media-breakpoint-down(md) {
+      display: none;
+
+      &:first-child,
+      &:last-child {
+        display: block;
+      }
+    }
+
+    &.active {
+      .page-link {
+        background-color: $red;
+        border-color: $red;
+      }
+    }
+  }
+}
