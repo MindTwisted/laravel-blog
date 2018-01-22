@@ -17,62 +17,12 @@
       <div class="homePage__content">
         <div class="postsPage">
           
-          @if(isset($filters['text']) ||
-              isset($filters['category']) ||
-              isset($filters['tag']) ||
-              isset($filters['order']))
-            
-            <div class="row">
-              <div class="col-md-12">
-                
-                <div class="postsPage__activeFilters">
-                  <div class="alert alert-primary">
-                    <h4>Active Filters</h4>
-                    <p class="postsPage__filterItem">
-                      Results: {{ $posts->total() }}
-                    </p>
-                    @isset($filters['text'])
-                      <p class="postsPage__filterItem">
-                        Text: {{ $filters['text'] }}
-                      </p>
-                    @endisset
-                    @isset($filters['category'])
-                      <p class="postsPage__filterItem">
-                        Category: {{ $categories
-                                        ->find($filters['category'])
-                                        ->title
-                                        or 'Without category' }}
-                      </p>
-                    @endisset
-                    @isset($filters['tag'])
-                      <p class="postsPage__filterItem">
-                        Tag: {{ $tags
-                                  ->find($filters['tag'])
-                                  ->title
-                                  or 'No such tag' }}
-                      </p>
-                    @endisset
-                    @isset($filters['order'])
-                      <p class="postsPage__filterItem">
-                        Latest posts first
-                      </p>
-                    @endisset
-                    <a href="{{ route('posts.index') }}">
-                      Reset filters
-                    </a>
-                  </div>
-                </div>
-              
-              </div>
-            </div>
-          
-          @endif
-          
           <div class="row">
             <div class="col-md-12">
               
               <div class="postsPage__filterPanel">
-                @component('home.components.postsFilterPanel.postsFilterPanel')
+                @component('home.components.postsFilterPanel.postsFilterPanel',
+                  ['totalPosts' => $posts->total(), 'filters' => $filters])
                 @endcomponent
               </div>
             

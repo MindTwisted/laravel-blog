@@ -8144,10 +8144,6 @@ a.text-dark:hover {
   margin-bottom: 2rem;
 }
 
-.postsPage__filterItem {
-  margin: 0;
-}
-
 .postsPage__title {
   font-size: 2.2rem;
 }
@@ -8440,6 +8436,10 @@ a.text-dark:hover {
 
 .postsFilterPanel__formWrapper > * {
   margin: 0.5rem 0;
+}
+
+.postsFilterPanel__filterItem {
+  margin: 0;
 }
 
 @media (max-width: 991px) {
