@@ -17,8 +17,6 @@ class PostController extends Controller
      * Display a listing of the resource.
      *
      * @param PostRepository $postRepository
-     * @param CategoryRepository $categoryRepository
-     * @param TagRepository $tagRepository
      * @return \Illuminate\Http\Response
      */
     public function index(PostRepository $postRepository)
