@@ -58,8 +58,7 @@
             <div class="col-md-12">
               
               <div class="commentsPage__filterPanel">
-                @component('home.components.commentsFilterPanel.commentsFilterPanel',
-                          compact('posts'))
+                @component('home.components.commentsFilterPanel.commentsFilterPanel')
                 @endcomponent
               </div>
             

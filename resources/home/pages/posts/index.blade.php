@@ -72,8 +72,7 @@
             <div class="col-md-12">
               
               <div class="postsPage__filterPanel">
-                @component('home.components.postsFilterPanel.postsFilterPanel',
-                          compact('categories', 'tags'))
+                @component('home.components.postsFilterPanel.postsFilterPanel')
                 @endcomponent
               </div>
             
