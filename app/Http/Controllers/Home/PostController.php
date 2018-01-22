@@ -21,17 +21,13 @@ class PostController extends Controller
      * @param TagRepository $tagRepository
      * @return \Illuminate\Http\Response
      */
-    public function index(PostRepository $postRepository,
-                          CategoryRepository $categoryRepository,
-                          TagRepository $tagRepository)
+    public function index(PostRepository $postRepository)
     {
         $filters = Request::only(['text', 'category', 'tag', 'order']);
         $posts = $postRepository->all($filters)->paginate(12);
-        $categories = $categoryRepository->all()->get();
-        $tags = $tagRepository->all()->get();
 
         return view('home.pages.posts.index',
-            compact('posts', 'categories', 'tags', 'filters'));
+            compact('posts', 'filters'));
     }
 
     /**
