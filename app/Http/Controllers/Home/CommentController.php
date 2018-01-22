@@ -17,18 +17,15 @@ class CommentController extends Controller
      * Display a listing of the resource.
      *
      * @param CommentRepository $commentRepository
-     * @param PostRepository $postRepository
      * @return \Illuminate\Http\Response
      */
-    public function index(CommentRepository $commentRepository,
-                          PostRepository $postRepository)
+    public function index(CommentRepository $commentRepository)
     {
         $filters = Request::only(['post', 'approved']);
         $comments = $commentRepository->all($filters)->paginate(12);
-        $posts = $postRepository->all()->get();
 
         return view('home.pages.comments.index',
-            compact('comments', 'posts', 'filters'));
+            compact('comments', 'filters'));
     }
 
     /**

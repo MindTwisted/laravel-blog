@@ -17,48 +17,12 @@
       <div class="homePage__content">
         <div class="commentsPage">
           
-          @if(isset($filters['post']) ||
-              (isset($filters['approved']) &&
-              $filters['approved'] === 'NOT_APPROVED'))
-            
-            <div class="row">
-              <div class="col-md-12">
-                
-                <div class="commentsPage__activeFilters">
-                  <div class="alert alert-primary">
-                    <h4>Active Filters</h4>
-                    <p class="postsPage__filterItem">
-                      Results: {{ $comments->total() }}
-                    </p>
-                    @isset($filters['post'])
-                      <p class="postsPage__filterItem">
-                        Post: {{ $posts->find($filters['post'])
-                                        ->title or 'No such post' }}
-                      </p>
-                    @endisset
-                    @isset($filters['approved'])
-                      @if($filters['approved'] === 'NOT_APPROVED')
-                        <p class="postsPage__filterItem">
-                          Only not approved comments
-                        </p>
-                      @endif
-                    @endisset
-                    <a href="{{ route('comments.index') }}">
-                      Reset filters
-                    </a>
-                  </div>
-                </div>
-              
-              </div>
-            </div>
-          
-          @endif
-          
           <div class="row">
             <div class="col-md-12">
               
               <div class="commentsPage__filterPanel">
-                @component('home.components.commentsFilterPanel.commentsFilterPanel')
+                @component('home.components.commentsFilterPanel.commentsFilterPanel',
+                  ['totalComments' => $comments->total(), 'filters' => $filters])
                 @endcomponent
               </div>
             
