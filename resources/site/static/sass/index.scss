@@ -13,7 +13,7 @@
 @import "../../pages/indexPage/indexPage";
 @import "../../pages/blogPage/blogPage";
 // Components
-@import "../../components/mainNavbar/mainNavbar";
+// Components/landingPartials
 @import "../../components/landingPartials/landingHeader/landingHeader";
 @import "../../components/landingPartials/sectionAbout/sectionAbout";
 @import "../../components/landingPartials/sectionHeading/sectionHeading";
@@ -24,19 +24,21 @@
 @import "../../components/landingPartials/sectionMap/sectionMap";
 @import "../../components/landingPartials/teaserAchievements/teaserAchievements";
 @import "../../components/landingPartials/teaserBrands/teaserBrands";
-@import "../../components/logo/logo";
-@import "../../components/skewedLine/skewedLine";
-@import "../../components/blogPost/smallBlogPost/smallBlogPost";
-@import "../../components/blogPost/mediumBlogPost/mediumBlogPost";
+// Components/blogPost
 @import "../../components/blogPost/postPartials/postSeparator/postSeparator";
 @import "../../components/blogPost/postPartials/postTitle/postTitle";
 @import "../../components/blogPost/postPartials/postBody/postBody";
 @import "../../components/blogPost/postPartials/postDate/postDate";
 @import "../../components/blogPost/postPartials/postStatItem/postStatItem";
+@import "../../components/blogPost/postPartials/postImage/postImage";
+@import "../../components/blogPost/smallBlogPost/smallBlogPost";
+@import "../../components/blogPost/mediumBlogPost/mediumBlogPost";
+// Components/other
+@import "../../components/mainNavbar/mainNavbar";
+@import "../../components/logo/logo";
+@import "../../components/skewedLine/skewedLine";
 @import "../../components/notification/notification";
 @import "../../components/mainFooter/mainFooter";
 @import "../../components/secondaryHeader/secondaryHeader";
 @import "../../components/secondaryNavbar/secondaryNavbar";
-@import "../../components/blogPost/postPartials/postImage/postImage";
 
-//TODO: organize components structure
