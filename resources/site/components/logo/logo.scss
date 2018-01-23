@@ -1,7 +1,12 @@
 .logo {
   $className: 'logo';
 
+  display: block;
   text-align: center;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   &__image {
     width: 50px;

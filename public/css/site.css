@@ -10750,7 +10750,12 @@ a.text-dark:hover {
 }
 
 .logo {
+  display: block;
   text-align: center;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 .logo__image {
