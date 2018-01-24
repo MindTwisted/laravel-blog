@@ -1,6 +1,12 @@
 .blogPage {
-  &__content {
+  &__content,
+  &__sidebar {
     padding-top: rem(100);
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: rem(20);
   }
 
   &__pagination {

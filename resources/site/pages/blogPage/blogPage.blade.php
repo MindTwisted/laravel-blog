@@ -12,7 +12,16 @@
     
     <div class="container">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-lg-3 order-lg-2">
+          
+          <div class="blogPage__sidebar">
+            @component('site.components.blogSidebar.blogSidebar',
+              ['filters' => $filters, 'totalPosts' => $posts->total()])
+            @endcomponent
+          </div>
+        
+        </div>
+        <div class="col-lg-9 order-lg-1">
           
           <div class="blogPage__content">
             @if(count($posts) > 0)
@@ -32,7 +41,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="blogPage__pagination">
-              {{ $posts->links('views.vendor.pagination.bootstrap-4-public-blog') }}
+              {{ $posts->appends($filters)->links('views.vendor.pagination.bootstrap-4-public-blog') }}
             </div>
           </div>
         </div>
@@ -44,5 +53,3 @@
     @endcomponent
   </div>
 @endsection
-
-{{--TODO: add sidebar--}}

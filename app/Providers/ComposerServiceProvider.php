@@ -28,6 +28,12 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer('home.components.commentsFilterPanel.commentsFilterPanel', function ($view) {
             $view->with('posts', (new PostRepository())->all()->get());
         });
+
+        // Automatically load tags and categories to blogSidebar component
+        View::composer('site.components.blogSidebar.blogSidebar', function ($view) {
+            $view->with('tags', (new TagRepository())->all()->get())
+                ->with('categories', (new CategoryRepository())->all()->get());
+        });
     }
 
     /**

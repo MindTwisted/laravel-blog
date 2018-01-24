@@ -1,0 +1,104 @@
+.blogSidebar {
+
+  &__header {
+    font-family: $ralewayFont;
+    font-weight: 600;
+    color: #303030;
+    font-size: rem(24);
+    margin-top: rem(100);
+    margin-bottom: rem(30);
+  }
+
+  // Categories
+  &__categories {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__categoryItem {
+    list-style-type: none;
+    margin-left: rem(20);
+    position: relative;
+    padding: rem(15) 0;
+    border-bottom: rem(1) solid #a9b2be;
+    font-size: rem(14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .svgIcon {
+      @include absoluteVerticalCentering;
+      left: rem(-20);
+
+      svg {
+        width: rem(15);
+        height: rem(15);
+        fill: $red;
+      }
+    }
+  }
+
+  &__categoryTitle,
+  &__categoryPostsCount {
+    color: #4e5860;
+  }
+
+  &__categoryTitle {
+    &:hover {
+      color: #4e5860;
+    }
+  }
+
+  // Tags
+  &__tags {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tagItem {
+    list-style-type: none;
+    font-size: 0;
+    margin-right: rem(5);
+    margin-bottom: rem(5);
+  }
+
+  &__tagTitle {
+    font-size: rem(14);
+    color: #4e5860;
+    padding: rem(5) rem(11);
+    border: rem(1) solid #7e858e;
+    display: block;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+      background-color: $red;
+      border-color: $red;
+    }
+  }
+
+  // Active filters panel
+  &__activeFilters {
+    margin-bottom: rem(50);
+    font-family: $ralewayFont;
+  }
+
+  &__filterItem {
+    margin: 0;
+  }
+
+  &__resetButton {
+    display: block;
+    margin-top: rem(10);
+    font-size: rem(20);
+
+    &,
+    &:hover {
+      color: $red;
+    }
+  }
+
+}

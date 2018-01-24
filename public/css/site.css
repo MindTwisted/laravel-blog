@@ -9760,8 +9760,14 @@ a.text-dark:hover {
   margin-top: 5rem;
 }
 
-.blogPage__content {
+.blogPage__content,
+.blogPage__sidebar {
   padding-top: 6.25rem;
+}
+
+.blogPage__empty {
+  text-align: center;
+  font-size: 1.25rem;
 }
 
 .blogPage__pagination {
@@ -11032,5 +11038,114 @@ a.text-dark:hover {
 .secondaryNavbar .nav-item .nav-link:hover,
 .secondaryNavbar .nav-item.active .nav-link:hover {
   color: white;
+}
+
+.blogSidebar__header {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #303030;
+  font-size: 1.5rem;
+  margin-top: 6.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.blogSidebar__categories {
+  margin: 0;
+  padding: 0;
+}
+
+.blogSidebar__categoryItem {
+  list-style-type: none;
+  margin-left: 1.25rem;
+  position: relative;
+  padding: 0.9375rem 0;
+  border-bottom: 0.0625rem solid #a9b2be;
+  font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blogSidebar__categoryItem .svgIcon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -1.25rem;
+}
+
+.blogSidebar__categoryItem .svgIcon svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  fill: #ff3c1f;
+}
+
+.blogSidebar__categoryTitle,
+.blogSidebar__categoryPostsCount {
+  color: #4e5860;
+}
+
+.blogSidebar__categoryTitle:hover {
+  color: #4e5860;
+}
+
+.blogSidebar__tags {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.blogSidebar__tagItem {
+  list-style-type: none;
+  font-size: 0;
+  margin-right: 0.3125rem;
+  margin-bottom: 0.3125rem;
+}
+
+.blogSidebar__tagTitle {
+  font-size: 0.875rem;
+  color: #4e5860;
+  padding: 0.3125rem 0.6875rem;
+  border: 0.0625rem solid #7e858e;
+  display: block;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.blogSidebar__tagTitle:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ff3c1f;
+  border-color: #ff3c1f;
+}
+
+.blogSidebar__activeFilters {
+  margin-bottom: 3.125rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.blogSidebar__filterItem {
+  margin: 0;
+}
+
+.blogSidebar__resetButton {
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.blogSidebar__resetButton,
+.blogSidebar__resetButton:hover {
+  color: #ff3c1f;
 }
 
