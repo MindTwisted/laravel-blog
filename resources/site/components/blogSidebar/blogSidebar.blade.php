@@ -31,7 +31,7 @@
                        or 'No such tag' }}
           </p>
         @endisset
-        <a href="{{ route('blogPage') }}"
+        <a href="{{ route('pages.blog') }}"
            class="blogSidebar__resetButton">
           Reset filters
         </a>
@@ -40,7 +40,7 @@
   
   @endif
   
-  <form action="{{ route('blogPage') }}"
+  <form action="{{ route('pages.blog') }}"
         method="GET"
         class="blogSidebar__searchForm">
     <div class="form-group">
@@ -65,7 +65,7 @@
         @component('site.components.svgSprites.svgIcon', ['id' => 'angle-double-right'])
         @endcomponent
         <a class="blogSidebar__categoryTitle"
-           href="{{ route('blogPage') }}?category={{ $category->id }}">
+           href="{{ route('pages.blog') }}?category={{ $category->id }}">
           {{ $category->title }}
         </a>
         <span class="blogSidebar__categoryPostsCount">
@@ -84,7 +84,7 @@
     @forelse($tags as $tag)
       <li class="blogSidebar__tagItem">
         <a class="blogSidebar__tagTitle"
-           href="{{ route('blogPage') }}?tag={{ $tag->id }}">
+           href="{{ route('pages.blog') }}?tag={{ $tag->id }}">
           {{ $tag->title }}
         </a>
       </li>

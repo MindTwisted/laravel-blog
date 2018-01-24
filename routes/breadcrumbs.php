@@ -101,7 +101,7 @@ Breadcrumbs::register('editComment', function ($breadcrumbs, $comment) {
 // Public site breadcrumbs
 // Main
 Breadcrumbs::register('main', function ($breadcrumbs) {
-    $breadcrumbs->push('Main', route('landingPage'));
+    $breadcrumbs->push('Main', route('pages.landing'));
 });
 
 // Main > Login
@@ -113,5 +113,5 @@ Breadcrumbs::register('login', function ($breadcrumbs) {
 // Main > Blog
 Breadcrumbs::register('blog', function ($breadcrumbs) {
     $breadcrumbs->parent('main');
-    $breadcrumbs->push('Blog', route('blogPage'));
+    $breadcrumbs->push('Blog', route('pages.blog'));
 });

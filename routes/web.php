@@ -24,8 +24,9 @@ Route::namespace('Auth')
 // Define routes for public site
 Route::namespace('Site')->group(function () {
     // Landing page route
-    Route::get('/', 'PagesController@indexPage')->name('landingPage');
-    Route::get('/blog', 'PagesController@blogPage')->name('blogPage');
+    Route::get('/', 'PagesController@indexPage')->name('pages.landing');
+    Route::get('/blog', 'PagesController@blogPage')->name('pages.blog');
+    Route::get('/blog/{post}', 'PagesController@postPage')->name('pages.post');
 
     // Sending contact email route
     Route::post('/send-contact-email', 'MailController@sendContactEmail')
