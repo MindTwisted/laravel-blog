@@ -5,7 +5,7 @@
   @endcomponent
   
   <div class="secondaryHeader__breadcrumbs">
-    {{ Breadcrumbs::render($breadcrumbName) }}
+    {{ Breadcrumbs::render($breadcrumbName, isset($post) ? $post : null) }}
   </div>
   
   <div class="secondaryHeader__navbar">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
+use App\Post;
 
 class PagesController extends Controller
 {
@@ -33,5 +34,16 @@ class PagesController extends Controller
         $posts = $postRepository->all($filters)->paginate(5);
 
         return view('site.pages.blogPage.blogPage', compact('posts', 'filters'));
+    }
+
+    /**
+     * Show public site post page
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\Response
+     */
+    public function postPage(Post $post)
+    {
+        return view('site.pages.postPage.postPage', compact('post'));
     }
 }

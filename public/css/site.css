@@ -9780,6 +9780,11 @@ a.text-dark:hover {
           justify-content: center;
 }
 
+.postPage__content,
+.postPage__sidebar {
+  padding-top: 6.25rem;
+}
+
 .landingHeader {
   padding: 20rem 0 5rem 0;
   position: relative;

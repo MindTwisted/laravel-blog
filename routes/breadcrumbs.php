@@ -115,3 +115,10 @@ Breadcrumbs::register('blog', function ($breadcrumbs) {
     $breadcrumbs->parent('main');
     $breadcrumbs->push('Blog', route('pages.blog'));
 });
+
+// Main > Blog > {Post}
+Breadcrumbs::register('post', function ($breadcrumbs, $post) {
+    $breadcrumbs->parent('blog');
+    $breadcrumbs->push("{$post->title}",
+        route('pages.post', $post->id));
+});

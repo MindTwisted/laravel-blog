@@ -66,7 +66,7 @@
     </div>
     
     <div class="mediumBlogPost__button">
-      <a href="#"
+      <a href="{{ route('pages.post', ['id' => $post->id]) }}"
          class="btn btn-outline-danger">
         read more
       </a>
