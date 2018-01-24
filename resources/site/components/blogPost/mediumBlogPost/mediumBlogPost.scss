@@ -3,10 +3,19 @@
   padding-left: rem(120);
   position: relative;
 
+  @include media-breakpoint-down(sm) {
+    padding-left: 0;
+  }
+
   &__date {
     position: absolute;
     left: 0;
     top: 0;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      margin-bottom: rem(40);
+    }
   }
 
   &__content {

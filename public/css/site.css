@@ -10617,10 +10617,23 @@ a.text-dark:hover {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .mediumBlogPost {
+    padding-left: 0;
+  }
+}
+
 .mediumBlogPost__date {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+@media (max-width: 767px) {
+  .mediumBlogPost__date {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .mediumBlogPost__content {
