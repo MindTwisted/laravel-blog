@@ -43,6 +43,7 @@
       @endcomponent
     
     </div>
+    
     <div class="smallBlogPost__body">
       
       @component('site.components.blogPost.postPartials.postBody.postBody')

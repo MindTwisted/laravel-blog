@@ -1,0 +1,36 @@
+.largeBlogPost {
+  padding-left: rem(120);
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 0;
+  }
+
+  &__date {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__separator {
+    margin: rem(15) 0;
+  }
+
+  &__image {
+    margin-top: rem(30);
+  }
+
+  &__body {
+    padding: rem(40);
+    border-left: rem(1) solid transparent;
+    border-right: rem(1) solid transparent;
+    border-image-source: linear-gradient(#a8b1bb, #ffffff);
+    border-image-slice: 1;
+  }
+
+}

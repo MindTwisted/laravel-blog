@@ -1,3 +1,3 @@
-<div class="postTitle postTitle--{{ $size }}">
+<h2 class="postTitle postTitle--{{ $size }}">
   {{ $title }}
-</div>
+</h2>

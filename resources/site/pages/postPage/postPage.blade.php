@@ -23,6 +23,10 @@
         <div class="col-lg-9 order-lg-1">
           
           <div class="postPage__content">
+            
+            @component('site.components.blogPost.largeBlogPost.largeBlogPost',
+              ['post' => $post])
+            @endcomponent
           
           </div>
         

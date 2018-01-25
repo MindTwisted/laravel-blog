@@ -1,4 +1,4 @@
-<div class="blogSidebar">
+<aside class="blogSidebar">
   
   @if(isset($filters['text']) ||
       isset($filters['category']) ||
@@ -92,4 +92,4 @@
     @endforelse
   </ul>
 
-</div>
+</aside>

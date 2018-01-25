@@ -1,4 +1,4 @@
-<div class="landingHeader"
+<header class="landingHeader"
      style="background-image: url('images/landing/mainHeader_bg.jpg')">
   
   @component('site.components.skewedLine.skewedLine',
@@ -75,4 +75,4 @@
       </div>
     </div>
   </div>
-</div>
+</header>

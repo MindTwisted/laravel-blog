@@ -1,4 +1,4 @@
-<div class="mainFooter">
+<footer class="mainFooter">
   
   <div class="container mainFooter__container">
     <div class="row align-items-center">
@@ -61,4 +61,4 @@
     </a>
   </div>
 
-</div>
+</footer>

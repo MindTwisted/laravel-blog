@@ -39,11 +39,17 @@ class PagesController extends Controller
     /**
      * Show public site post page
      *
-     * @param Post $post
+     * @param int $id
+     * @param PostRepository $postRepository
      * @return \Illuminate\Http\Response
      */
-    public function postPage(Post $post)
+    public function postPage(
+        int $id,
+        PostRepository $postRepository
+    )
     {
+        $post = $postRepository->find($id);
+
         return view('site.pages.postPage.postPage', compact('post'));
     }
 }

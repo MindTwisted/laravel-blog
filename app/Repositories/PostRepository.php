@@ -48,9 +48,24 @@ class PostRepository
             ->when($order === 'DESC', function ($query) use ($order) {
                 return $query->latest();
             })
-            ->withCount('comments');
+            ->withCount(['comments' => function ($query) {
+                $query->where('approved', '=', 1);
+            }]);
 
         return $posts;
+    }
+
+    /**
+     * Get post with current $id from DB
+     *
+     * @param int $id
+     * @return \App\Post
+     */
+    public function find(int $id)
+    {
+        return Post::withCount(['comments' => function ($query) {
+            $query->where('approved', '=', 1);
+        }])->find($id);
     }
 
     /**
@@ -61,7 +76,9 @@ class PostRepository
      */
     public function latest(int $count = 6)
     {
-        return Post::withCount('comments')->latest()->take($count);
+        return Post::withCount(['comments' => function ($query) {
+            $query->where('approved', '=', 1);
+        }])->latest()->take($count);
     }
 
     /**

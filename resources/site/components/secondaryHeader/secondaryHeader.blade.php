@@ -1,4 +1,4 @@
-<div class="secondaryHeader">
+<header class="secondaryHeader">
   
   @component('site.components.skewedLine.skewedLine',
     ['vPosition' => 'bottom', 'hPosition' => 'left'])
@@ -17,12 +17,13 @@
     <div class="row">
       <div class="col-md-12">
         
-        <div class="secondaryHeader__title">
+        <h1 class="secondaryHeader__title">
           {{ $title }}
-        </div>
+        </h1>
       
       </div>
     </div>
   </div>
 
-</div>
+</header>
+
