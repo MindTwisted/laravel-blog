@@ -9857,7 +9857,7 @@ a.text-dark:hover {
   }
 }
 
-.postPage__commentsTitle {
+.postPage__sectionTitle {
   font-family: "Raleway", sans-serif;
   color: #303030;
   font-size: 2.375rem;
@@ -9865,7 +9865,7 @@ a.text-dark:hover {
   margin-bottom: 6.25rem;
 }
 
-.postPage__commentsTitle::after {
+.postPage__sectionTitle::after {
   content: '';
   display: block;
   width: 6.25rem;
@@ -9923,6 +9923,17 @@ a.text-dark:hover {
 .postPage__commentForm textarea {
   resize: none;
   height: 9.375rem;
+}
+
+.postPage__relatedPosts {
+  padding-left: 7.5rem;
+  margin-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  .postPage__relatedPosts {
+    padding-left: 0;
+  }
 }
 
 .landingHeader {
@@ -10739,6 +10750,7 @@ a.text-dark:hover {
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .imageBox--small {

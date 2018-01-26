@@ -3,7 +3,7 @@
   <div class="smallBlogPost__image">
     
     @component('site.components.blogPost.postPartials.postImage.postImage',
-    ['size' => 'small'])
+    ['size' => 'small', 'post' => $post])
     @endcomponent
   
   </div>

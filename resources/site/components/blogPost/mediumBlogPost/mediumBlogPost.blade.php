@@ -19,7 +19,7 @@
   <div class="mediumBlogPost__image">
     
     @component('site.components.blogPost.postPartials.postImage.postImage',
-      ['size' => 'medium'])
+      ['size' => 'medium', 'post' => $post])
     @endcomponent
   
   </div>

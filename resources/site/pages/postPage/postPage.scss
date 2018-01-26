@@ -72,7 +72,7 @@
     }
   }
 
-  &__commentsTitle {
+  &__sectionTitle {
     font-family: $ralewayFont;
     color: #303030;
     font-size: rem(38);
@@ -134,6 +134,15 @@
     textarea {
       resize: none;
       height: rem(150);
+    }
+  }
+
+  &__relatedPosts {
+    padding-left: rem(120);
+    margin-top: rem(80);
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
     }
   }
 }

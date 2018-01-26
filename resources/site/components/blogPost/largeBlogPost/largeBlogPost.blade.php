@@ -50,7 +50,7 @@
     <div class="largeBlogPost__image">
       
       @component('site.components.blogPost.postPartials.postImage.postImage',
-        ['size' => 'large'])
+        ['size' => 'large', 'post' => $post])
       @endcomponent
     
     </div>

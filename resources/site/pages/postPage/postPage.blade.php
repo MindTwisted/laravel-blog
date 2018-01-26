@@ -50,7 +50,7 @@
             
             <div class="postPage__comments">
               
-              <div class="postPage__commentsTitle">
+              <div class="postPage__sectionTitle">
                 Say what's on your mind
               </div>
               
@@ -141,6 +141,14 @@
               </div>
             
             </form>
+            
+            <div class="postPage__relatedPosts">
+              
+              <div class="postPage__sectionTitle">
+                Related posts
+              </div>
+            
+            </div>
           
           </div>
         
