@@ -12,6 +12,11 @@
     font-size: rem(20);
   }
 
+  &__viewBlogButton {
+    text-align: center;
+    margin-top: rem(50);
+  }
+
   // Carousel nav styling
   .owl-nav {
     svg {

@@ -10,7 +10,8 @@
   
   <div class="smallBlogPost__content">
     
-    <div class="smallBlogPost__title">
+    <a href="{{ route('pages.post', ['id' => $post->id]) }}"
+       class="smallBlogPost__title">
       
       @component('site.components.blogPost.postPartials.postTitle.postTitle',
         ['size' => 'small'])
@@ -19,7 +20,7 @@
         @endslot
       @endcomponent
     
-    </div>
+    </a>
     
     <div class="smallBlogPost__separator">
       @component('site.components.blogPost.postPartials.postSeparator.postSeparator')
@@ -54,7 +55,7 @@
     
     </div>
     <div class="smallBlogPost__button">
-      <a href="#"
+      <a href="{{ route('pages.post', ['id' => $post->id]) }}"
          class="btn btn-outline-danger">
         read more
       </a>

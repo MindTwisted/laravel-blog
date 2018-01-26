@@ -28,6 +28,15 @@
         @else
           <p class="sectionBlog__empty">There is no posts yet</p>
         @endif
+        
+        <div class="sectionBlog__viewBlogButton">
+          
+          <a href="{{ route('pages.blog') }}"
+             class="btn btn-outline-danger">
+            view blog
+          </a>
+          
+        </div>
       
       </div>
     </div>

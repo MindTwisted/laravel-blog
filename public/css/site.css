@@ -10242,6 +10242,11 @@ a.text-dark:hover {
   font-size: 1.25rem;
 }
 
+.sectionBlog__viewBlogButton {
+  text-align: center;
+  margin-top: 3.125rem;
+}
+
 .sectionBlog .owl-nav svg {
   width: 3rem;
   height: 4rem;
@@ -10763,6 +10768,10 @@ a.text-dark:hover {
 
 .smallBlogPost__statsBox {
   margin-bottom: 0.9375rem;
+}
+
+.smallBlogPost__title:hover {
+  color: #303030;
 }
 
 .mediumBlogPost {

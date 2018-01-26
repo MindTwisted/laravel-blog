@@ -16,4 +16,10 @@
   &__statsBox {
     margin-bottom: rem(15);
   }
+
+  &__title {
+    &:hover {
+      color: #303030;
+    }
+  }
 }
