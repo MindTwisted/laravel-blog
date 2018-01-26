@@ -50,6 +50,7 @@ class PagesController extends Controller
         $post = $postRepository->find($id);
         $prevNextID = $postRepository->prevNextID($post);
 
-        return view('site.pages.postPage.postPage', compact('post', 'prevNextID'));
+        return view('site.pages.postPage.postPage',
+            compact('post', 'prevNextID'));
     }
 }

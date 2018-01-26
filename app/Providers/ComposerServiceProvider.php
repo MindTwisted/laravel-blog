@@ -32,7 +32,8 @@ class ComposerServiceProvider extends ServiceProvider
         // Automatically load tags and categories to blogSidebar component
         View::composer('site.components.blogSidebar.blogSidebar', function ($view) {
             $view->with('tags', (new TagRepository())->all()->get())
-                ->with('categories', (new CategoryRepository())->all()->get());
+                ->with('categories', (new CategoryRepository())->all()->get())
+                ->with('latestPosts', (new PostRepository())->latest(2)->get());
         });
     }
 

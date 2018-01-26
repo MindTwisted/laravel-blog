@@ -91,5 +91,40 @@
     @empty
     @endforelse
   </ul>
+  
+  <div class="blogSidebar__header">
+    Recent posts
+  </div>
+  
+  <div class="blogSidebar__recentPosts">
+    @forelse($latestPosts as $post)
+      <div class="blogSidebar__recentPostsItem">
+        
+        <div class="blogSidebar__recentPostsImage">
+          <img src="/images/landing/folder.png"
+               alt="Folder">
+        </div>
+        
+        <div class="blogSidebar__recentPostsContent">
+          <a href="{{ route('pages.post', ['id' => $post->id]) }}"
+             class="blogSidebar__recentPostsTitle">
+            {{ $post->title }}
+          </a>
+          <div class="blogSidebar__recentPostsStat">
+            
+            @component('site.components.blogPost.postPartials.postStatItem.postStatItem',
+                ['svgId' => 'calendar'])
+              @slot('text')
+                {{ $post->updated_at->formatLocalized('%d %B %Y') }}
+              @endslot
+            @endcomponent
+          
+          </div>
+        </div>
+      
+      </div>
+    @empty
+    @endforelse
+  </div>
 
 </aside>

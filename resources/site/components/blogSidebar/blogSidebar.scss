@@ -101,4 +101,38 @@
     }
   }
 
+  // Recent posts panel
+  &__recentPostsItem {
+    position: relative;
+    min-height: rem(80);
+    margin-bottom: rem(20);
+  }
+
+  &__recentPostsTitle {
+    display: block;
+    font-family: $ralewayFont;
+    color: #222222;
+    font-weight: 600;
+    margin-bottom: rem(20);
+
+    &:hover {
+      color: #222222;
+    }
+  }
+
+  &__recentPostsContent {
+    padding-left: rem(100);
+  }
+
+  &__recentPostsImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    img {
+      width: rem(80);
+      height: rem(80);
+    }
+  }
+
 }
