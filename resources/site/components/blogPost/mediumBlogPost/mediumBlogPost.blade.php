@@ -26,7 +26,8 @@
   
   <div class="mediumBlogPost__content">
     
-    <div class="mediumBlogPost__title">
+    <a href="{{ route('pages.post', ['id' => $post->id]) }}"
+       class="mediumBlogPost__title">
       
       @component('site.components.blogPost.postPartials.postTitle.postTitle',
         ['size' => 'medium'])
@@ -35,7 +36,7 @@
         @endslot
       @endcomponent
     
-    </div>
+    </a>
     
     <div class="mediumBlogPost__separator">
       

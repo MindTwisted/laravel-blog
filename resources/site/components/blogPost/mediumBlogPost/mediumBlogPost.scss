@@ -7,6 +7,12 @@
     padding-left: 0;
   }
 
+  &__title {
+    &:hover {
+      color: #303030;
+    }
+  }
+
   &__date {
     position: absolute;
     left: 0;

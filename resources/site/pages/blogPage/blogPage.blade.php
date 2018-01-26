@@ -53,5 +53,3 @@
     @endcomponent
   </div>
 @endsection
-
-{{--TODO: make title of post link--}}

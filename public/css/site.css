@@ -10777,6 +10777,10 @@ a.text-dark:hover {
   }
 }
 
+.mediumBlogPost__title:hover {
+  color: #303030;
+}
+
 .mediumBlogPost__date {
   position: absolute;
   left: 0;
