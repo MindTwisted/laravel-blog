@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+
+    /**
+     * Scope a query to only include popular users.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeApproved($query)
+    {
+        return $query->where('approved', '=', 1);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

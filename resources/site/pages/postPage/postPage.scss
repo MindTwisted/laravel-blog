@@ -7,4 +7,133 @@
   &__content {
     padding-bottom: rem(100);
   }
+
+  &__prevNextNavigation {
+    margin-top: rem(50);
+    display: flex;
+    justify-content: space-between;
+    padding-left: rem(120);
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    }
+  }
+
+  &__prevNextLink {
+    display: block;
+    font-family: $ralewayFont;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #303030;
+    padding: rem(11) rem(18);
+    border: rem(1) solid #e6e9ed;
+
+    .svgIcon {
+      width: rem(23);
+      height: rem(23);
+      display: block;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: #303030;
+      }
+    }
+
+    &:not([href]) {
+      color: darken(#e6e9ed, 10%) !important;
+
+      .svgIcon,
+      &:hover .svgIcon {
+        svg {
+          fill: #e6e9ed;
+        }
+      }
+    }
+
+    &:hover {
+      color: $red;
+      text-decoration: none;
+
+      .svgIcon {
+        svg {
+          fill: $red;
+        }
+      }
+    }
+  }
+
+  &__comments {
+    padding-left: rem(120);
+    margin-top: rem(100);
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    }
+  }
+
+  &__commentsTitle {
+    font-family: $ralewayFont;
+    color: #303030;
+    font-size: rem(38);
+    font-weight: 500;
+    margin-bottom: rem(100);
+
+    &::after {
+      content: '';
+      display: block;
+      width: rem(100);
+      height: rem(1);
+      margin-top: rem(12);
+      background-image: linear-gradient(to left, #4e5860 0%, #ff3c1f 100%);
+    }
+  }
+
+  &__commentItem {
+    padding-left: rem(100);
+    position: relative;
+    margin-bottom: rem(50);
+  }
+
+  &__commentAuthor {
+    font-family: $ralewayFont;
+    font-size: rem(18);
+    font-weight: 600;
+    margin-bottom: rem(8);
+  }
+
+  &__commentBody {
+    font-size: rem(14);
+    color: #4e5860;
+  }
+
+  &__commentImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__emptyComments {
+    text-align: center;
+    font-family: $ralewayFont;
+    font-size: rem(18);
+  }
+
+  &__commentForm {
+    padding-left: rem(120);
+    margin-top: rem(100);
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    }
+
+    .form-group {
+      width: 100%;
+    }
+
+    textarea {
+      resize: none;
+      height: rem(150);
+    }
+  }
 }

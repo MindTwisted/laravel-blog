@@ -44,4 +44,12 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    /**
+     * Post with approved comments
+     */
+    public function approvedComments()
+    {
+        return $this->hasMany('App\Comment')->approved();
+    }
 }

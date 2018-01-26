@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Site;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
-use App\Post;
 
 class PagesController extends Controller
 {
@@ -49,7 +48,8 @@ class PagesController extends Controller
     )
     {
         $post = $postRepository->find($id);
+        $prevNextID = $postRepository->prevNextID($post);
 
-        return view('site.pages.postPage.postPage', compact('post'));
+        return view('site.pages.postPage.postPage', compact('post', 'prevNextID'));
     }
 }

@@ -26,6 +26,7 @@ import sectionReviews from '../../components/landingPartials/sectionReviews/sect
 import sectionContacts from '../../components/landingPartials/sectionContacts/sectionContacts';
 import sectionMap from '../../components/landingPartials/sectionMap/sectionMap';
 import indexPage from '../../pages/indexPage/indexPage';
+import postPage from '../../pages/postPage/postPage';
 
 $(document).ready(function () {
     landingHeader();
@@ -35,4 +36,5 @@ $(document).ready(function () {
     sectionContacts();
     sectionMap();
     indexPage();
+    postPage();
 });

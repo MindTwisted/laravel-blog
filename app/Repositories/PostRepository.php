@@ -65,7 +65,7 @@ class PostRepository
     {
         return Post::withCount(['comments' => function ($query) {
             $query->where('approved', '=', 1);
-        }])->find($id);
+        }])->findOrFail($id);
     }
 
     /**
@@ -79,6 +79,20 @@ class PostRepository
         return Post::withCount(['comments' => function ($query) {
             $query->where('approved', '=', 1);
         }])->latest()->take($count);
+    }
+
+    /**
+     * Get ids of previous and next blog posts
+     *
+     * @param Post $post
+     * @return array
+     */
+    public function prevNextID(Post $post)
+    {
+        $previous = Post::where('id', '<', $post->id)->max('id');
+        $next = Post::where('id', '>', $post->id)->min('id');
+
+        return ['previous' => $previous, 'next' => $next];
     }
 
     /**

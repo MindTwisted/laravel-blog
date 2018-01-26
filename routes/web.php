@@ -25,12 +25,18 @@ Route::namespace('Auth')
 Route::namespace('Site')->group(function () {
     // Landing page route
     Route::get('/', 'PagesController@indexPage')->name('pages.landing');
+    // Blog route
     Route::get('/blog', 'PagesController@blogPage')->name('pages.blog');
+    // Single post route
     Route::get('/blog/{id}', 'PagesController@postPage')->name('pages.post');
 
     // Sending contact email route
     Route::post('/send-contact-email', 'MailController@sendContactEmail')
         ->name('contact-emails.send');
+
+    // Store public site comment
+    Route::post('/store-comment', 'CommentController@store')
+        ->name('site.storeComment');
 });
 
 // Define routes for personal admin dashboard

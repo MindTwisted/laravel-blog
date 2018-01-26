@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -13786,7 +13786,79 @@ var Collapse = function () {
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */,
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return showNotification; });
+// Get jquery instance of notification and alert dom elements
+var $notification = $('.notification');
+var $alert = $notification.find('.alert');
+
+// Notification visible class name
+var visibleClassName = 'notification--isVisible';
+
+// Notification auto-hide timeout, milliseconds
+var autoHideTimeout = 5000;
+
+// Initialize timer
+var timer = void 0;
+
+// Hide notification
+function hideNotification() {
+    $alert.removeClass('alert-success alert-danger');
+    $alert.text('');
+    $notification.removeClass(visibleClassName);
+}
+
+// Show success notification with provided text message
+function showSuccessNotification(text) {
+    // Clear old notification if any exists
+    hideNotification();
+    // Reset auto-hide timer if any exists
+    clearTimeout(timer);
+
+    $alert.addClass('alert-success');
+    $alert.text(text);
+    $notification.addClass(visibleClassName);
+
+    // Set auto-hide timer on notification
+    timer = setTimeout(hideNotification, autoHideTimeout);
+}
+
+// Show error notification with provided text message
+function showErrorNotification(text) {
+    // Clear old notification if any exists
+    hideNotification();
+    // Reset auto-hide timer if any exists
+    clearTimeout(timer);
+
+    $alert.addClass('alert-danger');
+    $alert.text(text);
+    $notification.addClass(visibleClassName);
+
+    // Set auto-hide timer on notification
+    timer = setTimeout(hideNotification, autoHideTimeout);
+}
+
+// Check notification type and invoke the right show function
+function showNotification(type, text) {
+    switch (type) {
+        case 'SUCCESS':
+            showSuccessNotification(text);
+            break;
+        case 'ERROR':
+            showErrorNotification(text);
+            break;
+        default:
+            return false;
+    }
+}
+
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
 /* 13 */,
 /* 14 */,
 /* 15 */,
@@ -13808,29 +13880,31 @@ var Collapse = function () {
 /* 31 */,
 /* 32 */,
 /* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(35);
+module.exports = __webpack_require__(36);
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(jQuery, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel__ = __webpack_require__(36);
+/* WEBPACK VAR INJECTION */(function(jQuery, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_owl_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery_parallax_js__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery_parallax_js__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery_parallax_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery_parallax_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_landingPartials_landingHeader_landingHeader__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_mainNavbar_mainNavbar__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_landingPartials_sectionBlog_sectionBlog__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_landingPartials_sectionReviews_sectionReviews__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_landingPartials_sectionContacts_sectionContacts__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_landingPartials_landingHeader_landingHeader__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_mainNavbar_mainNavbar__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_landingPartials_sectionBlog_sectionBlog__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_landingPartials_sectionReviews_sectionReviews__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_landingPartials_sectionContacts_sectionContacts__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_landingPartials_sectionMap_sectionMap__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_indexPage_indexPage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__ = __webpack_require__(47);
 // Note: you don't need to import Popper, Util
 // and jQuery as they are already autoload in webpack.mix.js
 
@@ -13842,7 +13916,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Bootstrap 4
 __webpack_require__(4);
 __webpack_require__(6);
-__webpack_require__(38);
+__webpack_require__(39);
 
 // Adding csrf token to every ajax request
 jQuery.ajaxSetup({
@@ -13860,6 +13934,7 @@ jQuery.ajaxSetup({
 
 
 
+
 $(document).ready(function () {
     Object(__WEBPACK_IMPORTED_MODULE_2__components_landingPartials_landingHeader_landingHeader__["a" /* default */])();
     Object(__WEBPACK_IMPORTED_MODULE_3__components_mainNavbar_mainNavbar__["a" /* default */])();
@@ -13868,11 +13943,12 @@ $(document).ready(function () {
     Object(__WEBPACK_IMPORTED_MODULE_6__components_landingPartials_sectionContacts_sectionContacts__["a" /* default */])();
     Object(__WEBPACK_IMPORTED_MODULE_7__components_landingPartials_sectionMap_sectionMap__["a" /* default */])();
     Object(__WEBPACK_IMPORTED_MODULE_8__pages_indexPage_indexPage__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__["a" /* default */])();
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(0)))
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, jQuery) {/**
@@ -17152,7 +17228,7 @@ $(document).ready(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/*!
@@ -17164,7 +17240,7 @@ $(document).ready(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($, Util) {function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -17485,7 +17561,7 @@ var ScrollSpy = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2)))
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17514,7 +17590,7 @@ var ScrollSpy = function () {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17539,7 +17615,7 @@ var ScrollSpy = function () {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17581,7 +17657,7 @@ var ScrollSpy = function () {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17602,11 +17678,11 @@ var ScrollSpy = function () {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notification_notification__ = __webpack_require__(44);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notification_notification__ = __webpack_require__(12);
 
 
 // Define variables form jquery instances of form fields
@@ -17760,81 +17836,6 @@ function init() {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return showNotification; });
-// Get jquery instance of notification and alert dom elements
-var $notification = $('.notification');
-var $alert = $notification.find('.alert');
-
-// Notification visible class name
-var visibleClassName = 'notification--isVisible';
-
-// Notification auto-hide timeout, milliseconds
-var autoHideTimeout = 5000;
-
-// Initialize timer
-var timer = void 0;
-
-// Hide notification
-function hideNotification() {
-    $alert.removeClass('alert-success alert-danger');
-    $alert.text('');
-    $notification.removeClass(visibleClassName);
-}
-
-// Show success notification with provided text message
-function showSuccessNotification(text) {
-    // Clear old notification if any exists
-    hideNotification();
-    // Reset auto-hide timer if any exists
-    clearTimeout(timer);
-
-    $alert.addClass('alert-success');
-    $alert.text(text);
-    $notification.addClass(visibleClassName);
-
-    // Set auto-hide timer on notification
-    timer = setTimeout(hideNotification, autoHideTimeout);
-}
-
-// Show error notification with provided text message
-function showErrorNotification(text) {
-    // Clear old notification if any exists
-    hideNotification();
-    // Reset auto-hide timer if any exists
-    clearTimeout(timer);
-
-    $alert.addClass('alert-danger');
-    $alert.text(text);
-    $notification.addClass(visibleClassName);
-
-    // Set auto-hide timer on notification
-    timer = setTimeout(hideNotification, autoHideTimeout);
-}
-
-// Check notification type and invoke the right show function
-function showNotification(type, text) {
-    switch (type) {
-        case 'SUCCESS':
-            showSuccessNotification(text);
-            break;
-        case 'ERROR':
-            showErrorNotification(text);
-            break;
-        default:
-            return false;
-    }
-}
-
-
-
-// TODO: rewrite notification with OOP and ul > li architecture
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
-
-/***/ }),
 /* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17898,6 +17899,154 @@ function initMap() {
     // Add bootstrap scroll spy if mainNavbar exists on the page
     if ($('#mainNavbar').length > 0) {
         $('body').scrollspy({ target: '#mainNavbar' });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (init);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_notification_notification__ = __webpack_require__(12);
+
+
+// Define variables form jquery instances of form fields
+var $postField = void 0,
+    $nameField = void 0,
+    $emailField = void 0,
+    $messageField = void 0;
+// Define variable for jquery instance of form submit button
+var $submitButton = void 0;
+// Input invalid class name
+var invalidClassName = 'is-invalid';
+
+// Reset form input fields
+function resetInputFields() {
+    $nameField.val('');
+    $emailField.val('');
+    $messageField.val('');
+}
+
+// Reset form errors state
+function resetErrors() {
+    $nameField.removeClass(invalidClassName);
+    $emailField.removeClass(invalidClassName);
+    $messageField.removeClass(invalidClassName);
+}
+
+// Get error response and set error state on provided form fields
+function handleErrors(errors) {
+    if (errors.author_name) {
+        $nameField.addClass(invalidClassName);
+
+        errors.author_name.map(function (error) {
+            $nameField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.author_email) {
+        $emailField.addClass(invalidClassName);
+
+        errors.author_email.map(function (error) {
+            $emailField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.body) {
+        $messageField.addClass(invalidClassName);
+
+        errors.body.map(function (error) {
+            $messageField.siblings('.invalid-feedback').text(error);
+        });
+    }
+}
+
+// Disable submit button
+function disableButton() {
+    $submitButton.attr('disabled', true);
+    $submitButton.text('Loading ...');
+}
+
+// Enable submit button
+function enableButton() {
+    $submitButton.attr('disabled', false);
+    $submitButton.text('SUBMIT');
+}
+
+// Main
+function init() {
+    var $form = $('.postPage__commentForm');
+
+    // Handle form submitting if form exists on the page
+    if ($form.length > 0) {
+        $form.on('submit', function submitCommentForm(e) {
+            // Prevent default form submit behavior
+            e.preventDefault();
+
+            // Get form action URL
+            var URL = $form.attr('action');
+
+            // Get form input fields jquery instances
+            $postField = $form.find(".form-control[name='post']");
+            $nameField = $form.find(".form-control[name='author_name']");
+            $emailField = $form.find(".form-control[name='author_email']");
+            $messageField = $form.find(".form-control[name='body']");
+
+            // Get submit button jquery instance
+            $submitButton = $form.find("button[type='submit']");
+
+            // Get form input fields data
+            var postData = $postField.val();
+            var nameData = $nameField.val();
+            var emailData = $emailField.val();
+            var messageData = $messageField.val();
+
+            // Disable submit button until response from server will be received
+            disableButton();
+
+            $.ajax(
+            // Request URL
+            URL,
+            // Request options object
+            {
+                // Set request method
+                method: 'POST',
+                // Set data which request will send
+                data: {
+                    post: postData,
+                    author_name: nameData,
+                    author_email: emailData,
+                    body: messageData
+                }
+            }).done(function (data) {
+                // Handle success ajax response
+
+                // Show success notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('SUCCESS', data);
+                // Reset form errors state
+                resetErrors();
+                // Enable submit button after server response received
+                enableButton();
+                // Reset input fields
+                resetInputFields();
+            }).fail(function (error) {
+                // Handle error ajax response
+                var errors = error.responseJSON.errors;
+                var message = error.responseJSON.message;
+
+                // Reset form errors state
+                resetErrors();
+                // Show error notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('ERROR', message);
+                // Add form invalid state
+                handleErrors(errors);
+                // Enable submit button after server response received
+                enableButton();
+            });
+        });
     }
 }
 

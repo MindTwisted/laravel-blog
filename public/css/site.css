@@ -9789,6 +9789,142 @@ a.text-dark:hover {
   padding-bottom: 6.25rem;
 }
 
+.postPage__prevNextNavigation {
+  margin-top: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 7.5rem;
+}
+
+@media (max-width: 767px) {
+  .postPage__prevNextNavigation {
+    padding-left: 0;
+  }
+}
+
+.postPage__prevNextLink {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #303030;
+  padding: 0.6875rem 1.125rem;
+  border: 0.0625rem solid #e6e9ed;
+}
+
+.postPage__prevNextLink .svgIcon {
+  width: 1.4375rem;
+  height: 1.4375rem;
+  display: block;
+}
+
+.postPage__prevNextLink .svgIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: #303030;
+}
+
+.postPage__prevNextLink:not([href]) {
+  color: #c8cfd8 !important;
+}
+
+.postPage__prevNextLink:not([href]) .svgIcon svg,
+.postPage__prevNextLink:not([href]):hover .svgIcon svg {
+  fill: #e6e9ed;
+}
+
+.postPage__prevNextLink:hover {
+  color: #ff3c1f;
+  text-decoration: none;
+}
+
+.postPage__prevNextLink:hover .svgIcon svg {
+  fill: #ff3c1f;
+}
+
+.postPage__comments {
+  padding-left: 7.5rem;
+  margin-top: 6.25rem;
+}
+
+@media (max-width: 767px) {
+  .postPage__comments {
+    padding-left: 0;
+  }
+}
+
+.postPage__commentsTitle {
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  font-size: 2.375rem;
+  font-weight: 500;
+  margin-bottom: 6.25rem;
+}
+
+.postPage__commentsTitle::after {
+  content: '';
+  display: block;
+  width: 6.25rem;
+  height: 0.0625rem;
+  margin-top: 0.75rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#4e5860), to(#ff3c1f));
+  background-image: linear-gradient(to left, #4e5860 0%, #ff3c1f 100%);
+}
+
+.postPage__commentItem {
+  padding-left: 6.25rem;
+  position: relative;
+  margin-bottom: 3.125rem;
+}
+
+.postPage__commentAuthor {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.postPage__commentBody {
+  font-size: 0.875rem;
+  color: #4e5860;
+}
+
+.postPage__commentImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.postPage__emptyComments {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+}
+
+.postPage__commentForm {
+  padding-left: 7.5rem;
+  margin-top: 6.25rem;
+}
+
+@media (max-width: 767px) {
+  .postPage__commentForm {
+    padding-left: 0;
+  }
+}
+
+.postPage__commentForm .form-group {
+  width: 100%;
+}
+
+.postPage__commentForm textarea {
+  resize: none;
+  height: 9.375rem;
+}
+
 .landingHeader {
   padding: 20rem 0 5rem 0;
   position: relative;
