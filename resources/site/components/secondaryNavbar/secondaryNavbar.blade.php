@@ -29,21 +29,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/#sectionBlog"
-               class="nav-link active">
+            <a href="{{ route('pages.blog') }}"
+               class="nav-link">
               Blog
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/#sectionAbout"
-               class="nav-link">
-              About Us
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/#sectionContacts"
-               class="nav-link">
-              Contact
             </a>
           </li>
         </ul>
@@ -51,5 +39,3 @@
     </div>
   </nav>
 </div>
-
-{{--TODO: add ability to link main page with slow scroll to ID--}}

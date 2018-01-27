@@ -7,7 +7,7 @@ function initMap() {
     // Init map in predefined coordinates
     let mapContainer = document.getElementById('sectionMap__map');
 
-    if (mapContainer) {
+    if (mapContainer && google.maps) {
         map = new google.maps.Map(mapContainer, {
             center: newYork,
             zoom: 13,
