@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+    /**
+     * Scope a query to only not excepted posts
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeExcept($query, $id)
+    {
+        return $query->where('id', '!=', $id);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

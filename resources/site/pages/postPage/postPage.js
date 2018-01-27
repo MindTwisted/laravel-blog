@@ -60,8 +60,8 @@ function enableButton() {
     $submitButton.text('SUBMIT');
 }
 
-// Main
-function init() {
+// Init comment form
+function initCommentForm() {
     let $form = $('.postPage__commentForm');
 
     // Handle form submitting if form exists on the page
@@ -136,4 +136,43 @@ function init() {
     }
 }
 
-export default init;
+// Init related posts carousel
+function initRelatedPostsCarousel() {
+    // Get DOM elements
+    let $container = $('.postPage__relatedPostsCarousel');
+
+    // Custom nav markup
+    let $prevNavHTML = `<svg>
+                          <use xlink:href="#angle-left"></use>
+                       </svg>`;
+    let $nextNavHTML = `<svg>
+                          <use xlink:href="#angle-right"></use>
+                       </svg>`;
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            autoplay: false,
+            smartSpeed: 750,
+            margin: 30,
+            nav: true,
+            navText: [$prevNavHTML, $nextNavHTML],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                900: {
+                    items: 2
+                }
+            }
+        });
+    }
+}
+
+export default {
+    initCommentForm,
+    initRelatedPostsCarousel
+};

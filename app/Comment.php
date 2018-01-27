@@ -8,7 +8,7 @@ class Comment extends Model
 {
 
     /**
-     * Scope a query to only include popular users.
+     * Scope a query to only include approved comments.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder

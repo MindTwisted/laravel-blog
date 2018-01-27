@@ -36,5 +36,6 @@ $(document).ready(function () {
     sectionContacts();
     sectionMap();
     indexPage();
-    postPage();
+    postPage.initCommentForm();
+    postPage.initRelatedPostsCarousel();
 });

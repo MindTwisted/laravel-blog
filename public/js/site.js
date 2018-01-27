@@ -13943,7 +13943,8 @@ $(document).ready(function () {
     Object(__WEBPACK_IMPORTED_MODULE_6__components_landingPartials_sectionContacts_sectionContacts__["a" /* default */])();
     Object(__WEBPACK_IMPORTED_MODULE_7__components_landingPartials_sectionMap_sectionMap__["a" /* default */])();
     Object(__WEBPACK_IMPORTED_MODULE_8__pages_indexPage_indexPage__["a" /* default */])();
-    Object(__WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__["a" /* default */])();
+    __WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__["a" /* default */].initCommentForm();
+    __WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__["a" /* default */].initRelatedPostsCarousel();
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(0)))
 
@@ -17976,8 +17977,8 @@ function enableButton() {
     $submitButton.text('SUBMIT');
 }
 
-// Main
-function init() {
+// Init comment form
+function initCommentForm() {
     var $form = $('.postPage__commentForm');
 
     // Handle form submitting if form exists on the page
@@ -18050,7 +18051,42 @@ function init() {
     }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (init);
+// Init related posts carousel
+function initRelatedPostsCarousel() {
+    // Get DOM elements
+    var $container = $('.postPage__relatedPostsCarousel');
+
+    // Custom nav markup
+    var $prevNavHTML = '<svg>\n                          <use xlink:href="#angle-left"></use>\n                       </svg>';
+    var $nextNavHTML = '<svg>\n                          <use xlink:href="#angle-right"></use>\n                       </svg>';
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            autoplay: false,
+            smartSpeed: 750,
+            margin: 30,
+            nav: true,
+            navText: [$prevNavHTML, $nextNavHTML],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                900: {
+                    items: 2
+                }
+            }
+        });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    initCommentForm: initCommentForm,
+    initRelatedPostsCarousel: initRelatedPostsCarousel
+});
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ })

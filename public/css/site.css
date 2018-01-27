@@ -9936,6 +9936,73 @@ a.text-dark:hover {
   }
 }
 
+.postPage__relatedPostsItem {
+  position: relative;
+}
+
+.postPage__relatedPostsItem::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.3;
+  z-index: 10;
+}
+
+.postPage__relatedPostsItem::before {
+  z-index: 15;
+}
+
+.postPage__relatedPostTitle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #fff;
+  z-index: 100;
+}
+
+.postPage__relatedPostTitle:hover {
+  color: #fff;
+}
+
+.postPage .owl-nav svg {
+  width: 3rem;
+  height: 4rem;
+  fill: #656d78;
+  -webkit-transition: fill 0.25s ease;
+  transition: fill 0.25s ease;
+}
+
+.postPage .owl-prev,
+.postPage .owl-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.postPage .owl-prev:hover svg,
+.postPage .owl-next:hover svg {
+  fill: #ff3c1f;
+}
+
+.postPage .owl-prev {
+  left: -4rem;
+}
+
+.postPage .owl-next {
+  right: -4rem;
+}
+
 .landingHeader {
   padding: 20rem 0 5rem 0;
   position: relative;

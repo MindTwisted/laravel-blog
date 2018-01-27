@@ -28,4 +28,12 @@ class Category extends Model
     {
         return $this->hasMany('App\Post');
     }
+
+    /**
+     * Get category posts except post with $id
+     */
+    public function postsExcept($id)
+    {
+        return $this->hasMany('App\Post')->except($id);
+    }
 }

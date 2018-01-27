@@ -142,13 +142,36 @@
             
             </form>
             
-            <div class="postPage__relatedPosts">
+            @if(count($post->category->postsExcept($post->id)->get()) > 1)
+              <div class="postPage__relatedPosts">
+                
+                <div class="postPage__sectionTitle">
+                  Related posts
+                </div>
+                
+                <div class="postPage__relatedPostsCarousel owl-carousel">
+                  
+                  @foreach($post->category->postsExcept($post->id)->get() as $relatedPost)
+                    
+                    <div class="postPage__relatedPostsItem">
+                      
+                      <a href="{{ route('pages.post', $relatedPost->id) }}"
+                         class="postPage__relatedPostTitle">
+                        {{ $relatedPost->title }}
+                      </a>
+                      
+                      @component('site.components.blogPost.postPartials.postImage.postImage',
+                        ['size' => 'small', 'post' => $relatedPost])
+                      @endcomponent
+                    
+                    </div>
+                  
+                  @endforeach
+                
+                </div>
               
-              <div class="postPage__sectionTitle">
-                Related posts
               </div>
-            
-            </div>
+            @endif
           
           </div>
         
