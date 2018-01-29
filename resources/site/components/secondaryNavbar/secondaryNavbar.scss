@@ -49,4 +49,14 @@
       }
     }
   }
+
+  &__authControls {
+    text-align: center;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $white;
+    }
+  }
 }

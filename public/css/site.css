@@ -10945,6 +10945,10 @@ a.text-dark:hover {
   }
 }
 
+.mainNavbar__authControls {
+  text-align: center;
+}
+
 @media (min-width: 992px) {
   .mainNavbar__authControls {
     right: 0;
@@ -11337,6 +11341,16 @@ a.text-dark:hover {
 .secondaryNavbar .nav-item .nav-link:hover,
 .secondaryNavbar .nav-item.active .nav-link:hover {
   color: white;
+}
+
+.secondaryNavbar__authControls {
+  text-align: center;
+}
+
+.secondaryNavbar__authControls svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #fff;
 }
 
 .blogSidebar__header {

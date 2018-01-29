@@ -9,6 +9,8 @@
   }
 
   &__authControls {
+    text-align: center;
+
     @include media-breakpoint-up(lg) {
       right: 0;
       @include absoluteVerticalCentering;

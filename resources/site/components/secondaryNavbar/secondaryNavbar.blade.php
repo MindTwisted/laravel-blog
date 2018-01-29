@@ -34,6 +34,53 @@
               Blog
             </a>
           </li>
+  
+          <!-- Authentication Links -->
+          @guest
+            <li class="nav-item secondaryNavbar__authControls">
+              <a class="nav-link"
+                 href="{{ route('login') }}">
+        
+                @component('site.components.svgSprites.svgIcon', ['id' => 'user'])
+                @endcomponent
+      
+              </a>
+            </li>
+          @else
+            <li class="nav-item dropdown secondaryNavbar__authControls">
+              <a class="nav-link dropdown-toggle"
+                 href="#"
+                 id="navbarDropdownMenuLink"
+                 data-toggle="dropdown"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+        
+                @component('site.components.svgSprites.svgIcon', ['id' => 'user'])
+                @endcomponent
+      
+              </a>
+      
+              <div class="dropdown-menu">
+                <a href="{{ route('home') }}"
+                   class="dropdown-item">
+                  Dashboard
+                </a>
+                <hr>
+                <a href="{{ route('logout') }}"
+                   class="dropdown-item"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                  Logout
+                </a>
+        
+                <form id="logout-form"
+                      action="{{ route('logout') }}"
+                      method="POST">
+                  {{ csrf_field() }}
+                </form>
+              </div>
+            </li>
+          @endguest
+          
         </ul>
       </div>
     </div>
