@@ -10939,6 +10939,29 @@ a.text-dark:hover {
   border-image-slice: 1;
 }
 
+.largeBlogPost__body blockquote {
+  font-size: 1.125rem;
+  font-style: italic;
+  padding: 1.875rem 1.25rem;
+  position: relative;
+}
+
+.largeBlogPost__body blockquote p {
+  margin: 0;
+}
+
+.largeBlogPost__body blockquote::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0.375rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff3c1f), to(#902616));
+  background-image: linear-gradient(to bottom, #ff3c1f 0%, #902616 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 @media (min-width: 992px) {
   .mainNavbar__secondaryLogo {
     display: none;

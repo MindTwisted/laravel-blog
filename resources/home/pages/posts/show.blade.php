@@ -52,12 +52,16 @@
                 </div>
               @endisset
               
-              <pre class="homePage__mdAreaRaw"
-                   style="display: none;">
-                {{ $post->body }}
-              </pre>
+              <div class="postsPage__postBody">
+                
+                <pre class="homePage__mdAreaRaw"
+                     style="display: none;">
+                  {{ $post->body }}
+                </pre>
+                
+                <div class="homePage__mdAreaViewer"></div>
               
-              <div class="homePage__mdAreaViewer"></div>
+              </div>
             
             </div>
             <br>

@@ -31,6 +31,28 @@
     border-right: rem(1) solid transparent;
     border-image-source: linear-gradient(#a8b1bb, #ffffff);
     border-image-slice: 1;
+
+    blockquote {
+      font-size: rem(18);
+      font-style: italic;
+      padding: rem(30) rem(20);
+      position: relative;
+
+      p {
+        margin: 0;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: rem(6);
+        background-image: linear-gradient(to bottom, #ff3c1f 0%, #902616 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
   }
 
 }
