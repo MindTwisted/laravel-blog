@@ -2,4 +2,9 @@
   &__filterPanel {
     margin-bottom: 2rem;
   }
+
+  &__commentBody {
+    height: 15rem;
+    resize: none;
+  }
 }

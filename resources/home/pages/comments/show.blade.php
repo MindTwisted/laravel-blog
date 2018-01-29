@@ -17,9 +17,7 @@
           <div class="row">
             <div class="col-md-12">
               
-              <div class="homePage__mdAreaViewer">
-                {{ $comment->body }}
-              </div>
+              {{ $comment->body }}
             
             </div>
             <br>

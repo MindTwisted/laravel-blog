@@ -53,10 +53,9 @@
                 </div>
                 <div class="form-group">
                   <label for="commentBody">Your comment</label>
-                  <textarea class="form-control homePage__mdAreaEditor"
+                  <textarea class="form-control commentsPage__commentBody"
                             id="commentBody"
-                            name="body"
-                            rows="3">{{ old('body') }}</textarea>
+                            name="body">{{ old('body') }}</textarea>
                 </div>
                 <button type="submit"
                         class="btn btn-primary">

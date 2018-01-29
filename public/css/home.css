@@ -8179,6 +8179,11 @@ a.text-dark:hover {
   margin-bottom: 2rem;
 }
 
+.commentsPage__commentBody {
+  height: 15rem;
+  resize: none;
+}
+
 .homePage__emptyQuery {
   text-align: center;
   font-size: 2rem;
