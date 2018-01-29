@@ -27,6 +27,7 @@ import sectionContacts from '../../components/landingPartials/sectionContacts/se
 import sectionMap from '../../components/landingPartials/sectionMap/sectionMap';
 import indexPage from '../../pages/indexPage/indexPage';
 import postPage from '../../pages/postPage/postPage';
+import largeBlogPost from '../../components/blogPost/largeBlogPost/largeBlogPost';
 
 $(document).ready(function () {
     landingHeader();
@@ -38,4 +39,5 @@ $(document).ready(function () {
     indexPage();
     postPage.initCommentForm();
     postPage.initRelatedPostsCarousel();
+    largeBlogPost.initMarkdownAreaViewer();
 });

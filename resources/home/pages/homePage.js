@@ -12,10 +12,11 @@ function markdownAreaEditor() {
 }
 
 function markdownAreaViewer() {
+    let rawMarkdown = document.querySelector('.homePage__mdAreaRaw');
     let viewArea = document.querySelector('.homePage__mdAreaViewer');
 
     if (viewArea) {
-        let markupContent = viewArea.innerHTML.trim();
+        let markupContent = rawMarkdown.innerText.trim();
         viewArea.innerHTML = marked(markupContent);
     }
 }

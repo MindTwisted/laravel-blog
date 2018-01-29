@@ -57,9 +57,13 @@
     
     <div class="largeBlogPost__body">
       
+      <pre class="largeBlogPost__mdRaw"
+           style="display: none;">
+        {{ $post->body }}
+      </pre>
+      
       @component('site.components.blogPost.postPartials.postBody.postBody')
         @slot('body')
-          {{ $post->body }}
         @endslot
       @endcomponent
     

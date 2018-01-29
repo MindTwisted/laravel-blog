@@ -26223,10 +26223,11 @@ function markdownAreaEditor() {
 }
 
 function markdownAreaViewer() {
+    var rawMarkdown = document.querySelector('.homePage__mdAreaRaw');
     var viewArea = document.querySelector('.homePage__mdAreaViewer');
 
     if (viewArea) {
-        var markupContent = viewArea.innerHTML.trim();
+        var markupContent = rawMarkdown.innerText.trim();
         viewArea.innerHTML = __WEBPACK_IMPORTED_MODULE_1_marked___default()(markupContent);
     }
 }
