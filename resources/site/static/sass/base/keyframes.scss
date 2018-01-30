@@ -1,4 +1,14 @@
+// Import animate.css base
+@import "~animate.css/source/_base.css";
 // Import animate.css keyframes
+@import "~animate.css/source/attention_seekers/rubberBand.css";
 @import "~animate.css/source/fading_entrances/fadeInRightBig.css";
 @import "~animate.css/source/fading_entrances/fadeInRight.css";
 @import "~animate.css/source/bouncing_entrances/bounceInUp.css";
+
+// Disable animation on medium and small devices (< 992px)
+@include media-breakpoint-down(md) {
+  .animated {
+    animation: none;
+  }
+}

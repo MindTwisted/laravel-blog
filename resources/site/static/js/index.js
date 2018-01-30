@@ -36,7 +36,9 @@ $(document).ready(function () {
     sectionReviews();
     sectionContacts();
     sectionMap();
-    indexPage();
+    indexPage.initSlowScroll();
+    indexPage.initScrollSpy();
+    indexPage.initScrollAnimations();
     postPage.initCommentForm();
     postPage.initRelatedPostsCarousel();
     largeBlogPost.initMarkdownAreaViewer();
