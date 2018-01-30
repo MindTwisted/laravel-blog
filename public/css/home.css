@@ -8377,6 +8377,10 @@ a.text-dark:hover {
   margin-top: 1rem;
 }
 
+.categoryItem__controls > * {
+  margin: 0.15rem 0;
+}
+
 .categoryItem .card-title {
   margin: 0;
 }
@@ -8387,6 +8391,27 @@ a.text-dark:hover {
 
 .categoryItem__deleteForm .btn {
   cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .categoryItem__titleWrap {
+    padding-right: 3rem;
+  }
+}
+
+.categoryItem .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 575px) {
+  .categoryItem .card-body {
+    display: block;
+  }
 }
 
 .tagItem {

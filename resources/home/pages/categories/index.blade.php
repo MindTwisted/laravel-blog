@@ -20,7 +20,7 @@
           <div class="row">
             
             @forelse($categories as $category)
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-md-12">
                 <div class="categoriesPage__categories">
                   @component('home.components.categoryItem.categoryItem',
                               compact('category'))
