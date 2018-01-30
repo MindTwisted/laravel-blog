@@ -55,42 +55,46 @@
   </form>
   
   
-  <div class="blogSidebar__header">
-    Categories
-  </div>
-  
-  <ul class="blogSidebar__categories">
-    @forelse($categories as $category)
-      <li class="blogSidebar__categoryItem">
-        @component('site.components.svgSprites.svgIcon', ['id' => 'angle-double-right'])
-        @endcomponent
-        <a class="blogSidebar__categoryTitle"
-           href="{{ route('pages.blog') }}?category={{ $category->id }}">
-          {{ $category->title }}
-        </a>
-        <span class="blogSidebar__categoryPostsCount">
+  @if(count($categories) > 0)
+    <div class="blogSidebar__header">
+      Categories
+    </div>
+    
+    <ul class="blogSidebar__categories">
+      @forelse($categories as $category)
+        <li class="blogSidebar__categoryItem">
+          @component('site.components.svgSprites.svgIcon', ['id' => 'angle-double-right'])
+          @endcomponent
+          <a class="blogSidebar__categoryTitle"
+             href="{{ route('pages.blog') }}?category={{ $category->id }}">
+            {{ $category->title }}
+          </a>
+          <span class="blogSidebar__categoryPostsCount">
           ({{ $category->posts_count }})
         </span>
-      </li>
-    @empty
-    @endforelse
-  </ul>
+        </li>
+      @empty
+      @endforelse
+    </ul>
+  @endif
   
-  <div class="blogSidebar__header">
-    Tags
-  </div>
-  
-  <ul class="blogSidebar__tags">
-    @forelse($tags as $tag)
-      <li class="blogSidebar__tagItem">
-        <a class="blogSidebar__tagTitle"
-           href="{{ route('pages.blog') }}?tag={{ $tag->id }}">
-          {{ $tag->title }}
-        </a>
-      </li>
-    @empty
-    @endforelse
-  </ul>
+  @if(count($tags) > 0)
+    <div class="blogSidebar__header">
+      Tags
+    </div>
+    
+    <ul class="blogSidebar__tags">
+      @forelse($tags as $tag)
+        <li class="blogSidebar__tagItem">
+          <a class="blogSidebar__tagTitle"
+             href="{{ route('pages.blog') }}?tag={{ $tag->id }}">
+            {{ $tag->title }}
+          </a>
+        </li>
+      @empty
+      @endforelse
+    </ul>
+  @endif
   
   <div class="blogSidebar__header">
     Recent posts
