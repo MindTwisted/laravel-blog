@@ -142,7 +142,7 @@
             
             </form>
             
-            @if(count($post->category->postsExcept($post->id)->get()) > 1)
+            @if($post->category && count($post->category->postsExcept($post->id)->get()) > 1)
               <div class="postPage__relatedPosts">
                 
                 <div class="postPage__sectionTitle">
