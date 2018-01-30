@@ -19,10 +19,9 @@
 
   &__thumbnail {
     overflow: hidden;
-
-    img {
-      max-height: 300px;
-    }
+    height: 20rem;
+    background-position: center;
+    background-size: cover;
   }
 
   &__comments {

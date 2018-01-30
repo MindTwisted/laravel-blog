@@ -27,9 +27,8 @@
       </div>
       
       @isset($post->thumbnail_path)
-        <div class="postItem__thumbnail">
-          <img src="{{ Storage::url($post->thumbnail_path) }}"
-               alt="Post thumbnail">
+        <div class="postItem__thumbnail"
+             style="background-image:url({{ Storage::url($post->thumbnail_path) }});">
         </div>
       @endisset
       

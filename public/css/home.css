@@ -8356,10 +8356,9 @@ a.text-dark:hover {
 
 .postItem__thumbnail {
   overflow: hidden;
-}
-
-.postItem__thumbnail img {
-  max-height: 300px;
+  height: 20rem;
+  background-position: center;
+  background-size: cover;
 }
 
 .postItem__comments {
