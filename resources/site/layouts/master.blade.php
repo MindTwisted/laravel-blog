@@ -12,6 +12,9 @@
   <meta name="csrf-token"
         content="{{ csrf_token() }}">
   
+  <link rel="shortcut icon"
+        href="/favicon.ico">
+  
   <title>Expire | @yield('title')</title>
   
   <!-- Styles -->
