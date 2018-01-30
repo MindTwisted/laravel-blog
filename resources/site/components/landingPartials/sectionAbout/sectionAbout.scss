@@ -29,6 +29,7 @@
 
   &__item {
     overflow: hidden;
+    @include onHoverScaleTransition();
 
     .svgIcon {
       position: relative;

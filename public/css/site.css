@@ -10282,6 +10282,17 @@ a.text-dark:hover {
 
 .sectionAbout__item {
   overflow: hidden;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .sectionAbout__item:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .sectionAbout__item .svgIcon {
@@ -10700,11 +10711,22 @@ a.text-dark:hover {
   padding-left: 6.25rem;
   margin-bottom: 4.375rem;
   position: relative;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
 @media (max-width: 991px) {
   .sectionContacts__contactItem {
     padding-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .sectionContacts__contactItem:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -10791,9 +10813,23 @@ a.text-dark:hover {
   }
 }
 
+.teaserAchievements__item {
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
 @media (max-width: 767px) {
   .teaserAchievements__item {
     margin: 1.875rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .teaserAchievements__item:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -10838,6 +10874,17 @@ a.text-dark:hover {
   padding: 2.625rem 0;
   text-align: center;
   margin: 0.9375rem 0;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .teaserBrands__item:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .postSeparator {

@@ -11,6 +11,8 @@
     @include media-breakpoint-down(sm) {
       margin: rem(30) 0;
     }
+
+    @include onHoverScaleTransition();
   }
 
   &__itemIcon {

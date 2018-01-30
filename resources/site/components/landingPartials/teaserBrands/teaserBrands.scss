@@ -7,5 +7,7 @@
     padding: rem(42) 0;
     text-align: center;
     margin: rem(15) 0;
+
+    @include onHoverScaleTransition();
   }
 }

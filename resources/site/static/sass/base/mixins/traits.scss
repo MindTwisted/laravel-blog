@@ -1,0 +1,9 @@
+@mixin onHoverScaleTransition($device: lg) {
+  transition: transform 0.25s ease;
+
+  @include media-breakpoint-up($device) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
