@@ -42,6 +42,7 @@
 
     &:not([href]) {
       color: darken(#e6e9ed, 10%) !important;
+      cursor: not-allowed;
 
       .svgIcon,
       &:hover .svgIcon {

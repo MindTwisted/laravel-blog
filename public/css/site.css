@@ -9939,6 +9939,7 @@ a.text-dark:hover {
 
 .postPage__prevNextLink:not([href]) {
   color: #c8cfd8 !important;
+  cursor: not-allowed;
 }
 
 .postPage__prevNextLink:not([href]) .svgIcon svg,
