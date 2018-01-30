@@ -11,11 +11,13 @@
         {{ $post->title }}
       </div>
       
-      <div class="postsPage__categoryTitle">
-        <a href="{{ route('posts.index', ['category' => $post->category->id]) }}">
-          <em>{{ $post->category->title or '' }}</em>
-        </a>
-      </div>
+      @if($post->category)
+        <div class="postsPage__categoryTitle">
+          <a href="{{ route('posts.index', ['category' => $post->category->id]) }}">
+            <em>{{ $post->category->title or '' }}</em>
+          </a>
+        </div>
+      @endif
       
       <div class="postsPage__tags">
         @forelse($post->tags as $tag)
