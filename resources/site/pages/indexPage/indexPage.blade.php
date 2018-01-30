@@ -1,5 +1,9 @@
 @extends('site.layouts.master')
 
+@section('title')
+  Home
+@endsection
+
 @section('content')
   <div class="indexPage">
     @component('site.components.mainNavbar.mainNavbar')

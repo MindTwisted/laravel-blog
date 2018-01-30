@@ -12,7 +12,7 @@
   <meta name="csrf-token"
         content="{{ csrf_token() }}">
   
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Expire | @yield('title')</title>
   
   <!-- Styles -->
   <link href="{{ asset('css/site.css') }}"

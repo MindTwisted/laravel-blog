@@ -1,5 +1,9 @@
 @extends('site.layouts.master')
 
+@section('title')
+  Blog
+@endsection
+
 @section('content')
   <div class="blogPage">
     

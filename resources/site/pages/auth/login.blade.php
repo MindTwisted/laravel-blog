@@ -1,5 +1,9 @@
 @extends('site.layouts.master')
 
+@section('title')
+  Login
+@endsection
+
 @section('content')
   <div class="loginPage">
     
