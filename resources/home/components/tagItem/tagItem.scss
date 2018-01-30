@@ -3,6 +3,10 @@
 
   &__controls {
     margin-top: 1rem;
+
+    & > * {
+      margin: 0.15rem 0;
+    }
   }
 
   .card-title {
@@ -14,6 +18,21 @@
 
     .btn {
       cursor: pointer;
+    }
+  }
+
+  &__titleWrap {
+    @include media-breakpoint-up(sm) {
+      padding-right: 3rem;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(xs) {
+      display: block;
     }
   }
 }

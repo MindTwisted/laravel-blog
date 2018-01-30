@@ -8422,6 +8422,10 @@ a.text-dark:hover {
   margin-top: 1rem;
 }
 
+.tagItem__controls > * {
+  margin: 0.15rem 0;
+}
+
 .tagItem .card-title {
   margin: 0;
 }
@@ -8432,6 +8436,27 @@ a.text-dark:hover {
 
 .tagItem__deleteForm .btn {
   cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .tagItem__titleWrap {
+    padding-right: 3rem;
+  }
+}
+
+.tagItem .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 575px) {
+  .tagItem .card-body {
+    display: block;
+  }
 }
 
 .commentItem {

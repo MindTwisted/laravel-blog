@@ -20,7 +20,7 @@
           <div class="row">
             
             @forelse($tags as $tag)
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-md-12">
                 <div class="tagsPage__tags">
                   @component('home.components.tagItem.tagItem',
                               compact('tag'))
