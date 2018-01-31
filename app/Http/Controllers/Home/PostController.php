@@ -22,7 +22,7 @@ class PostController extends Controller
     public function index(PostRepository $postRepository)
     {
         $filters = Request::only(['text', 'category', 'tag', 'order']);
-        $posts = $postRepository->all($filters)->paginate(12);
+        $posts = $postRepository->all($filters)->latest()->paginate(12);
 
         return view('home.pages.posts.index',
             compact('posts', 'filters'));

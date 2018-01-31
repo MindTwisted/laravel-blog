@@ -30,7 +30,7 @@ class PagesController extends Controller
     public function blogPage(PostRepository $postRepository)
     {
         $filters = Request::only(['text', 'category', 'tag']);
-        $posts = $postRepository->all($filters)->paginate(5);
+        $posts = $postRepository->all($filters)->latest()->paginate(5);
 
         return view('site.pages.blogPage.blogPage', compact('posts', 'filters'));
     }
