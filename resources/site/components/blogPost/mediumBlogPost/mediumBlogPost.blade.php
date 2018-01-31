@@ -60,7 +60,7 @@
       
       @component('site.components.blogPost.postPartials.postBody.postBody')
         @slot('body')
-          {{ trimString($post->body, 500) }}
+          {{ trimString($post->body_preview, 500) }}
         @endslot
       @endcomponent
     

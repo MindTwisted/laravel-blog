@@ -24,7 +24,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body', 'body_preview'];
 
     /**
      * Posts belongs to single user

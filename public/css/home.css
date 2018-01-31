@@ -8198,6 +8198,11 @@ a.text-dark:hover {
   display: block;
 }
 
+.postsPage__bodyPreviewArea {
+  height: 10rem;
+  resize: none;
+}
+
 .commentsPage__filterPanel {
   margin-bottom: 2rem;
 }

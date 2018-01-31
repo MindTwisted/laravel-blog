@@ -26,6 +26,7 @@ class StorePostRequest extends FormRequest
         $rules = [
             'title' => 'required|min:5|max:255|unique:posts',
             'body' => 'required|min:5',
+            'body_preview' => 'required|min:5',
             'category' => 'nullable|sometimes|exists:categories,id',
             'image' => 'nullable|sometimes|image|dimensions:min_width=1280,min_height=1024'
         ];

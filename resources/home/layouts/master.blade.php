@@ -15,7 +15,7 @@
   <link rel="shortcut icon"
         href="/favicon.ico">
   
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Laravel') }} | Admin</title>
   
   <!-- Styles -->
   <link href="{{ asset('css/home.css') }}"

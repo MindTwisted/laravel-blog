@@ -78,6 +78,15 @@
                             name="body"
                             rows="3">{{ old('body') }}</textarea>
                 </div>
+                
+                <div class="form-group">
+                  <label for="postBodyPreview">Post body preview</label>
+                  <textarea class="form-control postsPage__bodyPreviewArea"
+                            id="postBodyPreview"
+                            name="body_preview"
+                            rows="3">{{ old('body_preview') }}</textarea>
+                </div>
+                
                 <button type="submit"
                         class="btn btn-primary">
                   Add post

@@ -65,4 +65,9 @@
     display: block;
   }
 
+  &__bodyPreviewArea {
+    height: 10rem;
+    resize: none;
+  }
+
 }

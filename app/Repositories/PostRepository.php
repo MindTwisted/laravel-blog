@@ -104,7 +104,7 @@ class PostRepository
     public function create(Request $request)
     {
         $user = Auth::user();
-        $post = new Post($request->only(['title', 'body']));
+        $post = new Post($request->only(['title', 'body', 'body_preview']));
 
         if ($category_id = $request->input('category')) {
             $category = Category::findOrFail($category_id);
@@ -149,6 +149,7 @@ class PostRepository
     {
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->body_preview = $request->input('body_preview');
 
         if ($category_id = $request->input('category')) {
             $category = Category::findOrFail($category_id);

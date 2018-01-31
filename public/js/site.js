@@ -15196,8 +15196,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_landingPartials_sectionContacts_sectionContacts__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_landingPartials_sectionMap_sectionMap__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_indexPage_indexPage__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_blogPost_largeBlogPost_largeBlogPost__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_postPage_postPage__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_blogPost_largeBlogPost_largeBlogPost__ = __webpack_require__(49);
 // Note: you don't need to import Popper, Util
 // and jQuery as they are already autoload in webpack.mix.js
 
@@ -19184,7 +19184,7 @@ function initMap() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_onscreen__ = __webpack_require__(61);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_onscreen__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_onscreen___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_onscreen__);
 
 
@@ -19232,224 +19232,6 @@ function initScrollAnimations() {
 
 /***/ }),
 /* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_notification_notification__ = __webpack_require__(12);
-
-
-// Define variables form jquery instances of form fields
-var $postField = void 0,
-    $nameField = void 0,
-    $emailField = void 0,
-    $messageField = void 0;
-// Define variable for jquery instance of form submit button
-var $submitButton = void 0;
-// Input invalid class name
-var invalidClassName = 'is-invalid';
-
-// Reset form input fields
-function resetInputFields() {
-    $nameField.val('');
-    $emailField.val('');
-    $messageField.val('');
-}
-
-// Reset form errors state
-function resetErrors() {
-    $nameField.removeClass(invalidClassName);
-    $emailField.removeClass(invalidClassName);
-    $messageField.removeClass(invalidClassName);
-}
-
-// Get error response and set error state on provided form fields
-function handleErrors(errors) {
-    if (errors.author_name) {
-        $nameField.addClass(invalidClassName);
-
-        errors.author_name.map(function (error) {
-            $nameField.siblings('.invalid-feedback').text(error);
-        });
-    }
-
-    if (errors.author_email) {
-        $emailField.addClass(invalidClassName);
-
-        errors.author_email.map(function (error) {
-            $emailField.siblings('.invalid-feedback').text(error);
-        });
-    }
-
-    if (errors.body) {
-        $messageField.addClass(invalidClassName);
-
-        errors.body.map(function (error) {
-            $messageField.siblings('.invalid-feedback').text(error);
-        });
-    }
-}
-
-// Disable submit button
-function disableButton() {
-    $submitButton.attr('disabled', true);
-    $submitButton.text('Loading ...');
-}
-
-// Enable submit button
-function enableButton() {
-    $submitButton.attr('disabled', false);
-    $submitButton.text('SUBMIT');
-}
-
-// Init comment form
-function initCommentForm() {
-    var $form = $('.postPage__commentForm');
-
-    // Handle form submitting if form exists on the page
-    if ($form.length > 0) {
-        $form.on('submit', function submitCommentForm(e) {
-            // Prevent default form submit behavior
-            e.preventDefault();
-
-            // Get form action URL
-            var URL = $form.attr('action');
-
-            // Get form input fields jquery instances
-            $postField = $form.find(".form-control[name='post']");
-            $nameField = $form.find(".form-control[name='author_name']");
-            $emailField = $form.find(".form-control[name='author_email']");
-            $messageField = $form.find(".form-control[name='body']");
-
-            // Get submit button jquery instance
-            $submitButton = $form.find("button[type='submit']");
-
-            // Get form input fields data
-            var postData = $postField.val();
-            var nameData = $nameField.val();
-            var emailData = $emailField.val();
-            var messageData = $messageField.val();
-
-            // Disable submit button until response from server will be received
-            disableButton();
-
-            $.ajax(
-            // Request URL
-            URL,
-            // Request options object
-            {
-                // Set request method
-                method: 'POST',
-                // Set data which request will send
-                data: {
-                    post: postData,
-                    author_name: nameData,
-                    author_email: emailData,
-                    body: messageData
-                }
-            }).done(function (data) {
-                // Handle success ajax response
-
-                // Show success notification
-                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('SUCCESS', data);
-                // Reset form errors state
-                resetErrors();
-                // Enable submit button after server response received
-                enableButton();
-                // Reset input fields
-                resetInputFields();
-            }).fail(function (error) {
-                // Handle error ajax response
-                var errors = error.responseJSON.errors;
-                var message = error.responseJSON.message;
-
-                // Reset form errors state
-                resetErrors();
-                // Show error notification
-                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('ERROR', message);
-                // Add form invalid state
-                handleErrors(errors);
-                // Enable submit button after server response received
-                enableButton();
-            });
-        });
-    }
-}
-
-// Init related posts carousel
-function initRelatedPostsCarousel() {
-    // Get DOM elements
-    var $container = $('.postPage__relatedPostsCarousel');
-
-    // Custom nav markup
-    var $prevNavHTML = '<svg>\n                          <use xlink:href="#angle-left"></use>\n                       </svg>';
-    var $nextNavHTML = '<svg>\n                          <use xlink:href="#angle-right"></use>\n                       </svg>';
-
-    // Init carousel if container exists
-    if ($container.length > 0) {
-        $container.owlCarousel({
-            loop: true,
-            autoplay: false,
-            smartSpeed: 750,
-            margin: 30,
-            nav: true,
-            navText: [$prevNavHTML, $nextNavHTML],
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false
-                },
-                900: {
-                    items: 2
-                }
-            }
-        });
-    }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    initCommentForm: initCommentForm,
-    initRelatedPostsCarousel: initRelatedPostsCarousel
-});
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
-
-/***/ }),
-/* 48 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_marked__);
-
-
-function initMarkdownAreaViewer() {
-    var rawMarkdown = document.querySelector('.largeBlogPost__mdRaw');
-    var viewArea = document.querySelector('.largeBlogPost__body .postBody');
-
-    if (viewArea) {
-        var markupContent = rawMarkdown.innerText.trim();
-        viewArea.innerHTML = __WEBPACK_IMPORTED_MODULE_0_marked___default()(markupContent);
-    }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    initMarkdownAreaViewer: initMarkdownAreaViewer
-});
-
-/***/ }),
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -19847,6 +19629,212 @@ function initMarkdownAreaViewer() {
 }));
 //# sourceMappingURL=on-screen.umd.js.map
 
+
+/***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_notification_notification__ = __webpack_require__(12);
+
+
+// Define variables form jquery instances of form fields
+var $postField = void 0,
+    $nameField = void 0,
+    $emailField = void 0,
+    $messageField = void 0;
+// Define variable for jquery instance of form submit button
+var $submitButton = void 0;
+// Input invalid class name
+var invalidClassName = 'is-invalid';
+
+// Reset form input fields
+function resetInputFields() {
+    $nameField.val('');
+    $emailField.val('');
+    $messageField.val('');
+}
+
+// Reset form errors state
+function resetErrors() {
+    $nameField.removeClass(invalidClassName);
+    $emailField.removeClass(invalidClassName);
+    $messageField.removeClass(invalidClassName);
+}
+
+// Get error response and set error state on provided form fields
+function handleErrors(errors) {
+    if (errors.author_name) {
+        $nameField.addClass(invalidClassName);
+
+        errors.author_name.map(function (error) {
+            $nameField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.author_email) {
+        $emailField.addClass(invalidClassName);
+
+        errors.author_email.map(function (error) {
+            $emailField.siblings('.invalid-feedback').text(error);
+        });
+    }
+
+    if (errors.body) {
+        $messageField.addClass(invalidClassName);
+
+        errors.body.map(function (error) {
+            $messageField.siblings('.invalid-feedback').text(error);
+        });
+    }
+}
+
+// Disable submit button
+function disableButton() {
+    $submitButton.attr('disabled', true);
+    $submitButton.text('Loading ...');
+}
+
+// Enable submit button
+function enableButton() {
+    $submitButton.attr('disabled', false);
+    $submitButton.text('SUBMIT');
+}
+
+// Init comment form
+function initCommentForm() {
+    var $form = $('.postPage__commentForm');
+
+    // Handle form submitting if form exists on the page
+    if ($form.length > 0) {
+        $form.on('submit', function submitCommentForm(e) {
+            // Prevent default form submit behavior
+            e.preventDefault();
+
+            // Get form action URL
+            var URL = $form.attr('action');
+
+            // Get form input fields jquery instances
+            $postField = $form.find(".form-control[name='post']");
+            $nameField = $form.find(".form-control[name='author_name']");
+            $emailField = $form.find(".form-control[name='author_email']");
+            $messageField = $form.find(".form-control[name='body']");
+
+            // Get submit button jquery instance
+            $submitButton = $form.find("button[type='submit']");
+
+            // Get form input fields data
+            var postData = $postField.val();
+            var nameData = $nameField.val();
+            var emailData = $emailField.val();
+            var messageData = $messageField.val();
+
+            // Disable submit button until response from server will be received
+            disableButton();
+
+            $.ajax(
+            // Request URL
+            URL,
+            // Request options object
+            {
+                // Set request method
+                method: 'POST',
+                // Set data which request will send
+                data: {
+                    post: postData,
+                    author_name: nameData,
+                    author_email: emailData,
+                    body: messageData
+                }
+            }).done(function (data) {
+                // Handle success ajax response
+
+                // Show success notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('SUCCESS', data);
+                // Reset form errors state
+                resetErrors();
+                // Enable submit button after server response received
+                enableButton();
+                // Reset input fields
+                resetInputFields();
+            }).fail(function (error) {
+                // Handle error ajax response
+                var errors = error.responseJSON.errors;
+                var message = error.responseJSON.message;
+
+                // Reset form errors state
+                resetErrors();
+                // Show error notification
+                Object(__WEBPACK_IMPORTED_MODULE_0__components_notification_notification__["a" /* showNotification */])('ERROR', message);
+                // Add form invalid state
+                handleErrors(errors);
+                // Enable submit button after server response received
+                enableButton();
+            });
+        });
+    }
+}
+
+// Init related posts carousel
+function initRelatedPostsCarousel() {
+    // Get DOM elements
+    var $container = $('.postPage__relatedPostsCarousel');
+
+    // Custom nav markup
+    var $prevNavHTML = '<svg>\n                          <use xlink:href="#angle-left"></use>\n                       </svg>';
+    var $nextNavHTML = '<svg>\n                          <use xlink:href="#angle-right"></use>\n                       </svg>';
+
+    // Init carousel if container exists
+    if ($container.length > 0) {
+        $container.owlCarousel({
+            loop: true,
+            autoplay: false,
+            smartSpeed: 750,
+            margin: 30,
+            nav: true,
+            navText: [$prevNavHTML, $nextNavHTML],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                900: {
+                    items: 2
+                }
+            }
+        });
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    initCommentForm: initCommentForm,
+    initRelatedPostsCarousel: initRelatedPostsCarousel
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_marked__);
+
+
+function initMarkdownAreaViewer() {
+    var rawMarkdown = document.querySelector('.largeBlogPost__mdRaw');
+    var viewArea = document.querySelector('.largeBlogPost__body .postBody');
+
+    if (viewArea) {
+        var markupContent = rawMarkdown.innerText.trim();
+        viewArea.innerHTML = __WEBPACK_IMPORTED_MODULE_0_marked___default()(markupContent);
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    initMarkdownAreaViewer: initMarkdownAreaViewer
+});
 
 /***/ })
 /******/ ]);
