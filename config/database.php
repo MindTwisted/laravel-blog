@@ -1,5 +1,8 @@
 <?php
 
+// Heroku Postgres SQL
+$dbUrl = parse_url(env("DATABASE_URL"));
+
 return [
 
     /*
@@ -54,13 +57,14 @@ return [
             'engine' => null,
         ],
 
+        // Settings for Heroku
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => isset($dbUrl["host"]) ? $dbUrl["host"] : env("DB_HOST"),
+            'port' => isset($dbUrl["port"]) ? $dbUrl["port"] : env("DB_PORT"),
+            'database' => isset($dbUrl["path"]) ? ltrim($dbUrl["path"], '/') : env("DB_DATABASE"),
+            'username' => isset($dbUrl["user"]) ? $dbUrl["user"] : env("DB_USERNAME"),
+            'password' => isset($dbUrl["pass"]) ? $dbUrl["pass"] : env("DB_PASSWORD"),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
