@@ -18,7 +18,7 @@
   <title>{{ config('app.name', 'Laravel') }} | Admin</title>
   
   <!-- Styles -->
-  <link href="{{ asset('css/home.css') }}"
+  <link href="{{ secure_asset('css/home.css') }}"
         rel="stylesheet">
 </head>
 <body>
@@ -58,6 +58,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ secure_asset('js/home.js') }}"></script>
 </body>
 </html>

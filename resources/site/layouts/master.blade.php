@@ -18,7 +18,7 @@
   <title>Expire | @yield('title')</title>
   
   <!-- Styles -->
-  <link href="{{ asset('css/site.css') }}"
+  <link href="{{ secure_asset('css/site.css') }}"
         rel="stylesheet">
 </head>
 <body>
@@ -33,7 +33,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/site.js') }}"></script>
+<script src="{{ secure_asset('js/site.js') }}"></script>
 
 {{--Load google map--}}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu1s0G5DALQ1_ssXgddOX7T69PxY5_4v4"
