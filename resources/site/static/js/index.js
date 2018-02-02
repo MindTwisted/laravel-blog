@@ -24,7 +24,6 @@ import mainNavbar from '../../components/mainNavbar/mainNavbar';
 import sectionBlog from '../../components/landingPartials/sectionBlog/sectionBlog';
 import sectionReviews from '../../components/landingPartials/sectionReviews/sectionReviews';
 import sectionContacts from '../../components/landingPartials/sectionContacts/sectionContacts';
-import sectionMap from '../../components/landingPartials/sectionMap/sectionMap';
 import indexPage from '../../pages/indexPage/indexPage';
 import postPage from '../../pages/postPage/postPage';
 import largeBlogPost from '../../components/blogPost/largeBlogPost/largeBlogPost';
@@ -35,7 +34,6 @@ $(document).ready(function () {
     sectionBlog();
     sectionReviews();
     sectionContacts();
-    sectionMap();
     indexPage.initSlowScroll();
     indexPage.initScrollSpy();
     indexPage.initScrollAnimations();

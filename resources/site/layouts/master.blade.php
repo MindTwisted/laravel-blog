@@ -38,14 +38,14 @@
   @yield('content')
 </div>
 
-@yield('scripts')
-
 <!-- Scripts -->
 @if(env('APP_ENV') === 'production')
   <script src="{{ secure_asset('js/site.js') }}"></script>
 @else
   <script src="{{ asset('js/site.js') }}"></script>
 @endif
+
+@yield('scripts')
 
 </body>
 </html>
