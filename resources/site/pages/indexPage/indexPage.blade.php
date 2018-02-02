@@ -41,4 +41,7 @@
   </div>
 @endsection
 
-{{--TODO: add scroll and hover animations to landing elements only on desktop devices--}}
+@section('scripts')
+  {{--Load google map--}}
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu1s0G5DALQ1_ssXgddOX7T69PxY5_4v4"></script>
+@endsection

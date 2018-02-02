@@ -38,6 +38,8 @@
   @yield('content')
 </div>
 
+@yield('scripts')
+
 <!-- Scripts -->
 @if(env('APP_ENV') === 'production')
   <script src="{{ secure_asset('js/site.js') }}"></script>
@@ -45,9 +47,5 @@
   <script src="{{ asset('js/site.js') }}"></script>
 @endif
 
-{{--Load google map--}}
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu1s0G5DALQ1_ssXgddOX7T69PxY5_4v4"
-        async
-        defer></script>
 </body>
 </html>

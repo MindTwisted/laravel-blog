@@ -72,5 +72,3 @@
   </div>
 
 </div>
-
-{{--TODO: add styles for blockquotes and etc--}}
