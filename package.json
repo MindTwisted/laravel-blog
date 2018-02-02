@@ -9,7 +9,8 @@
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "devDependencies": {
+  "dependencies": {
+    "exports-loader": "^0.6.4",
     "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0-beta.2",
     "browser-sync": "^2.18.13",
@@ -24,8 +25,5 @@
     "popper.js": "^1.12.9",
     "select2": "^4.0.6-rc.1",
     "simplemde": "^1.11.2"
-  },
-  "dependencies": {
-    "exports-loader": "^0.6.4"
   }
 }
