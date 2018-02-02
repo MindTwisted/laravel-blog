@@ -18,8 +18,14 @@
   <title>{{ config('app.name', 'Laravel') }} | Admin</title>
   
   <!-- Styles -->
-  <link href="{{ secure_asset('css/home.css') }}"
-        rel="stylesheet">
+  @if(env('APP_ENV') === 'production')
+    <link href="{{ secure_asset('css/home.css') }}"
+          rel="stylesheet">
+  @else
+    <link href="{{ asset('css/home.css') }}"
+          rel="stylesheet">
+  @endif
+
 </head>
 <body>
 <div id="app">
@@ -58,6 +64,11 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ secure_asset('js/home.js') }}"></script>
+@if(env('APP_ENV') === 'production')
+  <script src="{{ secure_asset('js/home.js') }}"></script>
+@else
+  <script src="{{ asset('js/home.js') }}"></script>
+@endif
+
 </body>
 </html>

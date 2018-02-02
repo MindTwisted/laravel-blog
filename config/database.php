@@ -1,7 +1,7 @@
 <?php
 
 // Heroku Postgres SQL
-$dbUrl = parse_url(env("DATABASE_URL"));
+$dbUrl = env('APP_ENV') === 'production' ? parse_url(env("DATABASE_URL")) : [];
 
 return [
 

@@ -18,8 +18,14 @@
   <title>Expire | @yield('title')</title>
   
   <!-- Styles -->
-  <link href="{{ secure_asset('css/site.css') }}"
-        rel="stylesheet">
+  @if(env('APP_ENV') === 'production')
+    <link href="{{ secure_asset('css/site.css') }}"
+          rel="stylesheet">
+  @else
+    <link href="{{ asset('css/site.css') }}"
+          rel="stylesheet">
+  @endif
+
 </head>
 <body>
 <div id="app">
@@ -33,7 +39,11 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ secure_asset('js/site.js') }}"></script>
+@if(env('APP_ENV') === 'production')
+  <script src="{{ secure_asset('js/site.js') }}"></script>
+@else
+  <script src="{{ asset('js/site.js') }}"></script>
+@endif
 
 {{--Load google map--}}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu1s0G5DALQ1_ssXgddOX7T69PxY5_4v4"
