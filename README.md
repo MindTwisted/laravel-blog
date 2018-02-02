@@ -2,6 +2,7 @@
 
 Blog application created with Laravel 5.5 and Postgres SQL.
 
+
 **Front-end features:**
 * component based approach;
 * BEM naming convention;
@@ -10,8 +11,10 @@ Blog application created with Laravel 5.5 and Postgres SQL.
 * SCSS;
 * SVG sprites;
 
+
 **Live preview link:**
 https://cryptic-fjord-99357.herokuapp.com/
+
 
 **Design by Denis Žoljom:**
 https://dribbble.com/shots/1827459-Expire-Theme-for-Themeforest
