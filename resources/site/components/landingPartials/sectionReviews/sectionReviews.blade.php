@@ -79,14 +79,12 @@
           
           <div class="sectionReviews__accordion">
             
-            <div id="sectionReviews__accordion"
-                 data-children=".sectionReviews__accordionItem">
+            <div id="sectionReviews__accordion">
               
               <div class="sectionReviews__accordionItem">
                 
                 <div class="sectionReviews__accordionItemTogglerOuterWrap">
                   <a data-toggle="collapse"
-                     data-parent="#sectionReviews__accordion"
                      href="#sectionReviews__accordionItem_1"
                      role="button"
                      class="sectionReviews__accordionItemToggler"
@@ -100,6 +98,7 @@
                 
                 <div id="sectionReviews__accordionItem_1"
                      class="collapse show sectionReviews__accordionItemBody"
+                     data-parent="#sectionReviews__accordion"
                      role="tabpanel">
                   <p class="mb-3">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime perferendis voluptatum maiores quos
@@ -117,7 +116,6 @@
                 
                 <div class="sectionReviews__accordionItemTogglerOuterWrap">
                   <a data-toggle="collapse"
-                     data-parent="#sectionReviews__accordion"
                      href="#sectionReviews__accordionItem_2"
                      role="button"
                      class="sectionReviews__accordionItemToggler"
@@ -131,6 +129,7 @@
                 
                 <div id="sectionReviews__accordionItem_2"
                      class="collapse sectionReviews__accordionItemBody"
+                     data-parent="#sectionReviews__accordion"
                      role="tabpanel">
                   <p class="mb-3">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime perferendis voluptatum maiores quos
@@ -148,7 +147,6 @@
                 
                 <div class="sectionReviews__accordionItemTogglerOuterWrap">
                   <a data-toggle="collapse"
-                     data-parent="#sectionReviews__accordion"
                      href="#sectionReviews__accordionItem_3"
                      role="button"
                      class="sectionReviews__accordionItemToggler"
@@ -162,6 +160,7 @@
                 
                 <div id="sectionReviews__accordionItem_3"
                      class="collapse sectionReviews__accordionItemBody"
+                     data-parent="#sectionReviews__accordion"
                      role="tabpanel">
                   <p class="mb-3">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime perferendis voluptatum maiores quos
