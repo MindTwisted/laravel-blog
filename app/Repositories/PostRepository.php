@@ -28,8 +28,8 @@ class PostRepository
         $posts = Post
             ::when($text, function ($query) use ($text) {
                 return $query->where(function ($query) use ($text) {
-                    $query->where('title', 'LIKE', "%{$text}%")
-                        ->orWhere('body', 'LIKE', "%{$text}%");
+                    $query->where('title', 'iLIKE', "%{$text}%")
+                        ->orWhere('body', 'iLIKE', "%{$text}%");
                 });
             })
             ->when($category && $category !== 'NO_CATEGORY',

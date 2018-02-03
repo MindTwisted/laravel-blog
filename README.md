@@ -1,6 +1,6 @@
 # laravel-blog
 
-Blog application created with Laravel 5.5 and Postgres SQL.
+Blog application created with Laravel 5.5 and PostgreSQL
 
 
 **Front-end features:**
