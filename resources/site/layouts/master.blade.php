@@ -18,13 +18,8 @@
   <title>Expire | @yield('title')</title>
   
   <!-- Styles -->
-  @if(env('APP_ENV') === 'production')
-    <link href="{{ secure_asset('css/site.css') }}"
-          rel="stylesheet">
-  @else
-    <link href="{{ asset('css/site.css') }}"
-          rel="stylesheet">
-  @endif
+  <link href="{{ asset('css/site.css') }}"
+        rel="stylesheet">
 
 </head>
 <body>
@@ -39,11 +34,7 @@
 </div>
 
 <!-- Scripts -->
-@if(env('APP_ENV') === 'production')
-  <script src="{{ secure_asset('js/site.js') }}"></script>
-@else
-  <script src="{{ asset('js/site.js') }}"></script>
-@endif
+<script src="{{ asset('js/site.js') }}"></script>
 
 @yield('scripts')
 
