@@ -25,9 +25,9 @@ function markdownAreaViewer() {
     }
 }
 
-function barChartInit() {
+function postPerCategoryChartInit() {
     // Cache bar chart dom canvas element
-    const ctx = $('.homePage__barChart');
+    const ctx = $('.homePage__postPerCategoryChart');
     // Get url stored in data attribute
     const url = ctx.data('url');
 
@@ -61,7 +61,7 @@ function barChartInit() {
                         // Set labels from categories names array
                         labels: categoriesNames,
                         datasets: [{
-                            label: 'Posts per Category',
+                            label: 'Posts per category',
                             // Set data from posts count array
                             data: postsCount,
                             // Set background color from background colors generated array
@@ -80,7 +80,62 @@ function barChartInit() {
                         title: {
                             display: true,
                             fontSize: 18,
-                            text: 'Posts per Category chart'
+                            text: 'Count of posts per category'
+                        }
+                    }
+                });
+            })
+            .fail(function (error) {
+                // If ajax request failed invoke notification with error text
+                notification.addNotification(error.statusText, 'danger', 5000);
+            });
+    }
+}
+
+function postPerDateChartInit() {
+    // Cache bar chart dom canvas element
+    const ctx = $('.homePage__postPerDateChart');
+    // Get url stored in data attribute
+    const url = ctx.data('url');
+
+    // If canvas exists
+    if (ctx.length > 0) {
+        // Get ajax request into provided url
+        $.get(url)
+        // If request was successfully completed
+            .done(function (data) {
+                // Store dates names array into variable
+                const dates = data.dates;
+                // Store posts count array into variable
+                const postsCount = data.postsCount;
+                // Generate random RGBa color
+                const backgroudColor = randomColor({
+                    luminosity: 'dark',
+                    format: 'rgba',
+                    alpha: 0.5
+                });
+
+                // Start generating chart
+                const myChart = new Chart(ctx, {
+                    // Set chart type
+                    type: 'line',
+                    // Set chart data
+                    data: {
+                        // Set labels from dates names array
+                        labels: dates,
+                        datasets: [{
+                            label: 'Posts per date',
+                            // Set data from posts count array
+                            data: postsCount,
+                            backgroundColor: backgroudColor
+                        }]
+                    },
+                    options: {
+                        // Set chart title settings
+                        title: {
+                            display: true,
+                            fontSize: 18,
+                            text: 'Count of posts per date'
                         }
                     }
                 });
@@ -95,7 +150,8 @@ function barChartInit() {
 function init() {
     markdownAreaViewer();
     markdownAreaEditor();
-    barChartInit();
+    postPerCategoryChartInit();
+    postPerDateChartInit();
 }
 
 export default init;

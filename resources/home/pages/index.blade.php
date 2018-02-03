@@ -8,14 +8,25 @@
       </div>
       
       <div class="row">
+        
         <div class="col-md-6">
           
           <div class="card">
-            <canvas class="homePage__barChart"
+            <canvas class="homePage__postPerDateChart"
+                    data-url="{{ route('stats.post-per-date') }}"></canvas>
+          </div>
+        
+        </div>
+        
+        <div class="col-md-6">
+          
+          <div class="card">
+            <canvas class="homePage__postPerCategoryChart"
                     data-url="{{ route('stats.post-category') }}"></canvas>
           </div>
         
         </div>
+      
       </div>
     
     </div>

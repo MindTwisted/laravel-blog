@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\CategoryRepository;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,29 @@ class HomeController extends Controller
         return response()
             ->json([
                 'categoriesNames' => $categoriesNames,
+                'postsCount' => $postsCount
+            ]);
+    }
+
+    /**
+     * Get posts grouped by created at date
+     */
+    public function postPerDateStats()
+    {
+        $postsPerDate = Post::orderBy('created_at', 'asc')->get()->groupBy(function ($item) {
+            return $item->created_at->format('M-y');
+        });
+        $dates = [];
+        $postsCount = [];
+
+        foreach ($postsPerDate as $key => $val) {
+            $dates[] = $key;
+            $postsCount[] = count($val);
+        }
+
+        return response()
+            ->json([
+                'dates' => $dates,
                 'postsCount' => $postsCount
             ]);
     }

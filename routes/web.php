@@ -48,6 +48,8 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('home');
         Route::get('/post-category-stats', 'HomeController@postCategoryStats')
             ->name('stats.post-category');
+        Route::get('/post-per-date-stats', 'HomeController@postPerDateStats')
+            ->name('stats.post-per-date');
 
         // Dashboard posts routes
         Route::delete('/posts/{post}/delete-image', 'PostController@deleteImage')
