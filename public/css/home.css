@@ -8532,9 +8532,17 @@ a.text-dark:focus {
   margin-bottom: 2rem;
 }
 
+.commentsPage__controls {
+  margin: 0.5rem 0;
+}
+
 .commentsPage__commentBody {
   height: 15rem;
   resize: none;
+}
+
+.commentsPage__approveBox {
+  display: inline-block;
 }
 
 .homePage__emptyQuery {

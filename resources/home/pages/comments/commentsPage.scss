@@ -3,8 +3,16 @@
     margin-bottom: 2rem;
   }
 
+  &__controls {
+    margin: 0.5rem 0;
+  }
+
   &__commentBody {
     height: 15rem;
     resize: none;
+  }
+
+  &__approveBox {
+    display: inline-block;
   }
 }

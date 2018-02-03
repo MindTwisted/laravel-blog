@@ -10,6 +10,19 @@
         <h2>Comment for post "{{ $comment->post->title }}"
           by {{ $comment->author_name }}</h2>
       </div>
+      
+      @if(!$comment->approved)
+        <div class="commentsPage__approveBox">
+          <form action="{{ route('comments.approve', $comment->id) }}"
+                method="POST">
+            {{ csrf_field() }}
+            <button type="submit"
+                    class="btn btn-warning btn-block">Approve comment
+            </button>
+          </form>
+        </div>
+      @endif
+      
       <hr>
       <div class="homePage__content">
         <div class="commentsPage">
@@ -38,6 +51,7 @@
                   </button>
                 </form>
               </div>
+            
             </div>
           </div>
         
