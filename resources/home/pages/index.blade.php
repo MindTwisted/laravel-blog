@@ -4,16 +4,20 @@
   <div class="homePage">
     <div class="container-fluid">
       <div class="homePage__title">
-        <h1>Welcome, {{ Auth::user()->name }}!</h1>
+        <h1>Blog stats</h1>
       </div>
-      <div class="homePage__content">
-        <ul>
-          <li><a href="{{ route('posts.index') }}">Posts</a></li>
-          <li><a href="{{ route('categories.index') }}">Categories</a></li>
-          <li><a href="{{ route('tags.index') }}">Tags</a></li>
-          <li><a href="{{ route('comments.index') }}">Comments</a></li>
-        </ul>
+      
+      <div class="row">
+        <div class="col-md-6">
+          
+          <div class="card">
+            <canvas class="homePage__barChart"
+                    data-url="{{ route('stats.post-category') }}"></canvas>
+          </div>
+        
+        </div>
       </div>
+    
     </div>
   </div>
 @endsection

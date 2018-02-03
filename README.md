@@ -10,6 +10,7 @@ Blog application created with Laravel 5.5 and PostgreSQL
 * jQuery, ES6;
 * SCSS;
 * SVG sprites;
+* Chart.js for blog stats;
 
 
 **Live preview link:**

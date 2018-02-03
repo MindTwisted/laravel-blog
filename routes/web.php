@@ -46,6 +46,8 @@ Route::middleware('auth')
     ->group(function () {
         // Dashboard index page
         Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/post-category-stats', 'HomeController@postCategoryStats')
+            ->name('stats.post-category');
 
         // Dashboard posts routes
         Route::delete('/posts/{post}/delete-image', 'PostController@deleteImage')
