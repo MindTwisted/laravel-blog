@@ -1,3 +1,11 @@
+html {
+  font-size: $font-size-base;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-sm;
+  }
+}
+
 body {
   max-width: 1920px;
   width: 100%;
