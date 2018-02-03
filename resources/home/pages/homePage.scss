@@ -16,15 +16,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
 
     h1 {
       display: inline-block;
     }
-  }
-
-  &__addResourceButton {
-    margin-left: 0.75rem;
   }
 
   &__content {

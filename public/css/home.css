@@ -8562,15 +8562,13 @@ a.text-dark:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .homePage__title h1 {
   display: inline-block;
-}
-
-.homePage__addResourceButton {
-  margin-left: 0.75rem;
 }
 
 .homePage__content .CodeMirror {
