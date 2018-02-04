@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Repositories\CategoryRepository;
 use App\Post;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.pages.index');
+        $postsCount = Post::count();
+        $categoriesCount = Category::count();
+
+        return view('home.pages.index',
+            compact('postsCount', 'categoriesCount'));
     }
 
     /**

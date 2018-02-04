@@ -26,13 +26,15 @@ function markdownAreaViewer() {
 }
 
 function postPerCategoryChartInit() {
+    // Cache chart wrap dom element
+    const $chartWrap = $('.homePage__chartWrap');
     // Cache bar chart dom canvas element
     const ctx = $('.homePage__postPerCategoryChart');
     // Get url stored in data attribute
     const url = ctx.data('url');
 
     // If canvas exists
-    if (ctx.length > 0) {
+    if (ctx.length > 0 && $chartWrap.is(':visible')) {
         // Get ajax request into provided url
         $.get(url)
         // If request was successfully completed
@@ -93,13 +95,15 @@ function postPerCategoryChartInit() {
 }
 
 function postPerDateChartInit() {
+    // Cache chart wrap dom element
+    const $chartWrap = $('.homePage__chartWrap');
     // Cache bar chart dom canvas element
     const ctx = $('.homePage__postPerDateChart');
     // Get url stored in data attribute
     const url = ctx.data('url');
 
     // If canvas exists
-    if (ctx.length > 0) {
+    if (ctx.length > 0 && $chartWrap.is(':visible')) {
         // Get ajax request into provided url
         $.get(url)
         // If request was successfully completed

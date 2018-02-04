@@ -35,4 +35,20 @@
       border-top-right-radius: 0;
     }
   }
+
+  &__chartWrap {
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__mobileDashboardContent {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
 }

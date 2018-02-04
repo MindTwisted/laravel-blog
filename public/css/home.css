@@ -8264,6 +8264,26 @@ a.text-dark:hover {
   border-top-right-radius: 0;
 }
 
+.homePage__chartWrap {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+  .homePage__chartWrap {
+    display: none;
+  }
+}
+
+.homePage__mobileDashboardContent {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .homePage__mobileDashboardContent {
+    display: block;
+  }
+}
+
 .sidebar {
   max-width: 300px;
   width: 100%;
