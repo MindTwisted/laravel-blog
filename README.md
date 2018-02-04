@@ -12,6 +12,9 @@ Blog application created with Laravel 5.5 and PostgreSQL
 * SVG sprites;
 * Chart.js for blog stats;
 
+**External services used:**
+* eMail sending: https://www.mailgun.com/
+
 
 **Live preview link:**
 https://cryptic-fjord-99357.herokuapp.com/
